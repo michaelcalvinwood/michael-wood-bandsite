@@ -20,26 +20,25 @@ html {
     color: $white;
     box-sizing: border-box;
     width: 100%;
-    padding: 3vh 0 0 0;
+    padding: 24px 0 0 0;
 
     &__title {
-        font-size: 2.75rem;
-        width: 100%;
+        font-size: 20px;
         text-align: center;
-        margin-bottom: 1rem;
+        margin-bottom: .75rem;
     }
     &__list {
         list-style: none;
         display: flex;
     }
     &__list-item {
-        height: 4.5rem;
+        @include mobile-body;
+        height: 2.5rem;
         box-sizing: border-box;
         text-align: center;
         flex-grow: 1;
-        font-size: 1.75rem;
         &--active, &:hover {
-             border-bottom: 8px solid white;
+             border-bottom: 5px solid white;
         }
         &--inactive {
             color: $mercury;
@@ -118,8 +117,41 @@ html {
     }
 }
 .footer {
+    @include mobile-body;
     padding: 24px $section-horizontal-padding 0 $section-horizontal-padding;
     background-color: $bandsite-black;
     color: $white;
 
+    &__title {
+        margin-top: 4rem;
+        font-size: 2rem;
+    }
+    &__copyright {
+        margin-top: 24px;
+    }
+}
+.social {
+    &__icons {
+        display: flex;
+        width: 8rem;
+        justify-content: space-between;
+        margin-top: 24px;
+    }
+}
+.contact {
+    display: flex;
+    flex-direction: column;
+
+    &__group {
+        margin-top: 24px;
+    }
+    &__name {
+        font-weight: 700;
+    }
+    &__location {
+        margin-top: 16px;
+    }
+    &__email {
+        margin-top: 16px;
+    }
 }
