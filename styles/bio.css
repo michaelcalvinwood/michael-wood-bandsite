@@ -1,0 +1,148 @@
+/* color scheme */
+@font-face {
+  font-family: "Avenir";
+  src: url("../assets/fonts/AvenirNextLTPro-Regular.otf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("../assets/fonts/AvenirNextLTPro-Demi.otf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("../assets/fonts/AvenirNextLTPro-Bold.otf");
+  font-weight: 700;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+}
+
+html {
+  font-family: "Avenir";
+}
+
+.header {
+  background-color: #323232;
+  color: #ffffff;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 3vh 0 0 0;
+}
+.header__title {
+  font-size: 2.75rem;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.header__list {
+  list-style: none;
+  display: flex;
+}
+.header__list-item {
+  height: 4.5rem;
+  box-sizing: border-box;
+  text-align: center;
+  flex-grow: 1;
+  font-size: 1.75rem;
+}
+.header__list-item--active, .header__list-item:hover {
+  border-bottom: 8px solid white;
+}
+.header__list-item--inactive {
+  color: #e1e1e1;
+}
+
+.hero {
+  width: 100%;
+  height: 30vh;
+  padding: 0 16px;
+  box-sizing: border-box;
+  background: url("../assets/images/hero-bio.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 30vh;
+  background-color: rgba(50, 50, 50, 0.5);
+}
+.hero__title {
+  color: white;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  z-index: 2;
+}
+
+.info {
+  padding: 0 16px;
+}
+.info__title {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  padding: 24px 0 16px 0;
+  box-sizing: border-box;
+}
+.info__image {
+  width: 100%;
+  height: auto;
+}
+.info__quote {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  font-weight: 600;
+  margin: 16px 0;
+}
+.info__subheading {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
+  margin: 24px 0 16px 0;
+}
+.info__p {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  margin: 16px 0;
+}
+
+.gallery {
+  padding: 24px 16px 0 16px;
+  background-color: #fafafa;
+}
+.gallery__title {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  margin: 0px 0 16px 0;
+}
+.gallery__photos {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+.gallery__photo {
+  margin-bottom: 16px;
+}
+
+.footer {
+  padding: 24px 16px 0 16px;
+  background-color: #323232;
+  color: #ffffff;
+}/*# sourceMappingURL=bio.css.map */

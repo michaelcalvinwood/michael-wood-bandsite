@@ -1,0 +1,125 @@
+@use './partials/colors' as *;
+@use './partials/mixins' as *;
+@use './partials/variables' as *;
+
+@include fonts;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    width: 100%;
+}
+html {
+    font-family: 'Avenir';
+}
+
+.header {
+    background-color: $bandsite-black;
+    color: $white;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 3vh 0 0 0;
+
+    &__title {
+        font-size: 2.75rem;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    &__list {
+        list-style: none;
+        display: flex;
+    }
+    &__list-item {
+        height: 4.5rem;
+        box-sizing: border-box;
+        text-align: center;
+        flex-grow: 1;
+        font-size: 1.75rem;
+        &--active, &:hover {
+             border-bottom: 8px solid white;
+        }
+        &--inactive {
+            color: $mercury;
+        }
+    }
+}
+.hero {
+    width: 100%;
+    height: 30vh;
+    padding: 0 $section-horizontal-padding;
+    box-sizing: border-box;
+    background: url('../assets/images/hero-bio.jpg');
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 30vh;
+        background-color: rgba($bandsite-black, .5);
+    }
+    &__title {
+        color: white;
+        font-weight: 400;
+        @include mobile-header;
+        z-index: 2;
+    }
+}
+.info {
+    padding: 0 $section-horizontal-padding;
+
+    &__title {
+        @include mobile-header;
+        padding: 24px 0 16px 0;
+        box-sizing: border-box;
+    }
+    &__image {
+        width: 100%;
+        height: auto;
+    }
+    &__quote {
+        @include mobile-body;
+        font-weight: 600;
+        margin: 16px 0;
+    }
+    &__subheading {
+        @include mobile-subheader;
+        margin: 24px 0 16px 0;
+
+    }
+    &__p {
+        @include mobile-body;
+        margin: 16px 0;
+    }
+}
+.gallery {
+    padding: 24px $section-horizontal-padding 0 $section-horizontal-padding;
+    background-color: $alabaster;
+    &__title {
+        @include mobile-header;
+        margin: 0px 0 16px 0;
+    }
+    &__photos {
+        width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+    }
+    &__photo {
+        margin-bottom: 16px;
+    }
+}
+.footer {
+    padding: 24px $section-horizontal-padding 0 $section-horizontal-padding;
+    background-color: $bandsite-black;
+    color: $white;
+
+}

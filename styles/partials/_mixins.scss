@@ -1,20 +1,45 @@
 @use 'variables' as *;
 
+@mixin fonts {
+    @font-face {
+        font-family: "Avenir";
+        src: url('../assets/fonts/AvenirNextLTPro-Regular.otf');
+        font-weight: 400;
+    
+    }
+    @font-face {
+        font-family: "Avenir";
+        src: url('../assets/fonts/AvenirNextLTPro-Demi.otf');
+        font-weight: 600;    
+    }
+    @font-face {
+        font-family: "Avenir";
+        src: url('../assets/fonts/AvenirNextLTPro-Bold.otf');
+        font-weight: 700;
+    }
+}
 @mixin tablet {
     @media (min-width: $tablet-breakpoint) {
         @content;
     }
 }
-
 @mixin desktop {
     @media (min-width: $desktop-breakpoint) {
         @content;
     }
 }
-
-@mixin mobile-page-header {
+@mixin mobile-header {
     font-size: 24px;
     line-height: 32px;
     font-weight: 700;
 }
-
+@mixin mobile-body {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+}
+@mixin mobile-subheader {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 600;
+}
