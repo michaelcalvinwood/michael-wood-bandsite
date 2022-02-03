@@ -20,16 +20,32 @@ html {
     color: $white;
     box-sizing: border-box;
     width: 100%;
-    padding: 24px 0 0 0;
+    padding: $mobile-section-top-margin $tablet-section-horizontal-padding 0 $tablet-section-horizontal-padding;
 
     &__title {
         font-size: 20px;
         text-align: center;
         margin-bottom: .75rem;
+
+        @include tablet {
+            display: inline-block;
+        }
+    }
+    &__nav {
+        @include tablet {            
+            display:inline-block;
+            width: 17.5%;
+        }
     }
     &__list {
         list-style: none;
         display: flex;
+
+        @include tablet {
+            width: 100%;
+            
+            justify-content: space-between;
+        }
     }
     &__list-item {
         @include mobile-body;
@@ -43,12 +59,16 @@ html {
         &--inactive {
             color: $mercury;
         }
+        @include tablet {
+            flex-grow: 0;
+            margin-left: 3rem;
+        }
     }
 }
 .hero {
     width: 100%;
     height: 30vh;
-    padding: 0 $section-horizontal-padding;
+    padding: 0 $mobile-section-horizontal-padding;
     box-sizing: border-box;
     background: url('../assets/images/hero-bio.jpg');
     background-repeat: no-repeat;
@@ -57,6 +77,11 @@ html {
     align-items: center;
     position: relative;
 
+    @include tablet {
+        height: 50vh;
+        padding: 0 $tablet-section-horizontal-padding;
+    }
+
     &__overlay {
         position: absolute;
         top: 0;
@@ -64,21 +89,39 @@ html {
         width: 100vw;
         height: 30vh;
         background-color: rgba($bandsite-black, .5);
+
+        @include tablet {
+            height: 50vh;
+        }
     }
     &__title {
         color: white;
         font-weight: 400;
         @include mobile-header;
         z-index: 2;
+
+        @include tablet {
+            @include tablet-page-header;
+        }
     }
 }
 .info {
-    padding: 0 $section-horizontal-padding;
+    padding: 0 $mobile-section-horizontal-padding;
+
+    @include tablet {
+        padding: 0 $tablet-section-horizontal-padding;
+    }
 
     &__title {
         @include mobile-header;
-        padding: 24px 0 16px 0;
+        padding: $mobile-section-top-margin 0 $mobile-component-padding 0;
         box-sizing: border-box;
+
+        @include tablet {
+            @include tablet-section-header;
+            @include tablet-section-header;
+            padding: $tablet-section-top-margin 0 $tablet-component-padding 0;
+        }
     }
     &__image {
         width: 100%;
@@ -88,62 +131,155 @@ html {
         @include mobile-body;
         font-weight: 600;
         margin: 16px 0;
+
+        @include tablet {
+            @include tablet-subheader;
+        }
+
+        &--reduced {
+            @include tablet {
+                @include tablet-body;
+                font-weight: 600;
+            }
+        }
     }
     &__subheading {
         @include mobile-subheader;
-        margin: 24px 0 16px 0;
+        margin: $mobile-section-top-margin 0 16px 0;
 
+        @include tablet {
+            @include tablet-subheader;
+        }
+    }
+    &__container {
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between
+        }
     }
     &__p {
         @include mobile-body;
-        margin: 16px 0;
+        margin: $mobile-component-padding 0;
+
+        @include tablet {
+            @include tablet-body;
+            width: 48%;
+        }
     }
 }
 .gallery {
-    padding: 24px $section-horizontal-padding 0 $section-horizontal-padding;
+    padding: $mobile-section-top-margin $mobile-section-horizontal-padding 0 $mobile-section-horizontal-padding;
     background-color: $alabaster;
+
+    @include tablet {
+        padding: $tablet-section-top-margin $tablet-section-horizontal-padding 0 $tablet-section-horizontal-padding;
+    }
     &__title {
         @include mobile-header;
-        margin: 0px 0 16px 0;
+        margin: 0px 0 $mobile-component-padding 0;
+
+        @include tablet {
+            @include tablet-section-header;
+        }
     }
     &__photos {
         width: 100%;
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
+       
+
+        @include tablet {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: space-evenly;
+            padding-bottom: $tablet-component-padding;
+        }
     }
     &__photo {
         margin-bottom: 16px;
+
+        @include tablet {
+            width: 27vw;
+            margin-bottom: 1.5rem;
+        }
     }
 }
 .footer {
-    @include mobile-body;
-    padding: 24px $section-horizontal-padding 0 $section-horizontal-padding;
+    @include mobile-footer-text;
+    padding: $mobile-section-top-margin $mobile-section-horizontal-padding 0 $mobile-section-horizontal-padding;
     background-color: $bandsite-black;
     color: $white;
 
-    &__title {
-        margin-top: 4rem;
-        font-size: 2rem;
+    @include tablet {
+        @include tablet-footer-text;
+    }
+    &__logo-alt {
+        display: none;
+
+        @include tablet {
+            display: inline-block;
+            text-align: right;
+            width: 30vw;
+        }
+    }
+    &__logo {
+        @include mobile-header;
+        
+        @include tablet {
+            display: none;   
+        }
     }
     &__copyright {
         margin-top: 24px;
     }
 }
 .social {
+    @include tablet {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+    &__title {
+        @include mobile-header;
+
+        @include tablet {
+            @include tablet-section-header;
+            width: 30vw;
+            
+        }
+    }
     &__icons {
         display: flex;
         width: 8rem;
         justify-content: space-between;
-        margin-top: 24px;
+        margin-top: $mobile-section-top-margin;
+
+        @include tablet {
+            margin-top: 0;
+            padding-bottom: .2rem;
+            width: 30vw;
+
+        }
     }
 }
 .contact {
     display: flex;
     flex-direction: column;
 
+    @include tablet {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
     &__group {
-        margin-top: 24px;
+        margin-top: $mobile-section-top-margin;
+
+        @include tablet {
+            width: 30vw;
+        }
     }
     &__name {
         font-weight: 700;
