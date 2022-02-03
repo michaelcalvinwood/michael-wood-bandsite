@@ -32,7 +32,17 @@ html {
   color: #ffffff;
   box-sizing: border-box;
   width: 100%;
-  padding: 24px 36px 0 36px;
+  padding: 24px 16px 0 16px;
+}
+@media (min-width: 768px) {
+  .header {
+    padding: 24px 36px 0 36px;
+  }
+}
+@media (min-width: 1280px) {
+  .header {
+    padding: 24px 72px 0 72px;
+  }
 }
 .header__title {
   font-size: 20px;
@@ -100,6 +110,11 @@ html {
     padding: 0 36px;
   }
 }
+@media (min-width: 1280px) {
+  .hero {
+    padding: 0 72px;
+  }
+}
 .hero__overlay {
   position: absolute;
   top: 0;
@@ -137,6 +152,17 @@ html {
     padding: 0 36px;
   }
 }
+@media (min-width: 1280px) {
+  .info {
+    padding: 0 72px;
+  }
+}
+@media (min-width: 1280px) {
+  .info__wrapper {
+    width: 85%;
+    margin: auto;
+  }
+}
 .info__title {
   font-size: 24px;
   line-height: 32px;
@@ -158,6 +184,7 @@ html {
 .info__image {
   width: 100%;
   height: auto;
+  display: block;
 }
 .info__quote {
   font-size: 13px;
@@ -171,6 +198,11 @@ html {
     font-size: 24px;
     line-height: 32px;
     font-weight: 600;
+  }
+}
+@media (min-width: 1280px) {
+  .info__quote {
+    width: 75%;
   }
 }
 @media (min-width: 768px) {
@@ -225,6 +257,11 @@ html {
     padding: 48px 36px 0 36px;
   }
 }
+@media (min-width: 1280px) {
+  .gallery {
+    padding: 48px 72px 0 72px;
+  }
+}
 .gallery__title {
   font-size: 24px;
   line-height: 32px;
@@ -253,6 +290,11 @@ html {
     padding-bottom: 36px;
   }
 }
+@media (min-width: 1280px) {
+  .gallery__photos {
+    justify-content: space-between;
+  }
+}
 .gallery__photo {
   margin-bottom: 16px;
 }
@@ -260,6 +302,11 @@ html {
   .gallery__photo {
     width: 27vw;
     margin-bottom: 1.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .gallery__photo {
+    width: 28vw;
   }
 }
 
@@ -276,6 +323,12 @@ html {
     font-size: 14px;
     line-height: 20px;
     font-weight: 400;
+    padding: 48px 36px 0 36px;
+  }
+}
+@media (min-width: 1280px) {
+  .footer {
+    padding: 48px 72px 0 72px;
   }
 }
 .footer__logo-alt {
@@ -333,6 +386,12 @@ html {
     margin-top: 0;
     padding-bottom: 0.2rem;
     width: 30vw;
+    justify-content: flex-start;
+  }
+}
+@media (min-width: 768px) {
+  .social__icon {
+    margin-right: 2rem;
   }
 }
 

@@ -20,7 +20,14 @@ html {
     color: $white;
     box-sizing: border-box;
     width: 100%;
-    padding: $mobile-section-top-margin $tablet-section-horizontal-padding 0 $tablet-section-horizontal-padding;
+    padding: $mobile-section-top-margin $mobile-section-horizontal-padding 0 $mobile-section-horizontal-padding;
+
+    @include tablet {
+        padding: $mobile-section-top-margin $tablet-section-horizontal-padding 0 $tablet-section-horizontal-padding;
+    }
+    @include desktop {
+        padding: $mobile-section-top-margin $desktop-section-horizontal-padding 0 $desktop-section-horizontal-padding;
+    }
 
     &__title {
         font-size: 20px;
@@ -81,6 +88,9 @@ html {
         height: 50vh;
         padding: 0 $tablet-section-horizontal-padding;
     }
+    @include desktop {
+        padding: 0 $desktop-section-horizontal-padding;
+    }
 
     &__overlay {
         position: absolute;
@@ -111,7 +121,15 @@ html {
     @include tablet {
         padding: 0 $tablet-section-horizontal-padding;
     }
-
+    @include desktop {
+        padding: 0 $desktop-section-horizontal-padding;
+    }
+    &__wrapper {
+        @include desktop {
+            width: 85%;
+            margin: auto;
+        }
+    }
     &__title {
         @include mobile-header;
         padding: $mobile-section-top-margin 0 $mobile-component-padding 0;
@@ -126,6 +144,7 @@ html {
     &__image {
         width: 100%;
         height: auto;
+        display: block;
     }
     &__quote {
         @include mobile-body;
@@ -134,6 +153,9 @@ html {
 
         @include tablet {
             @include tablet-subheader;
+        }
+        @include desktop {
+            width: 75%;
         }
 
         &--reduced {
@@ -175,6 +197,9 @@ html {
     @include tablet {
         padding: $tablet-section-top-margin $tablet-section-horizontal-padding 0 $tablet-section-horizontal-padding;
     }
+    @include desktop {
+        padding: $tablet-section-top-margin $desktop-section-horizontal-padding 0 $desktop-section-horizontal-padding;
+    }
     &__title {
         @include mobile-header;
         margin: 0px 0 $mobile-component-padding 0;
@@ -189,13 +214,15 @@ html {
         display: flex;
         flex-direction: column;
        
-
         @include tablet {
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: space-evenly;
             align-items: space-evenly;
             padding-bottom: $tablet-component-padding;
+        }
+        @include desktop {
+            justify-content: space-between;
         }
     }
     &__photo {
@@ -204,6 +231,9 @@ html {
         @include tablet {
             width: 27vw;
             margin-bottom: 1.5rem;
+        }
+        @include desktop {
+            width: 28vw;
         }
     }
 }
@@ -215,6 +245,10 @@ html {
 
     @include tablet {
         @include tablet-footer-text;
+        padding: $tablet-section-top-margin $tablet-section-horizontal-padding 0 $tablet-section-horizontal-padding;
+    }
+    @include desktop {
+        padding: $tablet-section-top-margin $desktop-section-horizontal-padding 0 $desktop-section-horizontal-padding;
     }
     &__logo-alt {
         display: none;
@@ -247,7 +281,7 @@ html {
 
         @include tablet {
             @include tablet-section-header;
-            width: 30vw;
+            width: $tablet-footer-content-width;
             
         }
     }
@@ -260,8 +294,13 @@ html {
         @include tablet {
             margin-top: 0;
             padding-bottom: .2rem;
-            width: 30vw;
-
+            width: $tablet-footer-content-width;
+            justify-content: flex-start;
+        }
+    }
+    &__icon {
+        @include tablet {
+            margin-right: 2rem;
         }
     }
 }
