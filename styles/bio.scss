@@ -15,6 +15,15 @@ html {
     font-family: 'Avenir';
 }
 
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+
 .header {
     background-color: $bandsite-black;
     color: $white;
@@ -26,7 +35,8 @@ html {
         padding: 1.5rem $tablet-section-horizontal-padding 0 $tablet-section-horizontal-padding;
     }
     @include desktop {
-        padding: $mobile-section-top-margin-mockup $desktop-section-horizontal-padding 0 $desktop-section-horizontal-padding;
+        padding-top: 2rem;
+        padding-left: 8rem;
     }
 
     &__logo {
@@ -44,6 +54,9 @@ html {
         @include tablet {            
             display:inline-block;
             width: 17.5%;
+        }
+        @include desktop {
+            margin-left: 2.5rem;
         }
         vertical-align: top;
     }
@@ -74,6 +87,11 @@ html {
             margin-left: 3.75rem;
             height: 2.75rem;
         }
+        @include desktop {
+            margin-left: 0;
+            height: 3.25rem;
+        }
+        
     }
 }
 .hero {
@@ -93,7 +111,7 @@ html {
         padding: 0 $tablet-section-horizontal-padding;
     }
     @include desktop {
-        padding: 0 $desktop-section-horizontal-padding;
+        height: 48.5vw;
     }
 
     &__overlay {
@@ -107,6 +125,9 @@ html {
         @include tablet {
             height: 57.5vw;
         }
+        @include desktop {
+            height: 48.5vw;
+        }
     }
     &__title {
         color: white;
@@ -117,6 +138,10 @@ html {
         @include tablet {
             @include tablet-page-header;
         }
+        @include desktop {
+            margin-left: 5.5rem;
+            font-size: 58px;
+        }
     }
 }
 .info {
@@ -126,7 +151,7 @@ html {
         padding: 0 2.25rem;
     }
     @include desktop {
-        padding: 0 $desktop-section-horizontal-padding;
+        padding: 0 $desktop-section-horizontal-padding 2.25rem $desktop-section-horizontal-padding;
     }
     &__title {
         @include mobile-header;
@@ -137,14 +162,16 @@ html {
             @include tablet-section-header;
             padding: $tablet-section-top-margin 0 1.25rem 0;
         }
+        @include desktop {
+            margin-left: 3.5rem;
+        }
     }
     &__wrapper {
         @include tablet {
             padding: 0 3.5rem;
         }
         @include desktop {
-            width: 85%;
-            margin: auto;
+            padding: 0 9rem;
         }
     }
     &__image {
@@ -154,6 +181,10 @@ html {
         
         @include tablet {
             height: 40vw;
+        }
+        @include desktop {
+            margin-top: 1rem;
+            height: 35vw;
         }
     }
     &__quote {
@@ -169,7 +200,8 @@ html {
             margin-bottom: 0;
         }
         @include desktop {
-            width: 75%;
+            margin-top: 2rem;
+            width: 80%;
         }
 
         &--reduced {
@@ -188,6 +220,9 @@ html {
         @include tablet {
             @include tablet-subheader;
             margin-top: $tablet-section-top-margin;
+        }
+        @include desktop {
+            margin-top: 3.5rem;
         }
     }
     &__container {
@@ -214,6 +249,9 @@ html {
             @include tablet-body;
             width: 48%;
         }
+        @include desktop {
+            width: 49%;
+        }
     }
 }
 .gallery {
@@ -224,7 +262,7 @@ html {
         padding: $tablet-section-top-margin $tablet-section-horizontal-padding 0 $tablet-section-horizontal-padding;
     }
     @include desktop {
-        padding: $tablet-section-top-margin $desktop-section-horizontal-padding 0 $desktop-section-horizontal-padding;
+        padding: 1.25rem 10vw 0 10vw;
     }
     &__title {
         @include mobile-header;
@@ -250,6 +288,7 @@ html {
         }
         @include desktop {
             justify-content: space-between;
+            margin-top: 2.5rem;
         }
     }
     &__photo {
@@ -260,7 +299,7 @@ html {
             margin-bottom: 1.5rem;
         }
         @include desktop {
-            width: 28vw;
+            width: 25vw;
         }
     }
 }
@@ -275,8 +314,9 @@ html {
         padding: $tablet-section-top-margin $tablet-section-horizontal-padding 2.25rem $tablet-section-horizontal-padding;
     }
     @include desktop {
-        padding: $tablet-section-top-margin $desktop-section-horizontal-padding 0 $desktop-section-horizontal-padding;
+        padding: 3rem 0vw 0 10vw;
     }
+    
     &__logo {
         @include mobile-header;
         max-height: 20px;
@@ -301,13 +341,27 @@ html {
         justify-content: space-between;
         align-items: flex-end;
     }
+    @include desktop {
+        display:block;
+        margin-right: 10vw;
+        box-sizing: border-box;
+    }
     &__title {
         @include mobile-header;
 
         @include tablet {
             @include tablet-section-header;
             width: $tablet-footer-content-width;
-            
+        }
+        @include desktop {
+            display: inline-block;
+            width: 20vw;
+        }
+    }
+    &__icon-container {
+        @include desktop {
+            display: inline-block;
+            width: 20vw;
         }
     }
     &__icons {
@@ -323,6 +377,10 @@ html {
             width: $tablet-footer-content-width;
             justify-content: flex-start;
             align-self: center;
+        }
+        @include desktop {
+            width: 20vw;
+            padding-left: 0;
         }
     }
     &__icon {
@@ -340,6 +398,10 @@ html {
             width: 30vw;
             align-self: center;
         }
+        @include desktop {
+            // display: none;
+            float: right;
+        }
     }
 }
 .contact {
@@ -351,12 +413,18 @@ html {
         flex-direction: row;
         justify-content: space-between;
     }
+    @include desktop {
+        width: 60vw;
+    }
 
     &__group {
         margin-top: $mobile-section-top-margin-mockup;
 
         @include tablet {
             width: 30vw;
+        }
+        @include desktop {
+            width: 20vw;
         }
     }
     &__name {
@@ -368,12 +436,18 @@ html {
         @include tablet {
             margin-top: 1.25rem;
         }
+        @include desktop {
+            margin-top: 1.5rem;
+        }
     }
     &__email {
         margin-top: 16px;
 
         @include tablet {
             margin-top: 1.25rem;
+        }
+        @include desktop {
+            margin-top: 1.5rem;
         }
     }
 }
