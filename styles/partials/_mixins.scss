@@ -28,8 +28,13 @@
         @content;
     }
 }
-@mixin mobile-header {
+@mixin mobile-header-style-guide {
     font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+}
+@mixin mobile-header {
+    font-size: 22px;
     line-height: 32px;
     font-weight: 700;
 }
@@ -48,7 +53,6 @@
     line-height: 18px;
     font-weight: 400;
 }
-
 @mixin tablet-page-header {
     font-size: 60px;
     line-height: 68px;

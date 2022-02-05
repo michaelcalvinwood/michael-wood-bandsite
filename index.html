@@ -9,8 +9,12 @@
     <link rel="stylesheet" href="styles/bio.css">
 </head>
 <body>
+    <!-- <section class="debug">
+        <img class="debug__overlay" src="/mockups/mobile.png" style=" display: none; display: block; opacity:.25; position: absolute; left: 0; top:3.15rem; width:100%;">
+    </section> -->
     <header class="header">
-        <div class="header__title">BANDSITE</div>
+    
+            <img class="header__logo" src="assets/logos/Logo-bandsite.svg" alt="BANDSITE">
         <nav class="header__nav">
             <ul class="header__list">
                 <li class="header__list-item header__list-item--active">Biography</li>
@@ -26,28 +30,28 @@
         <article class="info">
             <h2 class="info__title">About the Musicians</h2>
             <div class="info__wrapper">
-                <img class="info__image" src="./assets/images/band.jpg">
+                <img class="info__image" src="/assets/images/band.jpg">
                 <p class="info__quote">"We push each other to be the best. It's not uncommon for one of us to say 'this needs to be better, back to the drawing board'"</p>
                 <p class="info__quote info__quote--reduced">- Bryan Teddy, lead vocalist of The Bees Knees</p>
                 <h3 class="info__subheading">The Bees Knees</h3>
                 <div class="info__container">
                     <p class="info__p">The Bees Knees is a pop rock band originating from San Francisco, California. The band consists of lead vocalist Bryan Teddy, guitarist Mack Tolkens, guitarist Andrew Green, bassist Kent Zulkee and drummer Freddie Fischer. The band achieved its first commercial success as an unsigned act, drawing attention from manager Cam Adams. Having worked with other popular acts (The Elephant In The Room, One Trick Pony, The Cat's Meow), Adams was confident the band could succeed even further, pushing them to sign with Magenta Records.</p>
-                    <p class="info__p">From there, the band has soared, gaining international recognition and ranking in the top 10 on the Poster Charts. New fans immediately fell in love with the band's original and organic attitude, solidifying their place as one of the hottest and fastest up and coming acts of this century. Fans affectionately refer to themselves as "The Hive" and are drawn to their candid and authentic performances on stage. Looking forward to touring in the future. The Bees Knees are currently recording their second studio album, looking to be released in late 2021.</p>
+                    <p class="info__p info__p--continue">From there, the band has soared, gaining international recognition and ranking in the top 10 on the Poster Charts. New fans immediately fell in love with the band's original and organic attitude, solidifying their place as one of the hottest and fastest up and coming acts of this century. Fans affectionately refer to themselves as "The Hive" and are drawn to their candid and authentic performances on stage. Looking forward to touring in the future. The Bees Knees are currently recording their second studio album, looking to be released in late 2021.</p>
                 </div>
             </div>
             </article>
         <section class="gallery">
             <h2 class="gallery__title">Photo Gallery</h2>
             <div class="gallery__photos">
-                <img class="gallery__photo" src="assets/Images/Photo-gallery-1.jpg" />
-                <img class="gallery__photo" src="assets/Images/Photo-gallery-2.jpg" />
-                <img class="gallery__photo" src="assets/Images/Photo-gallery-3.jpg" />
-                <img class="gallery__photo" src="assets/Images/Photo-gallery-4.jpg" />
-                <img class="gallery__photo" src="assets/Images/Photo-gallery-5.jpg" />
-                <img class="gallery__photo" src="assets/Images/Photo-gallery-6.jpg" />
-                <img class="gallery__photo" src="assets/Images/Photo-gallery-7.jpg" />
-                <img class="gallery__photo" src="assets/Images/Photo-gallery-8.jpg" />
-                <img class="gallery__photo" src="assets/Images/Photo-gallery-9.jpg" />
+                <img class="gallery__photo" src="/assets/Images/Photo-gallery-1.jpg" />
+                <img class="gallery__photo" src="/assets/Images/Photo-gallery-2.jpg" />
+                <img class="gallery__photo" src="/assets/Images/Photo-gallery-3.jpg" />
+                <img class="gallery__photo" src="/assets/Images/Photo-gallery-4.jpg" />
+                <img class="gallery__photo" src="/assets/Images/Photo-gallery-5.jpg" />
+                <img class="gallery__photo" src="/assets/Images/Photo-gallery-6.jpg" />
+                <img class="gallery__photo" src="/assets/Images/Photo-gallery-7.jpg" />
+                <img class="gallery__photo" src="/assets/Images/Photo-gallery-8.jpg" />
+                <img class="gallery__photo" src="/assets/Images/Photo-gallery-9.jpg" />
             </div>
             </section>
     </main>
@@ -56,13 +60,19 @@
             <h2 class="social__title">Get in Touch</h2>
             <div class="social__icons">
                 <figure class="social__icon">
-                    <img class="social__image" src="assets/icons/Icon-instagram.svg">
+                    <a href="https://instagram.com">
+                        <img class="social__image" src="assets/icons/Icon-instagram.svg">
+                    </a>
                 </figure>
                 <figure class="social__icon">
-                    <img class="social__image" src="assets/icons/Icon-facebook.svg">
+                    <a href="https://facebook.com">
+                        <img class="social__image" src="assets/icons/Icon-facebook.svg">
+                    </a>
                 </figure>
                 <figure class="social__icon">
-                    <img class="social__image" src="assets/icons/Icon-twitter.svg">
+                    <a href="https://twitter.com">
+                        <img class="social__image" src="assets/icons/Icon-twitter.svg">
+                    </a>
                 </figure>
             </div>
             <div class="footer__logo-alt">BANDSITE</div>
@@ -108,7 +118,7 @@
                 </div>
             </div>
         </section>
-    <div class="footer__logo">BANDSITE</div>
+    <img class="footer__logo" src="/assets/logos/Logo-bandsite.svg">
     <p class="footer__copyright">Copyright The Bees Knees @2021 All Rights Reserved</p>
     </footer>
 </body>

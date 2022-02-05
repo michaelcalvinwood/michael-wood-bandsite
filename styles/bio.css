@@ -32,25 +32,27 @@ html {
   color: #ffffff;
   box-sizing: border-box;
   width: 100%;
-  padding: 24px 16px 0 16px;
+  padding: 1rem 0 0 0;
 }
 @media (min-width: 768px) {
   .header {
-    padding: 24px 36px 0 36px;
+    padding: 18px 36px 0 36px;
   }
 }
 @media (min-width: 1280px) {
   .header {
-    padding: 24px 72px 0 72px;
+    padding: 18px 72px 0 72px;
   }
 }
-.header__title {
-  font-size: 20px;
+.header__logo {
+  display: block;
   text-align: center;
-  margin-bottom: 0.75rem;
+  max-height: 20px;
+  max-width: 120px;
+  margin: 0 auto 0.5rem auto;
 }
 @media (min-width: 768px) {
-  .header__title {
+  .header__logo {
     display: inline-block;
   }
 }
@@ -63,6 +65,7 @@ html {
 .header__list {
   list-style: none;
   display: flex;
+  justify-content: space-between;
 }
 @media (min-width: 768px) {
   .header__list {
@@ -74,13 +77,14 @@ html {
   font-size: 13px;
   line-height: 18px;
   font-weight: 400;
-  height: 2.5rem;
+  height: 1.8rem;
+  width: 49.9%;
   box-sizing: border-box;
   text-align: center;
   flex-grow: 1;
 }
 .header__list-item--active, .header__list-item:hover {
-  border-bottom: 5px solid white;
+  border-bottom: 3px solid white;
 }
 .header__list-item--inactive {
   color: #e1e1e1;
@@ -94,7 +98,7 @@ html {
 
 .hero {
   width: 100%;
-  height: 30vh;
+  height: 56vw;
   padding: 0 16px;
   box-sizing: border-box;
   background: url("../assets/images/hero-bio.jpg");
@@ -120,7 +124,7 @@ html {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 30vh;
+  height: 56vw;
   background-color: rgba(50, 50, 50, 0.5);
 }
 @media (min-width: 768px) {
@@ -131,7 +135,7 @@ html {
 .hero__title {
   color: white;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 32px;
   font-weight: 700;
   z-index: 2;
@@ -145,7 +149,7 @@ html {
 }
 
 .info {
-  padding: 0 16px;
+  padding: 0 16px 1rem 16px;
 }
 @media (min-width: 768px) {
   .info {
@@ -164,10 +168,10 @@ html {
   }
 }
 .info__title {
-  font-size: 24px;
+  font-size: 22px;
   line-height: 32px;
   font-weight: 700;
-  padding: 24px 0 16px 0;
+  padding: 18px 0 0.5rem 0;
   box-sizing: border-box;
 }
 @media (min-width: 768px) {
@@ -183,7 +187,7 @@ html {
 }
 .info__image {
   width: 100%;
-  height: auto;
+  height: 46.5vw;
   display: block;
 }
 .info__quote {
@@ -191,7 +195,7 @@ html {
   line-height: 18px;
   font-weight: 400;
   font-weight: 600;
-  margin: 16px 0;
+  margin: 0.8rem 0 1rem 0;
 }
 @media (min-width: 768px) {
   .info__quote {
@@ -217,7 +221,7 @@ html {
   font-size: 14px;
   line-height: 22px;
   font-weight: 600;
-  margin: 24px 0 16px 0;
+  margin: 18px 0 16px 0;
 }
 @media (min-width: 768px) {
   .info__subheading {
@@ -238,6 +242,10 @@ html {
   line-height: 18px;
   font-weight: 400;
   margin: 16px 0;
+  margin: 0;
+}
+.info__p--continue {
+  margin-top: 1rem;
 }
 @media (min-width: 768px) {
   .info__p {
@@ -249,7 +257,7 @@ html {
 }
 
 .gallery {
-  padding: 24px 16px 0 16px;
+  padding: 18px 16px 0 16px;
   background-color: #fafafa;
 }
 @media (min-width: 768px) {
@@ -263,10 +271,10 @@ html {
   }
 }
 .gallery__title {
-  font-size: 24px;
+  font-size: 22px;
   line-height: 32px;
   font-weight: 700;
-  margin: 0px 0 16px 0;
+  margin: 0px 0 0.7rem 0;
 }
 @media (min-width: 768px) {
   .gallery__title {
@@ -296,7 +304,7 @@ html {
   }
 }
 .gallery__photo {
-  margin-bottom: 16px;
+  margin-bottom: 1.1rem;
 }
 @media (min-width: 768px) {
   .gallery__photo {
@@ -314,7 +322,7 @@ html {
   font-size: 13px;
   line-height: 18px;
   font-weight: 400;
-  padding: 24px 16px 0 16px;
+  padding: 18px 16px 0 16px;
   background-color: #323232;
   color: #ffffff;
 }
@@ -333,6 +341,7 @@ html {
 }
 .footer__logo-alt {
   display: none;
+  font-size: 20px;
 }
 @media (min-width: 768px) {
   .footer__logo-alt {
@@ -342,9 +351,12 @@ html {
   }
 }
 .footer__logo {
-  font-size: 24px;
+  font-size: 22px;
   line-height: 32px;
   font-weight: 700;
+  max-height: 20px;
+  max-width: 120px;
+  margin-top: 3.5rem;
 }
 @media (min-width: 768px) {
   .footer__logo {
@@ -352,7 +364,7 @@ html {
   }
 }
 .footer__copyright {
-  margin-top: 24px;
+  margin-top: 0.75rem;
 }
 
 @media (min-width: 768px) {
@@ -363,7 +375,7 @@ html {
   }
 }
 .social__title {
-  font-size: 24px;
+  font-size: 22px;
   line-height: 32px;
   font-weight: 700;
 }
@@ -377,9 +389,9 @@ html {
 }
 .social__icons {
   display: flex;
-  width: 8rem;
+  width: 7.5rem;
   justify-content: space-between;
-  margin-top: 24px;
+  margin-top: 18px;
 }
 @media (min-width: 768px) {
   .social__icons {
@@ -406,7 +418,7 @@ html {
   }
 }
 .contact__group {
-  margin-top: 24px;
+  margin-top: 18px;
 }
 @media (min-width: 768px) {
   .contact__group {

@@ -20,19 +20,21 @@ html {
     color: $white;
     box-sizing: border-box;
     width: 100%;
-    padding: $mobile-section-top-margin $mobile-section-horizontal-padding 0 $mobile-section-horizontal-padding;
+    padding: 1rem 0 0 0;
 
     @include tablet {
-        padding: $mobile-section-top-margin $tablet-section-horizontal-padding 0 $tablet-section-horizontal-padding;
+        padding: $mobile-section-top-margin-mockup $tablet-section-horizontal-padding 0 $tablet-section-horizontal-padding;
     }
     @include desktop {
-        padding: $mobile-section-top-margin $desktop-section-horizontal-padding 0 $desktop-section-horizontal-padding;
+        padding: $mobile-section-top-margin-mockup $desktop-section-horizontal-padding 0 $desktop-section-horizontal-padding;
     }
 
-    &__title {
-        font-size: 20px;
+    &__logo {
+        display:block;
         text-align: center;
-        margin-bottom: .75rem;
+        max-height: 20px;
+        max-width: 120px;
+        margin: 0 auto .5rem auto;
 
         @include tablet {
             display: inline-block;
@@ -47,21 +49,21 @@ html {
     &__list {
         list-style: none;
         display: flex;
-
+        justify-content: space-between;
         @include tablet {
-            width: 100%;
-            
+            width: 100%;         
             justify-content: space-between;
         }
     }
     &__list-item {
         @include mobile-body;
-        height: 2.5rem;
+        height: 1.8rem;
+        width: 49.9%;
         box-sizing: border-box;
         text-align: center;
         flex-grow: 1;
         &--active, &:hover {
-             border-bottom: 5px solid white;
+             border-bottom: 3px solid white;
         }
         &--inactive {
             color: $mercury;
@@ -74,7 +76,7 @@ html {
 }
 .hero {
     width: 100%;
-    height: 30vh;
+    height: 56vw;
     padding: 0 $mobile-section-horizontal-padding;
     box-sizing: border-box;
     background: url('../assets/images/hero-bio.jpg');
@@ -97,7 +99,7 @@ html {
         top: 0;
         left: 0;
         width: 100vw;
-        height: 30vh;
+        height: 56vw;
         background-color: rgba($bandsite-black, .5);
 
         @include tablet {
@@ -116,7 +118,7 @@ html {
     }
 }
 .info {
-    padding: 0 $mobile-section-horizontal-padding;
+    padding: 0 $mobile-section-horizontal-padding 1rem $mobile-section-horizontal-padding;
 
     @include tablet {
         padding: 0 $tablet-section-horizontal-padding;
@@ -132,7 +134,7 @@ html {
     }
     &__title {
         @include mobile-header;
-        padding: $mobile-section-top-margin 0 $mobile-component-padding 0;
+        padding: $mobile-section-top-margin-mockup 0 .5rem 0;
         box-sizing: border-box;
 
         @include tablet {
@@ -143,13 +145,13 @@ html {
     }
     &__image {
         width: 100%;
-        height: auto;
+        height: 46.5vw;
         display: block;
     }
     &__quote {
         @include mobile-body;
         font-weight: 600;
-        margin: 16px 0;
+        margin: .8rem 0 1rem 0;
 
         @include tablet {
             @include tablet-subheader;
@@ -167,7 +169,7 @@ html {
     }
     &__subheading {
         @include mobile-subheader;
-        margin: $mobile-section-top-margin 0 16px 0;
+        margin: $mobile-section-top-margin-mockup 0 16px 0;
 
         @include tablet {
             @include tablet-subheader;
@@ -183,6 +185,11 @@ html {
     &__p {
         @include mobile-body;
         margin: $mobile-component-padding 0;
+        margin:0;
+
+        &--continue {
+            margin-top: 1rem;
+        }
 
         @include tablet {
             @include tablet-body;
@@ -191,7 +198,7 @@ html {
     }
 }
 .gallery {
-    padding: $mobile-section-top-margin $mobile-section-horizontal-padding 0 $mobile-section-horizontal-padding;
+    padding: $mobile-section-top-margin-mockup $mobile-section-horizontal-padding 0 $mobile-section-horizontal-padding;
     background-color: $alabaster;
 
     @include tablet {
@@ -202,7 +209,7 @@ html {
     }
     &__title {
         @include mobile-header;
-        margin: 0px 0 $mobile-component-padding 0;
+        margin: 0px 0 .7rem 0;
 
         @include tablet {
             @include tablet-section-header;
@@ -226,7 +233,7 @@ html {
         }
     }
     &__photo {
-        margin-bottom: 16px;
+        margin-bottom: 1.1rem;
 
         @include tablet {
             width: 27vw;
@@ -239,7 +246,7 @@ html {
 }
 .footer {
     @include mobile-footer-text;
-    padding: $mobile-section-top-margin $mobile-section-horizontal-padding 0 $mobile-section-horizontal-padding;
+    padding: $mobile-section-top-margin-mockup $mobile-section-horizontal-padding 0 $mobile-section-horizontal-padding;
     background-color: $bandsite-black;
     color: $white;
 
@@ -252,6 +259,7 @@ html {
     }
     &__logo-alt {
         display: none;
+        font-size: $logo-size;
 
         @include tablet {
             display: inline-block;
@@ -261,13 +269,16 @@ html {
     }
     &__logo {
         @include mobile-header;
+        max-height: 20px;
+        max-width: 120px;
+        margin-top: 3.5rem;
         
         @include tablet {
             display: none;   
         }
     }
     &__copyright {
-        margin-top: 24px;
+        margin-top: .75rem;
     }
 }
 .social {
@@ -287,9 +298,9 @@ html {
     }
     &__icons {
         display: flex;
-        width: 8rem;
+        width: 7.5rem;
         justify-content: space-between;
-        margin-top: $mobile-section-top-margin;
+        margin-top: $mobile-section-top-margin-mockup;
 
         @include tablet {
             margin-top: 0;
@@ -314,7 +325,7 @@ html {
     }
 
     &__group {
-        margin-top: $mobile-section-top-margin;
+        margin-top: $mobile-section-top-margin-mockup;
 
         @include tablet {
             width: 30vw;
