@@ -434,7 +434,7 @@ html, body {
   font-size: 13px;
   line-height: 18px;
   font-weight: 400;
-  padding: 18px 16px 0 16px;
+  padding: 18px 16px 1.5rem 16px;
   background-color: #323232;
   color: #ffffff;
 }
@@ -443,12 +443,12 @@ html, body {
     font-size: 14px;
     line-height: 20px;
     font-weight: 400;
-    padding: 48px 36px 2.25rem 36px;
+    padding: 48px 36px 1.5rem 36px;
   }
 }
 @media (min-width: 1280px) {
   .footer {
-    padding: 3rem 0vw 0 10vw;
+    padding: 3rem 0vw 1.5rem 10vw;
   }
 }
 .footer__logo {

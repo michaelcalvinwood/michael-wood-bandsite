@@ -342,16 +342,16 @@ html,body
 }
 .footer {
     @include mobile-footer-text;
-    padding: $mobile-section-top-margin-mockup $mobile-section-horizontal-padding 0 $mobile-section-horizontal-padding;
+    padding: $mobile-section-top-margin-mockup $mobile-section-horizontal-padding 1.5rem $mobile-section-horizontal-padding;
     background-color: $bandsite-black;
     color: $white;
 
     @include tablet {
         @include tablet-footer-text;
-        padding: $tablet-section-top-margin $tablet-section-horizontal-padding 2.25rem $tablet-section-horizontal-padding;
+        padding: $tablet-section-top-margin $tablet-section-horizontal-padding 1.5rem $tablet-section-horizontal-padding;
     }
     @include desktop {
-        padding: 3rem 0vw 0 10vw;
+        padding: 3rem 0vw 1.5rem 10vw;
     }
 
     &__logo {
