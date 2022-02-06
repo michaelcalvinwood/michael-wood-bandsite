@@ -1,17 +1,21 @@
 /* color scheme */
+/*
+ * Note to Instructor:
+ * Hover animation has been added to photos in tablet and desktop sizes. Kindly mouseover to see effect. Also, please click resulting email image.
+*/
 @font-face {
   font-family: "Avenir";
-  src: url("../assets/fonts/AvenirNextLTPro-Regular.otf");
+  src: url("/assets/fonts/AvenirNextLTPro-Regular.otf");
   font-weight: 400;
 }
 @font-face {
   font-family: "Avenir";
-  src: url("../assets/fonts/AvenirNextLTPro-Demi.otf");
+  src: url("/assets/fonts/AvenirNextLTPro-Demi.otf");
   font-weight: 600;
 }
 @font-face {
   font-family: "Avenir";
-  src: url("../assets/fonts/AvenirNextLTPro-Bold.otf");
+  src: url("/assets/fonts/AvenirNextLTPro-Bold.otf");
   font-weight: 700;
 }
 * {
@@ -19,20 +23,11 @@
   padding: 0;
 }
 
-body {
-  width: 100%;
-}
-
-html {
-  font-family: "Avenir";
-}
-
 html, body {
   width: 100%;
   height: 100%;
-  margin: 0px;
-  padding: 0px;
   overflow-x: hidden;
+  font-family: "Avenir";
 }
 
 .header {
@@ -50,7 +45,7 @@ html, body {
 @media (min-width: 1280px) {
   .header {
     padding-top: 2rem;
-    padding-left: 8rem;
+    padding-left: 10vw;
   }
 }
 .header__logo {
@@ -246,14 +241,12 @@ html, body {
   font-size: 13px;
   line-height: 18px;
   font-weight: 400;
-  font-weight: 600;
   margin: 0.8rem 0 1rem 0;
 }
 @media (min-width: 768px) {
   .info__quote {
     font-size: 22px;
     line-height: 28px;
-    font-weight: 600;
     margin-top: 1.75rem;
     margin-bottom: 0;
   }
@@ -263,6 +256,9 @@ html, body {
     margin-top: 2rem;
     width: 80%;
   }
+}
+.info__quote--emphasized {
+  font-weight: 600;
 }
 @media (min-width: 768px) {
   .info__quote--reduced {
@@ -302,7 +298,6 @@ html, body {
   font-size: 13px;
   line-height: 18px;
   font-weight: 400;
-  margin: 16px 0;
   margin: 0;
 }
 .info__p--continue {
@@ -376,18 +371,62 @@ html, body {
     margin-top: 2.5rem;
   }
 }
-.gallery__photo {
+.gallery__figure {
+  position: relative;
   margin-bottom: 1.1rem;
 }
 @media (min-width: 768px) {
-  .gallery__photo {
+  .gallery__figure {
     width: 27.5vw;
-    margin-bottom: 1.5rem;
+    height: 15.8484vw;
+    margin-bottom: 2.8vw;
   }
 }
 @media (min-width: 1280px) {
-  .gallery__photo {
+  .gallery__figure {
     width: 25vw;
+    height: 14.31157vw;
+    margin-bottom: 1.7155vw;
+  }
+}
+.gallery__share {
+  display: none;
+}
+@media (min-width: 768px) {
+  .gallery__share {
+    display: block;
+    position: absolute;
+    text-decoration: none;
+    color: black;
+    font-size: 2.75rem;
+    bottom: 1.35rem;
+    right: 1.35rem;
+  }
+}
+@media (min-width: 1280px) {
+  .gallery__share {
+    font-size: 4rem;
+    bottom: 2rem;
+    right: 2rem;
+  }
+}
+.gallery__photo {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .gallery__photo {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    perspective: 3000px;
+    transform-style: preserve-3d;
+    z-index: 2;
+    transition: all 0.4s;
+  }
+  .gallery__photo--slide {
+    transform: rotateX(70deg) rotateZ(-60deg) translate3d(-120px, 0px, 70px);
+    box-shadow: -80px 60px 15px 5px rgba(0, 0, 0, 0.4);
+    transform-style: preserve-3d;
   }
 }
 
@@ -443,7 +482,6 @@ html, body {
 }
 @media (min-width: 1280px) {
   .social {
-    display: block;
     margin-right: 10vw;
     box-sizing: border-box;
   }
@@ -514,7 +552,7 @@ html, body {
 }
 @media (min-width: 1280px) {
   .social__logo-container {
-    float: right;
+    flex-grow: 2;
   }
 }
 
