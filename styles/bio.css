@@ -613,4 +613,8 @@ html, body {
   .contact__email {
     margin-top: 1.5rem;
   }
+}
+.contact__mailto {
+  text-decoration: none;
+  color: white;
 }/*# sourceMappingURL=bio.css.map */
