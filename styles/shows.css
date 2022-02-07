@@ -284,10 +284,6 @@ html, body {
   color: white;
 }
 
-/*
- * Note to Instructor:
- * Hover animation has been added to photos in tablet and desktop sizes. Kindly mouseover to see effect. Also, please click resulting email image.
-*/
 /* color scheme */
 * {
   margin: 0;
@@ -574,31 +570,14 @@ html, body {
   color: white;
 }
 
-@font-face {
-  font-family: "Avenir";
-  src: url("/assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype");
-  font-weight: 400;
-}
-@font-face {
-  font-family: "Avenir";
-  src: url("/assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype");
-  font-weight: 600;
-}
-@font-face {
-  font-family: "Avenir";
-  src: url("/assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype");
-  font-weight: 700;
-}
 .hero {
   width: 100%;
-  height: 56vw;
-  padding: 0 16px;
+  height: 82vw;
+  padding: 2rem 16px 0 16px;
   box-sizing: border-box;
-  background: url("../assets/images/hero-bio.jpg");
+  background-image: url("/assets/images/hero-shows.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  display: flex;
-  align-items: center;
   position: relative;
 }
 @media (min-width: 768px) {
@@ -611,6 +590,11 @@ html, body {
   .hero {
     height: 48.5vw;
   }
+}
+.hero__album {
+  display: block;
+  color: white;
+  margin-bottom: 0.5rem;
 }
 .hero__overlay {
   position: absolute;
@@ -631,13 +615,14 @@ html, body {
   }
 }
 .hero__title {
-  display: block;
   color: white;
   font-weight: 400;
   font-size: 22px;
   line-height: 32px;
   font-weight: 700;
   z-index: 2;
+  width: 80%;
+  margin-bottom: 1rem;
 }
 @media (min-width: 768px) {
   .hero__title {
@@ -651,256 +636,4 @@ html, body {
     margin-left: 5.5rem;
     font-size: 58px;
   }
-}
-
-.info {
-  padding: 0 16px 1rem 16px;
-}
-@media (min-width: 768px) {
-  .info {
-    padding: 0 2.25rem;
-  }
-}
-@media (min-width: 1280px) {
-  .info {
-    padding: 0 72px 2.25rem 72px;
-  }
-}
-.info__title {
-  font-size: 22px;
-  line-height: 32px;
-  font-weight: 700;
-  padding: 18px 0 0.5rem 0;
-  box-sizing: border-box;
-}
-@media (min-width: 768px) {
-  .info__title {
-    font-size: 36px;
-    line-height: 44px;
-    font-weight: 700;
-    padding: 48px 0 1.25rem 0;
-  }
-}
-@media (min-width: 1280px) {
-  .info__title {
-    margin-left: 3.5rem;
-  }
-}
-@media (min-width: 768px) {
-  .info__wrapper {
-    padding: 0 3.5rem;
-  }
-}
-@media (min-width: 1280px) {
-  .info__wrapper {
-    padding: 0 9rem;
-  }
-}
-.info__image {
-  width: 100%;
-  height: 46.5vw;
-  display: block;
-}
-@media (min-width: 768px) {
-  .info__image {
-    height: 40vw;
-  }
-}
-@media (min-width: 1280px) {
-  .info__image {
-    margin-top: 1rem;
-    height: 35vw;
-  }
-}
-.info__quote {
-  font-size: 13px;
-  line-height: 18px;
-  font-weight: 400;
-  margin: 0.8rem 0 1rem 0;
-}
-@media (min-width: 768px) {
-  .info__quote {
-    font-size: 22px;
-    line-height: 28px;
-    margin-top: 1.75rem;
-    margin-bottom: 0;
-  }
-}
-@media (min-width: 1280px) {
-  .info__quote {
-    margin-top: 2rem;
-    width: 80%;
-  }
-}
-.info__quote--emphasized {
-  font-weight: 600;
-}
-@media (min-width: 768px) {
-  .info__quote--reduced {
-    font-size: 16px;
-    line-height: 22px;
-    font-weight: 600;
-    margin-top: 1rem;
-  }
-}
-.info__subheading {
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: 600;
-  margin: 18px 0 16px 0;
-}
-@media (min-width: 768px) {
-  .info__subheading {
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 600;
-    margin-top: 48px;
-  }
-}
-@media (min-width: 1280px) {
-  .info__subheading {
-    margin-top: 3.5rem;
-  }
-}
-@media (min-width: 768px) {
-  .info__container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-}
-.info__p {
-  font-size: 13px;
-  line-height: 18px;
-  font-weight: 400;
-  margin: 0;
-}
-.info__p--continue {
-  margin-top: 1rem;
-}
-@media (min-width: 768px) {
-  .info__p--continue {
-    margin-top: 0;
-  }
-}
-@media (min-width: 768px) {
-  .info__p {
-    font-size: 14px;
-    line-height: 22px;
-    font-weight: 400;
-    width: 48%;
-  }
-}
-@media (min-width: 1280px) {
-  .info__p {
-    width: 49%;
-  }
-}
-
-.gallery {
-  padding: 18px 16px 0 16px;
-  background-color: #fafafa;
-}
-@media (min-width: 768px) {
-  .gallery {
-    padding: 48px 36px 0 36px;
-  }
-}
-@media (min-width: 1280px) {
-  .gallery {
-    padding: 1.25rem 10vw 0 10vw;
-  }
-}
-.gallery__title {
-  font-size: 22px;
-  line-height: 32px;
-  font-weight: 700;
-  margin: 0px 0 0.7rem 0;
-}
-@media (min-width: 768px) {
-  .gallery__title {
-    font-size: 36px;
-    line-height: 44px;
-    font-weight: 700;
-    margin-top: 1.5rem;
-  }
-}
-.gallery__photos {
-  width: 100%;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-}
-@media (min-width: 768px) {
-  .gallery__photos {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding-bottom: 0.6rem;
-    margin-top: 1.75rem;
-  }
-}
-@media (min-width: 1280px) {
-  .gallery__photos {
-    justify-content: space-between;
-    margin-top: 2.5rem;
-  }
-}
-.gallery__figure {
-  position: relative;
-  margin-bottom: 1.1rem;
-}
-@media (min-width: 768px) {
-  .gallery__figure {
-    width: 27.5vw;
-    height: 15.8484vw;
-    margin-bottom: 2.8vw;
-  }
-}
-@media (min-width: 1280px) {
-  .gallery__figure {
-    width: 25vw;
-    height: 14.31157vw;
-    margin-bottom: 1.7155vw;
-  }
-}
-.gallery__share {
-  display: none;
-}
-@media (min-width: 768px) {
-  .gallery__share {
-    display: block;
-    position: absolute;
-    text-decoration: none;
-    color: black;
-    font-size: 2.75rem;
-    bottom: 1.35rem;
-    right: 1.35rem;
-  }
-}
-@media (min-width: 1280px) {
-  .gallery__share {
-    font-size: 4rem;
-    bottom: 2rem;
-    right: 2rem;
-  }
-}
-.gallery__photo {
-  width: 100%;
-}
-@media (min-width: 768px) {
-  .gallery__photo {
-    position: absolute;
-    left: 0%;
-    top: 0%;
-    perspective: 3000px;
-    transform-style: preserve-3d;
-    z-index: 2;
-    transition: all 0.4s;
-  }
-  .gallery__photo--slide {
-    transform: rotateX(70deg) rotateZ(-60deg) translate3d(-120px, 0px, 70px);
-    box-shadow: -80px 60px 15px 5px rgba(0, 0, 0, 0.4);
-    transform-style: preserve-3d;
-  }
-}/*# sourceMappingURL=bio.css.map */
+}/*# sourceMappingURL=shows.css.map */
