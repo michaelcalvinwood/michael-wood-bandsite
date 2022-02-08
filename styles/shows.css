@@ -572,8 +572,8 @@ html, body {
 
 .hero {
   width: 100%;
-  height: 82vw;
-  padding: 2rem 16px 0 16px;
+  height: 87vw;
+  padding: 11vw 16px 0 16px;
   box-sizing: border-box;
   background-image: url("/assets/images/hero-shows.jpg");
   background-repeat: no-repeat;
@@ -591,17 +591,33 @@ html, body {
     height: 48.5vw;
   }
 }
+.hero__info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: space-between;
+  width: 100%;
+  height: 13rem;
+  height: 70vw;
+  padding-bottom: 5vw;
+  box-sizing: border-box;
+  z-index: 3;
+}
 .hero__album {
   display: block;
   color: white;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0;
+}
+.hero__song-container {
+  width: 100%;
+  height: 30vw;
 }
 .hero__overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 56vw;
+  height: 87vw;
   background-color: rgba(50, 50, 50, 0.5);
 }
 @media (min-width: 768px) {
@@ -621,8 +637,7 @@ html, body {
   line-height: 32px;
   font-weight: 700;
   z-index: 2;
-  width: 80%;
-  margin-bottom: 1rem;
+  width: 70%;
 }
 @media (min-width: 768px) {
   .hero__title {
@@ -636,4 +651,37 @@ html, body {
     margin-left: 5.5rem;
     font-size: 58px;
   }
+}
+
+.shows {
+  padding: 2rem 16px 1rem 16px;
+}
+.shows__card {
+  position: relative;
+  margin-top: 1.3rem;
+}
+.shows__info-label {
+  font-size: 12px;
+}
+.shows__info-value {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 1.1rem;
+}
+.shows__button {
+  height: 40px;
+  width: 100%;
+  background-color: #323232;
+  color: white;
+  border-radius: 4px;
+  border-width: 0;
+  margin-bottom: 0.95rem;
+}
+.shows__divider {
+  position: absolute;
+  width: 100vw;
+  height: 1px;
+  background-color: #e1e1e1;
+  bottom: 0;
+  left: -16px;
 }/*# sourceMappingURL=shows.css.map */

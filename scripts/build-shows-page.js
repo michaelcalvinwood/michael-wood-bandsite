@@ -102,6 +102,10 @@ function createShowCard (concert) {
     cardButton.innerText="BUY TICKETS";
     card.appendChild(cardButton);
 
+    let divider = document.createElement('div');
+    divider.classList.add('shows__divider');
+    card.appendChild(divider);
+
     return card;
 }
 

@@ -7,8 +7,8 @@
 
 .hero {
     width: 100%;
-    height: 82vw;
-    padding: 2rem $mobile-section-horizontal-padding 0 $mobile-section-horizontal-padding;
+    height: 87vw;
+    padding: 11vw $mobile-section-horizontal-padding 0 $mobile-section-horizontal-padding;
     box-sizing: border-box;
     background-image: url('/assets/images/hero-shows.jpg');
     background-repeat: no-repeat;
@@ -22,17 +22,35 @@
     @include desktop {
         height: 48.5vw;
     }
+    &__info-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-content: space-between;
+        width: 100%;
+        height: 13rem;
+        height: 70vw;
+        padding-bottom: 5vw;
+        box-sizing: border-box;
+        z-index: 3;
+    }
     &__album {
         display:block;
         color: white;
-        margin-bottom: .5rem;
+        margin-bottom: 0;
+    }
+    &__song-container {
+        width: 100%;
+        height: 30vw;
+    }
+    &__song {
     }
     &__overlay {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
-        height: 56vw;
+        height: 87vw;
         background-color: rgba($bandsite-black, .5);
 
         @include tablet {
@@ -47,9 +65,8 @@
         font-weight: 400;
         @include mobile-header;
         z-index: 2;
-        width: 80%;
-        margin-bottom: 1rem;
-
+        width: 70%;
+       
         @include tablet {
             @include tablet-page-header;
         }
@@ -58,4 +75,40 @@
             font-size: 58px;
         }
     }
+}
+.shows {
+    padding: 2rem $mobile-section-horizontal-padding 1rem $mobile-section-horizontal-padding;
+
+    &__title {
+    }
+    &__card {
+        position: relative;
+        margin-top: 1.3rem;
+    }
+    &__info-label {
+        font-size: 12px;
+    }
+    &__info-value {
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 1.1rem;
+    }
+    &__button{
+        height: 40px;
+        width: 100%;
+        background-color: $bandsite-black;
+        color: white;
+        border-radius: 4px;
+        border-width: 0;
+        margin-bottom: .95rem;
+    }
+    &__divider {
+        position: absolute;
+        width: 100vw;
+        height: 1px;
+        background-color: $mercury;
+        bottom: 0;
+        left: -$mobile-section-horizontal-padding;
+    }
+
 }
