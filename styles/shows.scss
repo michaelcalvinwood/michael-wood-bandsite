@@ -5,9 +5,14 @@
 
 @import './partials/global';
 
+$hero-mobile-width: 100%;
+$hero-mobile-height: 87vw;
+
+$hero-tablet-height: 62.5vw;
+
 .hero {
-    width: 100%;
-    height: 87vw;
+    width: $hero-mobile-width;
+    height: $hero-mobile-height;
     padding: 11vw $mobile-section-horizontal-padding 0 $mobile-section-horizontal-padding;
     box-sizing: border-box;
     background-image: url('/assets/images/hero-shows.jpg');
@@ -16,7 +21,7 @@
     position: relative;
 
     @include tablet {
-        height: 63.6vw;
+        height: $hero-tablet-height;
         padding: 8vw $tablet-section-horizontal-padding;
         font-size: 1.6rem;
     }
@@ -28,8 +33,8 @@
         flex-direction: column;
         justify-content: space-between;
         align-content: space-between;
-        width: 100%;
-        height: 13rem;
+        width: $hero-mobile-width;
+        height: $hero-mobile-height;
         height: 70vw;
         padding-bottom: 5vw;
         box-sizing: border-box;
@@ -41,7 +46,7 @@
             display: block;
             top: 0;
             left: 0;
-            height: 63.6vw;
+            height: $hero-tablet-height;
             padding: 8vw $tablet-section-horizontal-padding;
             font-size: 1.6rem;
         }
@@ -51,6 +56,20 @@
         color: white;
         margin-bottom: 0;
         z-index: 3 !important;
+
+        @include desktop {
+            margin-top: 6rem;
+            margin-left: 5.5rem;
+            width: 30%;
+        }
+    }
+    &__flex-container {
+        @include desktop {
+            margin-right: 7rem;
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+        }
     }
     &__song-container {
         width: 100%;
@@ -61,7 +80,12 @@
             width: 60%;
             height: 18vw;
         }
-    }
+        @include desktop {
+            margin-top: 0;
+            width: 50%;
+            height: 10.5vw;
+        }
+    }   
     &__song {
       
     }
@@ -69,12 +93,12 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 87vw;
+        width: $hero-mobile-width;
+        height: $hero-mobile-height;
         background-color: rgba($bandsite-black, .5);
        
         @include tablet {
-            height: 57.5vw;
+            height: $hero-tablet-height;
         }
         @include desktop {
             height: 48.5vw;
@@ -94,23 +118,75 @@
         @include desktop {
             margin-left: 5.5rem;
             font-size: 58px;
+            width: 45%;
         }
     }
 }
+$tablet-button-height: 40px;
+$tablet-button-width: 19.25vw;
+$tablet-date-width: 20vw;
+$tablet-venue-width: 10vw;
+$tablet-location-width: 10vw;
+
 .shows {
     padding: 2rem $mobile-section-horizontal-padding 1rem $mobile-section-horizontal-padding;
+    box-sizing: border-box;
 
     @include tablet {
-        padding: 3rem $tablet-section-horizontal-padding 2rem $tablet-section-horizontal-padding;
+        padding: 2.75rem 3rem 2.25rem $tablet-section-horizontal-padding;
     }
-
+    @include desktop {
+        padding: 2.75rem 9.75rem 2.25rem 8rem;
+        display: flex;
+        justify-content: space-between;
+    }
+    
     &__title {
         @include tablet {
             font-size: 2.25rem;
+            margin-bottom: 2rem;
         }
     }
+    &__container {
+        @include desktop {
+            margin-left: 9.5rem;
+            width: 75%;
+        }
+    }
+    &__labels {
+        display: none;
+        font-size: .85rem;
+
+        @include tablet {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.25rem;
+        }
+        @include desktop {
+            width: 20%;
+            height: 2.25rem;
+            vertical-align: middle;
+        }
+    }
+    &__label-date, &__label-venue, &__label-location {
+        @include tablet {
+            width: $tablet-date-width;
+        }
+        @include desktop {
+            height: 3.75rem;
+            display: flex;
+            align-items: center;
+        }
+    }
+    &__label-place-holder {
+        width: $tablet-button-width;
+    }
     &__cards {
-        
+        @include desktop {
+            margin-top: 2.5rem;
+            width: 100%;
+        }
     }
     &__card {
         position: relative;
@@ -120,6 +196,15 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            margin-top: .75rem;
+        }
+        @include desktop {
+            height: 3.75rem;
+        }
+    }
+    &__info-pair {
+        @include tablet {
+            vertical-align: middle;
         }
     }
     &__info-label {
@@ -133,9 +218,24 @@
         font-size: 13px;
         font-weight: 600;
         margin-bottom: 1.1rem;
+
+        @include tablet {
+            font-size: .9rem;
+            width: $tablet-date-width;
+            display: flex;
+            align-items: center;
+            height: $tablet-button-height;
+        }
+        @include desktop {
+            width: 13.5vw;
+
+            &--date {
+                width: 20vw;
+            }
+        }
     }
     &__button{
-        height: 40px;
+        height: $tablet-button-height;
         width: 100%;
         background-color: $bandsite-black;
         color: white;
@@ -144,7 +244,10 @@
         margin-bottom: .95rem;
 
         @include tablet {
-            width: 19.5vw;
+            width: $tablet-button-width;
+        }
+        @include desktop {
+            width: 11.5vw;
         }
     }
     &__divider {

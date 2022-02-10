@@ -582,7 +582,7 @@ html, body {
 }
 @media (min-width: 768px) {
   .hero {
-    height: 63.6vw;
+    height: 62.5vw;
     padding: 8vw 36px;
     font-size: 1.6rem;
   }
@@ -598,7 +598,7 @@ html, body {
   justify-content: space-between;
   align-content: space-between;
   width: 100%;
-  height: 13rem;
+  height: 87vw;
   height: 70vw;
   padding-bottom: 5vw;
   box-sizing: border-box;
@@ -611,7 +611,7 @@ html, body {
     display: block;
     top: 0;
     left: 0;
-    height: 63.6vw;
+    height: 62.5vw;
     padding: 8vw 36px;
     font-size: 1.6rem;
   }
@@ -621,6 +621,21 @@ html, body {
   color: white;
   margin-bottom: 0;
   z-index: 3 !important;
+}
+@media (min-width: 1280px) {
+  .hero__album {
+    margin-top: 6rem;
+    margin-left: 5.5rem;
+    width: 30%;
+  }
+}
+@media (min-width: 1280px) {
+  .hero__flex-container {
+    margin-right: 7rem;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
 }
 .hero__song-container {
   width: 100%;
@@ -633,6 +648,13 @@ html, body {
     height: 18vw;
   }
 }
+@media (min-width: 1280px) {
+  .hero__song-container {
+    margin-top: 0;
+    width: 50%;
+    height: 10.5vw;
+  }
+}
 .hero__overlay {
   position: absolute;
   top: 0;
@@ -643,7 +665,7 @@ html, body {
 }
 @media (min-width: 768px) {
   .hero__overlay {
-    height: 57.5vw;
+    height: 62.5vw;
   }
 }
 @media (min-width: 1280px) {
@@ -672,20 +694,76 @@ html, body {
   .hero__title {
     margin-left: 5.5rem;
     font-size: 58px;
+    width: 45%;
   }
 }
 
 .shows {
   padding: 2rem 16px 1rem 16px;
+  box-sizing: border-box;
 }
 @media (min-width: 768px) {
   .shows {
-    padding: 3rem 36px 2rem 36px;
+    padding: 2.75rem 3rem 2.25rem 36px;
+  }
+}
+@media (min-width: 1280px) {
+  .shows {
+    padding: 2.75rem 9.75rem 2.25rem 8rem;
+    display: flex;
+    justify-content: space-between;
   }
 }
 @media (min-width: 768px) {
   .shows__title {
     font-size: 2.25rem;
+    margin-bottom: 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .shows__container {
+    margin-left: 9.5rem;
+    width: 75%;
+  }
+}
+.shows__labels {
+  display: none;
+  font-size: 0.85rem;
+}
+@media (min-width: 768px) {
+  .shows__labels {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .shows__labels {
+    width: 20%;
+    height: 2.25rem;
+    vertical-align: middle;
+  }
+}
+@media (min-width: 768px) {
+  .shows__label-date, .shows__label-venue, .shows__label-location {
+    width: 20vw;
+  }
+}
+@media (min-width: 1280px) {
+  .shows__label-date, .shows__label-venue, .shows__label-location {
+    height: 3.75rem;
+    display: flex;
+    align-items: center;
+  }
+}
+.shows__label-place-holder {
+  width: 19.25vw;
+}
+@media (min-width: 1280px) {
+  .shows__cards {
+    margin-top: 2.5rem;
+    width: 100%;
   }
 }
 .shows__card {
@@ -697,6 +775,17 @@ html, body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 0.75rem;
+  }
+}
+@media (min-width: 1280px) {
+  .shows__card {
+    height: 3.75rem;
+  }
+}
+@media (min-width: 768px) {
+  .shows__info-pair {
+    vertical-align: middle;
   }
 }
 .shows__info-label {
@@ -712,6 +801,23 @@ html, body {
   font-weight: 600;
   margin-bottom: 1.1rem;
 }
+@media (min-width: 768px) {
+  .shows__info-value {
+    font-size: 0.9rem;
+    width: 20vw;
+    display: flex;
+    align-items: center;
+    height: 40px;
+  }
+}
+@media (min-width: 1280px) {
+  .shows__info-value {
+    width: 13.5vw;
+  }
+  .shows__info-value--date {
+    width: 20vw;
+  }
+}
 .shows__button {
   height: 40px;
   width: 100%;
@@ -723,7 +829,12 @@ html, body {
 }
 @media (min-width: 768px) {
   .shows__button {
-    width: 19.5vw;
+    width: 19.25vw;
+  }
+}
+@media (min-width: 1280px) {
+  .shows__button {
+    width: 11.5vw;
   }
 }
 .shows__divider {

@@ -48,19 +48,46 @@ let concerts = [
  *   returns the cards container object
 */
 function initializeShowsSection (title) {
-    let main = document.querySelector('main');
+    const main = document.querySelector('main');
 
-    let section = document.createElement('section');
+    const section = document.createElement('section');
     section.classList.add('shows');
 
-    let h2 = document.createElement('h2');
+    const h2 = document.createElement('h2');
     h2.classList.add('shows__title');
     h2.innerText = title;
     section.appendChild(h2);
 
+    const showsContainer = document.createElement('div');
+    showsContainer.classList.add('shows__container');
+    section.appendChild(showsContainer);
+
+    const labels = document.createElement('div');
+    labels.classList.add('shows__labels');
+    showsContainer.appendChild(labels);
+
+    const labelDate = document.createElement('div');
+    labelDate.classList.add('shows__label-date');
+    labelDate.innerText = 'DATE';
+    labels.appendChild(labelDate);
+
+    const labelVenue = document.createElement('div');
+    labelVenue.classList.add('shows__label-venue');
+    labelVenue.innerText = 'VENUE';
+    labels.appendChild(labelVenue);
+
+    const labelLocation = document.createElement('div');
+    labelLocation.classList.add('shows__label-location');
+    labelLocation.innerText = 'LOCATION';
+    labels.appendChild(labelLocation);
+
+    const labelPlaceHolder = document.createElement('div');
+    labelPlaceHolder.classList.add('shows__label-place-holder');
+    labels.appendChild(labelPlaceHolder);
+
     let cards = document.createElement('section');
     cards.classList.add('shows__cards')
-    section.appendChild(cards);
+    showsContainer.appendChild(cards);
 
     main.appendChild(section);
 
@@ -69,7 +96,7 @@ function initializeShowsSection (title) {
 
 function generateInfoPair (label, value) {
     let infoPair = document.createElement('div');
-    infoPair.classList.add('shows_info-pair');
+    infoPair.classList.add('shows__info-pair');
 
     let infoLabel = document.createElement('p');
     infoLabel.classList.add('shows__info-label');
@@ -79,6 +106,22 @@ function generateInfoPair (label, value) {
     let infoValue = document.createElement('p');
     infoValue.classList.add('shows__info-value');
     infoValue.innerText = value;
+    
+    switch (label) {
+        case 'DATE':
+            infoValue.classList.add('shows__info-value--date');
+            break;
+        
+        case 'VENUE':
+            infoValue.classList.add('shows__info-value--venue');
+            break;
+
+        case 'LOCATION':
+            infoValue.classList.add('shows__info-value--location');
+            break;
+        
+        default:
+    }
     infoPair.appendChild(infoValue);
 
     return infoPair;
