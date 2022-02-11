@@ -262,3 +262,16 @@
         }
     }
 }
+.add-comment {
+    height: 18rem;
+    background-color: red;
+
+    &__label-name {
+        display: block;
+    }
+    &__head-shot {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+    }
+}
