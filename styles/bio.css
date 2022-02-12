@@ -905,6 +905,13 @@ html, body {
   }
 }
 
+.add-comment {
+  padding: 0 16px 0 16px;
+}
+.add-comment__title {
+  font-size: 1.45rem;
+  margin-bottom: 1.25rem;
+}
 .add-comment__label-name {
   display: block;
 }
@@ -920,18 +927,48 @@ html, body {
 }
 .add-comment__form {
   box-sizing: border-box;
-  padding: 0 0 0 4rem;
+  padding: 0 0 0 0.7rem;
   flex-grow: 2;
+}
+.add-comment__label-name {
+  font-size: 0.6rem;
+  margin-bottom: 0.25rem;
+}
+.add-comment__input-name {
+  width: 100%;
+  height: 2rem;
+  margin-bottom: 1.4rem;
 }
 .add-comment__label-comment {
   display: block;
+  font-size: 0.6rem;
+  margin-bottom: 0.25rem;
+}
+.add-comment__input-comment {
+  width: 100%;
+  height: 6rem;
+  margin-bottom: 0.75rem;
 }
 .add-comment__button {
   display: block;
+  width: 100%;
+  height: 2.5rem;
+  background-color: #323232;
+  color: white;
+  margin-bottom: 1rem;
 }
 
+.submitted-comments {
+  padding: 0 16px 0 16px;
+}
+.submitted-comments__divider {
+  width: 100%;
+  border-top: 1px solid red;
+  margin-bottom: 0.85rem;
+}
 .submitted-comments__display-container {
   display: flex;
+  margin-bottom: 1rem;
 }
 .submitted-comments__avatar {
   width: 2.5rem;
@@ -939,7 +976,22 @@ html, body {
   border-radius: 50%;
   background-color: gray;
 }
+.submitted-comments__info {
+  padding: 0 0 0 0.65rem;
+}
 .submitted-comments__name-time-container {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+.submitted-comments__name {
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.submitted-comments__timestamp {
+  font-size: 0.8rem;
+}
+.submitted-comments__comment {
+  font-size: 0.8rem;
+  line-height: 1.1rem;
 }/*# sourceMappingURL=bio.css.map */

@@ -37,11 +37,11 @@ function initializeAddCommentSection () {
     
     C(form, 'label', 'add-comment__label-name', 'NAME', {for: 'name'});
 
-    C(form, 'input', 'add-comment__input-name', '', {type: 'text', name: 'name', id: 'name', placeholder: 'Enter your name'});
+    C(form, 'input', 'add-comment__input-name', '', {type: 'text', name: 'name', id: 'name', placeholder: ' Enter your name'});
 
     C(form, 'label', 'add-comment__label-comment', 'COMMENT', {for: 'comment'});
 
-    C(form, 'textarea', 'add-comment__input-comment', '', {name: 'comment', id: 'comment', placeholder: 'Add a new comment'});
+    C(form, 'textarea', 'add-comment__input-comment', '', {name: 'comment', id: 'comment', placeholder: ' Add a new comment'});
 
     C(form, 'button', 'add-comment__button', 'COMMENT');    
 }
@@ -68,7 +68,7 @@ function initializeSubmittedCommentsSection () {
 
         C(nameTimeContainer, 'p', 'submitted-comments__timestamp', comments[i].timestamp);
 
-        C(commentCardContainer, 'p', 'submitted-contents__comment', comments[i].comment);
+        C(commentCardContainer, 'p', 'submitted-comments__comment', comments[i].comment);
     }
  
 
