@@ -40,10 +40,10 @@ let concerts = [
 function initializeShowsSection (title) {
     const main = Q('main');
 
-    const section = C('section', main, 'shows');
+    const section = C(main, 'section', 'shows');
     C(section, 'h2', 'shows__title', title);
 
-    const showsContainer = C('div', section, 'shows__container');
+    const showsContainer = C(section, 'div', 'shows__container');
     
     const labels = C(showsContainer, 'div', 'shows__labels');
     C(labels, 'div', 'shows__label-date', 'DATE');

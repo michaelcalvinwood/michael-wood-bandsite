@@ -11,7 +11,7 @@
 function C (parent, tag, c = false, text = false, attributes = false) {
     const el = document.createElement(tag);
 
-    if (c) el.classList.add(c); 
+    if (c) el.className = c; 
     if (parent) parent.appendChild(el);
     if (text) el.innerText = text;
     if (attributes) {

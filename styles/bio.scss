@@ -61,6 +61,10 @@
             font-size: 58px;
         }
     }
+    &__iframe {
+        width: 100%;
+        height: 100%;
+    }
 }
 .info {
     padding: 0 $mobile-section-horizontal-padding 1rem $mobile-section-horizontal-padding;
@@ -264,22 +268,39 @@
 }
 .add-comment {
     padding: 0 $mobile-section-horizontal-padding 0 $mobile-section-horizontal-padding;
+
+    @include tablet {
+        padding: .5rem 36px;
+    }
+
     &__title {
         font-size: 1.45rem;
         margin-bottom: 1.25rem;
-    }
-    &__label-name {
-        display: block;
+
+        @include tablet {        
+            font-size: 34px;
+            margin-bottom: 2.25rem;
+        }
     }
     &__form-container {
         display: flex;
+
+        @include tablet {
+            margin: 0 4.5rem 0 3.5rem;
+        }
     }
     &__head-shot {
-        width: 2.5rem;
-        height: 2.5rem;
+        width: 36px;
+        height: 36px;
         border-radius: 50%;
-        left: 0;
-        top: 2rem;
+        margin-top: .9rem;
+
+        @include tablet {
+            width: 48px;
+            height: 48px;
+            margin-top: 1.2rem;
+
+        }
     }
     &__form {
         box-sizing: border-box;
@@ -289,55 +310,115 @@
     &__label-name {
         font-size: .6rem;
         margin-bottom: .25rem;
+        display:block;
+
+        @include tablet {
+            font-size: .8rem;
+        }
     }
     &__input-name {
         width: 100%;
         height: 2rem;
         margin-bottom: 1.4rem;
+        border-radius: 4px;
+        padding: 12px;
+        box-sizing: border-box;
+
+        @include tablet {
+            padding: 16px;
+            height: 3rem;
+            margin-bottom: 1.25rem;
+        }
     }
     &__label-comment {
         display: block;
         font-size: .6rem;
         margin-bottom: .25rem;
+
+        @include tablet {
+            font-size: .8rem;
+        }
     }
     &__input-comment {
         width: 100%;
         height: 6rem;
         margin-bottom: .75rem;
+        border-radius: 4px;
+        padding: 12px;
+        box-sizing: border-box;
+
+        @include tablet {
+            padding: 16px;
+        }
     }
     &__button {
         display: block;
         width: 100%;
-        height: 2.5rem;
+        height: 40px;
         background-color: $bandsite-black;
         color: white;
-        margin-bottom: 1rem;
+        margin-bottom: 1.25rem;
+        border: none;
+        border-radius: 4px;
+        
+        @include tablet {
+            width: 30%;
+            margin: 0 0px 1.1rem auto;
+
+        }
     }
 }
 .submitted-comments {
     padding: 0 $mobile-section-horizontal-padding 0 $mobile-section-horizontal-padding;
+    margin-bottom: 1.75rem;
+
+    @include tablet {
+        margin: 0 96px 0 80px;
+    }
+
     &__divider {
         width: 100%;
-        border-top: 1px solid red;
+        border-top: 1px solid $mercury;
         margin-bottom: .85rem;
+
+        @include tablet {
+            margin-bottom: 1.7rem;
+        }
     }
     &__display-container {
         display: flex;
         margin-bottom: 1rem;
     }
     &__avatar {
-        width: 2.5rem;
-        height: 2.5rem;
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        min-height: 36px;
         border-radius: 50%;
-        background-color: gray;
+        background-color: $mercury;
+
+        @include tablet {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            min-height: 48px;
+        }
     }
     &__info {
         padding: 0 0 0 .65rem;
+
+        @include tablet {
+            margin-bottom: .75rem;
+        }
     }
     &__name-time-container {
         display: flex;
         justify-content: space-between;
         margin-bottom: .75rem;
+
+        @include tablet {
+            margin-bottom: .5rem;
+        }
     }
     &__name {
         font-size: .8rem;
@@ -349,5 +430,10 @@
     &__comment {
         font-size: .8rem;
         line-height: 1.1rem;
+
+        @include tablet {
+            font-size: .85rem;
+            line-height: 1.3rem;
+        }
     }
 }
