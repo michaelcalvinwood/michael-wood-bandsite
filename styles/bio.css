@@ -917,6 +917,12 @@ html, body {
     padding: 0.5rem 36px;
   }
 }
+@media (min-width: 1280px) {
+  .add-comment {
+    padding: 2.75rem 48px 0px 128px;
+    margin-bottom: 0.5rem;
+  }
+}
 .add-comment__title {
   font-size: 1.45rem;
   margin-bottom: 1.25rem;
@@ -933,6 +939,11 @@ html, body {
 @media (min-width: 768px) {
   .add-comment__form-container {
     margin: 0 4.5rem 0 3.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .add-comment__form-container {
+    margin: 0 22rem 0 16rem;
   }
 }
 .add-comment__head-shot {
@@ -1017,6 +1028,12 @@ html, body {
     margin: 0 0px 1.1rem auto;
   }
 }
+@media (min-width: 1280px) {
+  .add-comment__button {
+    width: 34%;
+    margin-top: 0.25rem;
+  }
+}
 
 .submitted-comments {
   padding: 0 16px 0 16px;
@@ -1025,6 +1042,11 @@ html, body {
 @media (min-width: 768px) {
   .submitted-comments {
     margin: 0 96px 0 80px;
+  }
+}
+@media (min-width: 1280px) {
+  .submitted-comments {
+    margin: 0 24rem 0 23rem;
   }
 }
 .submitted-comments__divider {

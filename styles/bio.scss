@@ -273,6 +273,11 @@
         padding: .5rem 36px;
     }
 
+    @include desktop {
+        padding: 2.75rem 48px 0px 128px;
+        margin-bottom: .5rem;
+    }
+
     &__title {
         font-size: 1.45rem;
         margin-bottom: 1.25rem;
@@ -281,12 +286,16 @@
             font-size: 34px;
             margin-bottom: 2.25rem;
         }
+
     }
     &__form-container {
         display: flex;
 
         @include tablet {
             margin: 0 4.5rem 0 3.5rem;
+        }
+        @include desktop {
+            margin: 0 22rem 0 16rem;
         }
     }
     &__head-shot {
@@ -364,7 +373,10 @@
         @include tablet {
             width: 30%;
             margin: 0 0px 1.1rem auto;
-
+        }
+        @include desktop {
+            width: 34%;
+            margin-top: .25rem;
         }
     }
 }
@@ -374,6 +386,9 @@
 
     @include tablet {
         margin: 0 96px 0 80px;
+    }
+    @include desktop {
+        margin: 0 24rem 0 23rem;
     }
 
     &__divider {
