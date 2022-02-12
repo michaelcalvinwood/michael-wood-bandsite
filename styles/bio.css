@@ -905,15 +905,41 @@ html, body {
   }
 }
 
-.add-comment {
-  height: 18rem;
-  background-color: red;
-}
 .add-comment__label-name {
   display: block;
+}
+.add-comment__form-container {
+  display: flex;
 }
 .add-comment__head-shot {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
+  left: 0;
+  top: 2rem;
+}
+.add-comment__form {
+  box-sizing: border-box;
+  padding: 0 0 0 4rem;
+  flex-grow: 2;
+}
+.add-comment__label-comment {
+  display: block;
+}
+.add-comment__button {
+  display: block;
+}
+
+.submitted-comments__display-container {
+  display: flex;
+}
+.submitted-comments__avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: gray;
+}
+.submitted-comments__name-time-container {
+  display: flex;
+  justify-content: space-between;
 }/*# sourceMappingURL=bio.css.map */

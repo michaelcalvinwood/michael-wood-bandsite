@@ -1,4 +1,3 @@
-
 let concerts = [
     {
         date: "Mon Sept 06 2021",
@@ -30,16 +29,7 @@ let concerts = [
         venue: "Press Club",
         location: "San Francisco, CA"
     }
-]
-
-
-
-
-
- 
-
-
-
+];
 /*
  * initializeShowsSection:
  *   creates the shows section
@@ -48,65 +38,32 @@ let concerts = [
  *   returns the cards container object
 */
 function initializeShowsSection (title) {
-    const main = document.querySelector('main');
+    const main = Q('main');
 
-    const section = document.createElement('section');
-    section.classList.add('shows');
+    const section = C('section', main, 'shows');
+    C(section, 'h2', 'shows__title', title);
 
-    const h2 = document.createElement('h2');
-    h2.classList.add('shows__title');
-    h2.innerText = title;
-    section.appendChild(h2);
+    const showsContainer = C('div', section, 'shows__container');
+    
+    const labels = C(showsContainer, 'div', 'shows__labels');
+    C(labels, 'div', 'shows__label-date', 'DATE');
+    C(labels, 'div', 'shows__label-venue', 'VENUE');
+    C(labels, 'div', 'shows__label-location', 'LOCATION');
+    C(labels, 'div', 'shows__label-place-holder');
 
-    const showsContainer = document.createElement('div');
-    showsContainer.classList.add('shows__container');
-    section.appendChild(showsContainer);
-
-    const labels = document.createElement('div');
-    labels.classList.add('shows__labels');
-    showsContainer.appendChild(labels);
-
-    const labelDate = document.createElement('div');
-    labelDate.classList.add('shows__label-date');
-    labelDate.innerText = 'DATE';
-    labels.appendChild(labelDate);
-
-    const labelVenue = document.createElement('div');
-    labelVenue.classList.add('shows__label-venue');
-    labelVenue.innerText = 'VENUE';
-    labels.appendChild(labelVenue);
-
-    const labelLocation = document.createElement('div');
-    labelLocation.classList.add('shows__label-location');
-    labelLocation.innerText = 'LOCATION';
-    labels.appendChild(labelLocation);
-
-    const labelPlaceHolder = document.createElement('div');
-    labelPlaceHolder.classList.add('shows__label-place-holder');
-    labels.appendChild(labelPlaceHolder);
-
-    let cards = document.createElement('section');
-    cards.classList.add('shows__cards')
-    showsContainer.appendChild(cards);
-
-    main.appendChild(section);
+    const cards = C(showsContainer, 'section', 'shows__cards');
 
     return cards;
 }
 
-function generateInfoPair (label, value) {
-    let infoPair = document.createElement('div');
-    infoPair.classList.add('shows__info-pair');
+function generateInfoPair (label, value, parent) {
 
-    let infoLabel = document.createElement('p');
-    infoLabel.classList.add('shows__info-label');
-    infoLabel.innerText = label;
-    infoPair.appendChild(infoLabel);
+    const infoPair = C(parent, 'div', 'shows__info-pair');
 
-    let infoValue = document.createElement('p');
-    infoValue.classList.add('shows__info-value');
-    infoValue.innerText = value;
-    
+    C(infoPair, 'p', 'shows__info-label', label);
+
+    let infoValue = C(infoPair, 'p', 'shows__info-value', value);
+
     switch (label) {
         case 'DATE':
             infoValue.classList.add('shows__info-value--date');
@@ -122,40 +79,27 @@ function generateInfoPair (label, value) {
         
         default:
     }
-    infoPair.appendChild(infoValue);
 
     return infoPair;
 }
 
-function createShowCard (concert) {
-    let card = document.createElement('div');
-    card.classList.add('shows__card');
+function createShowCard (concert, parent) {
+    const card = C(parent, 'div', 'shows__card');
     
-    let infoPair = generateInfoPair('DATE', concert.date);
-    card.appendChild(infoPair);
-
-    infoPair = generateInfoPair('VENUE', concert.venue);
-    card.appendChild(infoPair);
-
-    infoPair = generateInfoPair('LOCATION', concert.location);
-    card.appendChild(infoPair);
-
-    let cardButton = document.createElement('button');
-    cardButton.classList.add('shows__button');
-    cardButton.innerText="BUY TICKETS";
-    card.appendChild(cardButton);
-
-    let divider = document.createElement('div');
-    divider.classList.add('shows__divider');
-    card.appendChild(divider);
+    generateInfoPair('DATE', concert.date, card);
+    generateInfoPair('VENUE', concert.venue, card);
+    generateInfoPair('LOCATION', concert.location, card);
+    
+    C(card, 'button', 'shows__button', 'BUY TICKETS');
+    C(card, 'div', 'shows__divider');
 
     return card;
 }
 
-let cards = initializeShowsSection('Shows');
+let cardsSection = initializeShowsSection('Shows');
 let card = {};
 
 for (let i = 0; i < concerts.length; ++i) {
-    card = createShowCard(concerts[i]);
-    cards.appendChild(card);
+    card = createShowCard(concerts[i], cardsSection);
+    // cards.appendChild(card);
 }

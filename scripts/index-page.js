@@ -1,71 +1,79 @@
-
-
+let comments = [
+    {
+        id: 0,
+        avatar: "/assets/images/blank-avatar.jpg",
+        name: "Connor Walton",
+        timestamp: "02/17/2021",
+        comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."
+    },
+    {
+        id: 1,
+        avatar: "/assets/images/blank-avatar.jpg",
+        name: "Emilie Beach",
+        timestamp: "01/09/2021",
+        comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."
+    },
+    {
+        id: 2,
+        avatar: "/assets/images/blank-avatar.jpg",
+        name: "Miles Acosta",
+        timestamp: "12/20/2020",
+        comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."
+    }
+]
+    
 function initializeAddCommentSection () {
-    const section = document.createElement('section');
-    section.classList.add('add-comment');
-    const main = document.querySelector('main');
-    main.appendChild(section);
+    const main = Q('main');
 
-    const title = document.createElement('h2');
-    title.classList.add('add-comment__title');
-    title.innerText = 'Join the Conversation';
-    section.appendChild(title);
+    const section = C(main, 'section', 'add-comment');
 
-    const formContainer = document.createElement('div');
-    formContainer.classList.add('add-comment__form-container');
-    section.appendChild(formContainer);
+    C(section, 'h2', 'add-comment__title', 'Join the Conversation');
 
-    const form = document.createElement('form');
-    form.classList.add('add-comment__form');
-    section.appendChild(form);
+    const formContainer = C(section, 'div', 'add-comment__form-container');
 
-    const labelName = document.createElement('label');
-    labelName.classList.add('add-comment__label-name');
-    labelName.setAttribute('for', 'name');
-    labelName.innerText = 'NAME';
-    form.appendChild(labelName);
+    C(formContainer, 'img', 'add-comment__head-shot', '', {src: '/assets/images/Mohan-muruge.jpg', alt: 'avatar'});
 
-    const headShot = document.createElement('img');
-    headShot.classList.add('add-comment__head-shot');
-    headShot.setAttribute('src', '/assets/images/Mohan-muruge.jpg');
-    form.appendChild(headShot);
+    const form = C(formContainer, 'form', 'add-comment__form', '', {id: 'inputForm'});
+    
+    C(form, 'label', 'add-comment__label-name', 'NAME', {for: 'name'});
 
-    const inputName = document.createElement('input');
-    inputName.classList.add('add-comment__input-name');
-    inputName.setAttribute('type', 'text');
-    inputName.setAttribute('name', 'name');
-    inputName.setAttribute('id', 'name');
-    inputName.setAttribute('placeholder', 'Enter your name');
-    form.appendChild(inputName);
+    C(form, 'input', 'add-comment__input-name', '', {type: 'text', name: 'name', id: 'name', placeholder: 'Enter your name'});
 
-    const labelComment = document.createElement('label');
-    labelComment.classList.add('add-comment__label-comment');
-    labelComment.setAttribute('for', 'name');
-    labelComment.innerText = 'COMMENT';
-    form.appendChild(labelComment);
+    C(form, 'label', 'add-comment__label-comment', 'COMMENT', {for: 'comment'});
 
-    const inputComment = document.createElement('textarea');
-    inputComment.classList.add('add-comment__input-comment');
-    inputComment.setAttribute('name', 'comment');
-    inputComment.setAttribute('id', 'comment');
-    inputComment.setAttribute('placeholder', 'Add a new comment');
-    form.appendChild(inputComment);
+    C(form, 'textarea', 'add-comment__input-comment', '', {name: 'comment', id: 'comment', placeholder: 'Add a new comment'});
 
-    const commentsButton = document.createElement('button');
-    commentsButton.classList.add('add-comment__button');
-    commentsButton.innerText = "COMMENT";
-    form.appendChild(commentsButton);    
+    C(form, 'button', 'add-comment__button', 'COMMENT');    
 }
 
 function initializeSubmittedCommentsSection () {
-    const main = document.querySelector('main');
+    const main = Q('main');
 
-    const section = document.createElement('section');
-    section.classList('submitted-comments')
-    main.appendChild(section);
+    const submittedCommentsSection = C(main, 'section', 'submitted-comments');
+
+    for (let i = 0; i < comments.length; i++) {
+        let commentCard = C(submittedCommentsSection, 'div', 'submitted-comments__comment-card');
+
+        C(commentCard, 'div', 'submitted-comments__divider');
+
+        let displayContainer = C(commentCard, 'div', 'submitted-comments__display-container');
+
+        C(displayContainer, 'img', 'submitted-comments__avatar', '', {src: comments[i].avatar, alt: 'avatar'});
+
+        let commentCardContainer = C(displayContainer, 'div', 'submitted-comments__info');
+
+        let nameTimeContainer = C(commentCardContainer, 'div', 'submitted-comments__name-time-container');
+        
+        C(nameTimeContainer, 'p', 'submitted-comments__name', comments[i].name);
+
+        C(nameTimeContainer, 'p', 'submitted-comments__timestamp', comments[i].timestamp);
+
+        C(commentCardContainer, 'p', 'submitted-contents__comment', comments[i].comment);
+    }
+ 
+
 }
 
 initializeAddCommentSection();
-
-
+initializeSubmittedCommentsSection();
 

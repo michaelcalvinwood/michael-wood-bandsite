@@ -263,15 +263,44 @@
     }
 }
 .add-comment {
-    height: 18rem;
-    background-color: red;
-
+    
     &__label-name {
         display: block;
+    }
+    &__form-container {
+        display: flex;
     }
     &__head-shot {
         width: 2.5rem;
         height: 2.5rem;
         border-radius: 50%;
+        left: 0;
+        top: 2rem;
+    }
+    &__form {
+        box-sizing: border-box;
+        padding: 0 0 0 4rem;
+        flex-grow: 2;
+    }
+    &__label-comment {
+        display: block;
+    }
+    &__button {
+        display: block;
+    }
+}
+.submitted-comments {
+    &__display-container {
+        display: flex;
+    }
+    &__avatar {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        background-color: gray;
+    }
+    &__name-time-container {
+        display: flex;
+        justify-content: space-between;
     }
 }
