@@ -319,7 +319,12 @@
     &__label-name {
         font-size: .6rem;
         margin-bottom: .25rem;
-        display:block;
+        display: block;
+        color: $silver;
+
+        &--error {
+            color: red;
+        }
 
         @include tablet {
             font-size: .8rem;
@@ -332,6 +337,13 @@
         border-radius: 4px;
         padding: 12px;
         box-sizing: border-box;
+        border-color: silver;
+        border-style: solid;
+        background-color: $alabaster;
+
+        &--error {
+            border: 2px solid red;
+        }
 
         @include tablet {
             padding: 16px;
@@ -343,6 +355,11 @@
         display: block;
         font-size: .6rem;
         margin-bottom: .25rem;
+        color: $silver;
+
+        &--error {
+            color: red;
+        }
 
         @include tablet {
             font-size: .8rem;
@@ -355,6 +372,13 @@
         border-radius: 4px;
         padding: 12px;
         box-sizing: border-box;
+        border-color: silver;
+        border-style: solid;
+        background-color: $alabaster;
+
+        &--error {
+            border: 2px solid red;
+        }
 
         @include tablet {
             padding: 16px;
@@ -421,7 +445,8 @@
     }
     &__info {
         padding: 0 0 0 .65rem;
-
+        width: 100%;
+        
         @include tablet {
             margin-bottom: .75rem;
         }

@@ -616,6 +616,11 @@ html, body {
     font-size: 1.6rem;
   }
 }
+@media (min-width: 525px) {
+  .hero__info-container {
+    padding-bottom: 15vw;
+  }
+}
 .hero__album {
   display: block;
   color: white;
@@ -640,10 +645,18 @@ html, body {
 .hero__song-container {
   width: 100%;
   height: 30vw;
+  z-index: 3 !important;
+  position: relative;
+}
+@media (min-width: 525px) {
+  .hero__song-container {
+    width: 80%;
+    margin: 0 auto;
+  }
 }
 @media (min-width: 768px) {
   .hero__song-container {
-    margin-top: 7vw;
+    margin: 7vw 0 0 0;
     width: 60%;
     height: 18vw;
   }
@@ -654,6 +667,12 @@ html, body {
     width: 50%;
     height: 10.5vw;
   }
+}
+.hero__iframe {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
 }
 .hero__overlay {
   position: absolute;
@@ -676,12 +695,13 @@ html, body {
 .hero__title {
   color: white;
   font-weight: 400;
-  font-size: 22px;
+  font-size: 24px;
   line-height: 32px;
-  font-weight: 700;
-  z-index: 20;
+  z-index: 20 !important;
   opacity: 1;
   width: 70%;
+  position: relative;
+  padding-bottom: 0.75rem;
 }
 @media (min-width: 768px) {
   .hero__title {
@@ -770,12 +790,20 @@ html, body {
   position: relative;
   margin-top: 1.3rem;
 }
+.shows__card:hover {
+  background-color: #fafafa;
+}
+.shows__card--active {
+  background-color: #e1e1e1 !important;
+}
 @media (min-width: 768px) {
   .shows__card {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-top: 0.75rem;
+    box-sizing: border-box;
+    height: 3rem;
   }
 }
 @media (min-width: 1280px) {
@@ -789,7 +817,10 @@ html, body {
   }
 }
 .shows__info-label {
-  font-size: 12px;
+  font-size: 0.6rem;
+  font-weight: 400;
+  color: #afafaf;
+  margin-bottom: 0.2rem;
 }
 @media (min-width: 768px) {
   .shows__info-label {
@@ -798,8 +829,11 @@ html, body {
 }
 .shows__info-value {
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 400;
   margin-bottom: 1.1rem;
+}
+.shows__info-value--date {
+  font-weight: 700;
 }
 @media (min-width: 768px) {
   .shows__info-value {
@@ -807,7 +841,7 @@ html, body {
     width: 20vw;
     display: flex;
     align-items: center;
-    height: 40px;
+    height: 100%;
   }
 }
 @media (min-width: 1280px) {
@@ -830,6 +864,9 @@ html, body {
 @media (min-width: 768px) {
   .shows__button {
     width: 19.25vw;
+    height: 40px;
+    padding: 0;
+    margin: auto 0;
   }
 }
 @media (min-width: 1280px) {

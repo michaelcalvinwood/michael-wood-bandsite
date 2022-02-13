@@ -43,13 +43,13 @@ function initializeAddCommentSection () {
 
     C(form, 'textarea', 'add-comment__input-comment', '', {name: 'comment', id: 'comment', placeholder: 'Add a new comment'});
 
-    C(form, 'button', 'add-comment__button', 'COMMENT');    
+    C(form, 'button', 'add-comment__button', 'COMMENT');
+
+    form.addEventListener('submit', formHandler);
 }
 
-function initializeSubmittedCommentsSection () {
-    const main = Q('main');
-
-    const submittedCommentsSection = C(main, 'section', 'submitted-comments');
+function updateSubmittedComments (submittedCommentsSection) {
+    submittedCommentsSection.innerHTML = '';
 
     let avatar = {};
 
@@ -64,7 +64,6 @@ function initializeSubmittedCommentsSection () {
             C(displayContainer, 'img', 'submitted-comments__avatar', '', {src: comments[i].avatar, alt: 'avatar'});
         } else {
             avatar = C(displayContainer, 'div', 'submitted-comments__avatar');
-            // avatar.style.backgroundColor = '#e1e1e1';
         }
         
         let commentCardContainer = C(displayContainer, 'div', 'submitted-comments__info');
@@ -73,17 +72,124 @@ function initializeSubmittedCommentsSection () {
         
         C(nameTimeContainer, 'p', 'submitted-comments__name', comments[i].name);
 
-        C(nameTimeContainer, 'p', 'submitted-comments__timestamp', comments[i].timestamp);
+        C(nameTimeContainer, 'p', 'submitted-comments__timestamp', displayLiveDate(comments[i].timestamp));
 
         C(commentCardContainer, 'p', 'submitted-comments__comment', comments[i].comment);
     }
+}
+
+function displayLiveDate (timestamp) {
+    let test;
+
+    if (timestamp.indexOf('/') !== -1) {
+        const dateParts = timestamp.split('/');
+        const dateString = `${dateParts[2]}-${dateParts[0]}-${dateParts[1]}`;
+        test = Date.parse(dateString)/1000;
+        if (isNaN(test)) return timestamp;
+        timestamp = test;
+    }
+
+    test = parseInt(timestamp);
+    if (isNaN(test)) return timestamp;
+    timestamp = test;
+
+    const currentTime = Math.round(Date.now() / 1000);
+    const diff = currentTime - timestamp;
+
+    if (diff < 2) return "now";
+    if (diff < 60) return diff + " seconds";
+    if (diff < 120) return "1 minute";
+    if (diff < 3600) return (diff % 60) + " minutes";
+    if (diff < 7200) return "1 hour";
+    if (diff < 86400) return (diff % 3600) + " hours";
+    if (diff < 172800) return "1 day";
+    if (diff < 604800) return (diff % 86400) + " days";
+
+    const myDate = new Date((timestamp+82000)*1000);
+    const localString = myDate.toLocaleString();
+    const localParts = localString.split(',');
+    
+    return localParts[0];
+}
+
+function initializeSubmittedCommentsSection () {
+    const main = Q('main');
+
+    const submittedCommentsSection = C(main, 'section', 'submitted-comments');
+
+    updateSubmittedComments(submittedCommentsSection);
  
-    // add the final divider at the end
-
     C(submittedCommentsSection, 'div', 'submitted-comments__divider');
+}
 
+function formHandler (e) {
+    e.preventDefault();
+    
+    let hasErrors = false;
+    let label = {};
+
+    const name = e.target.name.value;
+    const comment = e.target.comment.value;
+
+    if (!name) {
+        I('name').classList.add('add-comment__input-name--error');
+
+        label = Q('.add-comment__label-name');
+        label.classList.add('add-comment__label-name--error');
+        label.innerText = 'Please enter a name.'
+
+        hasErrors = true;
+    } else {
+         I('name').classList.remove('add-comment__input-name--error');
+
+        label = Q('.add-comment__label-name');
+        label.classList.remove('add-comment__label-name--error');
+        label.innerText = 'NAME';
+    }
+
+    if (!comment) {
+        I('comment').classList.add('add-comment__input-comment--error');
+
+        label = Q('.add-comment__label-comment');
+        label.classList.add('add-comment__label-comment--error');
+        label.innerText = 'Please write a comment.'
+
+        hasErrors = true;
+    } else {
+        I('comment').classList.remove('add-comment__input-comment--error');
+
+        label = Q('.add-comment__label-comment');
+        label.classList.remove('add-comment__label-comment--error');
+        label.innerText = 'COMMENT';
+    }
+
+    if (hasErrors) return;
+
+    let nextId = -1;
+
+    comments.forEach(comment => {
+        if (comment.id >= nextId) nextId = comment.id + 1; 
+    });
+
+    const newComment = {
+        id: nextId,
+        avatar: '',
+        name: name,
+        timestamp: Math.round(Date.now() / 1000).toString(),
+        comment: comment
+    }
+
+    comments.unshift(newComment);
+
+    const submittedCommentsSection = Q('.submitted-comments');
+
+    updateSubmittedComments (submittedCommentsSection);
+
+    e.target.reset();
 }
 
 initializeAddCommentSection();
 initializeSubmittedCommentsSection();
 
+const result = C('main', 'div');
+console.log ('result', result);

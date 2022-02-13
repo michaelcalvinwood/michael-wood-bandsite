@@ -968,6 +968,10 @@ html, body {
   font-size: 0.6rem;
   margin-bottom: 0.25rem;
   display: block;
+  color: #afafaf;
+}
+.add-comment__label-name--error {
+  color: red;
 }
 @media (min-width: 768px) {
   .add-comment__label-name {
@@ -981,6 +985,12 @@ html, body {
   border-radius: 4px;
   padding: 12px;
   box-sizing: border-box;
+  border-color: silver;
+  border-style: solid;
+  background-color: #fafafa;
+}
+.add-comment__input-name--error {
+  border: 2px solid red;
 }
 @media (min-width: 768px) {
   .add-comment__input-name {
@@ -993,6 +1003,10 @@ html, body {
   display: block;
   font-size: 0.6rem;
   margin-bottom: 0.25rem;
+  color: #afafaf;
+}
+.add-comment__label-comment--error {
+  color: red;
 }
 @media (min-width: 768px) {
   .add-comment__label-comment {
@@ -1006,6 +1020,12 @@ html, body {
   border-radius: 4px;
   padding: 12px;
   box-sizing: border-box;
+  border-color: silver;
+  border-style: solid;
+  background-color: #fafafa;
+}
+.add-comment__input-comment--error {
+  border: 2px solid red;
 }
 @media (min-width: 768px) {
   .add-comment__input-comment {
@@ -1081,6 +1101,7 @@ html, body {
 }
 .submitted-comments__info {
   padding: 0 0 0 0.65rem;
+  width: 100%;
 }
 @media (min-width: 768px) {
   .submitted-comments__info {

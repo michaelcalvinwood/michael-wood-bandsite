@@ -50,12 +50,16 @@ $hero-tablet-height: 62.5vw;
             padding: 8vw $tablet-section-horizontal-padding;
             font-size: 1.6rem;
         }
+        @media (min-width: 525px) {
+            padding-bottom: 15vw;
+        }
     }
     &__album {
         display:block;
         color: white;
         margin-bottom: 0;
         z-index: 3 !important;
+        
 
         @include desktop {
             margin-top: 6rem;
@@ -74,9 +78,15 @@ $hero-tablet-height: 62.5vw;
     &__song-container {
         width: 100%;
         height: 30vw;
+        z-index: 3 !important;
+        position: relative;
 
+        @media (min-width: 525px) {
+            width: 80%;
+            margin: 0 auto;
+        }
         @include tablet {
-            margin-top: 7vw;
+            margin: 7vw 0 0 0;
             width: 60%;
             height: 18vw;
         }
@@ -86,7 +96,11 @@ $hero-tablet-height: 62.5vw;
             height: 10.5vw;
         }
     }   
-    &__song {
+    &__iframe {
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        max-height: 100%;
       
     }
     &__overlay {
@@ -107,11 +121,14 @@ $hero-tablet-height: 62.5vw;
     &__title {
         color: white;
         font-weight: 400;
-        @include mobile-header;
-        z-index: 20;
+        font-size: 24px;
+        line-height: 32px;
+        z-index: 20 !important;
         opacity: 1;
         width: 70%;
-       
+        position: relative;
+        padding-bottom: .75rem;
+
         @include tablet {
             @include tablet-page-header;
         }
@@ -191,12 +208,21 @@ $tablet-location-width: 10vw;
     &__card {
         position: relative;
         margin-top: 1.3rem;
+
+        &:hover {
+            background-color: $alabaster;
+        }
+        &--active {
+            background-color: $mercury !important;
+        }
         
         @include tablet {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             margin-top: .75rem;
+            box-sizing: border-box;
+            height: 3rem;
         }
         @include desktop {
             height: 3.75rem;
@@ -208,7 +234,10 @@ $tablet-location-width: 10vw;
         }
     }
     &__info-label {
-        font-size: 12px;
+        font-size: .6rem;
+        font-weight: 400;
+        color: $silver;
+        margin-bottom: .2rem;
 
         @include tablet {
             display: none;
@@ -216,15 +245,19 @@ $tablet-location-width: 10vw;
     }
     &__info-value {
         font-size: 13px;
-        font-weight: 600;
+        font-weight: 400;
         margin-bottom: 1.1rem;
+
+        &--date {
+            font-weight: 700;
+        }
 
         @include tablet {
             font-size: .9rem;
             width: $tablet-date-width;
             display: flex;
             align-items: center;
-            height: $tablet-button-height;
+            height: 100%;
         }
         @include desktop {
             width: 13.5vw;
@@ -245,6 +278,9 @@ $tablet-location-width: 10vw;
 
         @include tablet {
             width: $tablet-button-width;
+            height: 40px;
+            padding: 0;
+            margin: auto 0;
         }
         @include desktop {
             width: 11.5vw;
