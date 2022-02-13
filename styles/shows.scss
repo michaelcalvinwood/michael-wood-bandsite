@@ -8,7 +8,7 @@
 $hero-mobile-width: 100%;
 $hero-mobile-height: 87vw;
 
-$hero-tablet-height: 62.5vw;
+$hero-tablet-height: 63.6vw;
 
 .hero {
     width: $hero-mobile-width;
@@ -60,7 +60,9 @@ $hero-tablet-height: 62.5vw;
         margin-bottom: 0;
         z-index: 3 !important;
         
-
+        @include tablet {
+            margin-bottom: .25rem;
+        }
         @include desktop {
             margin-top: 6rem;
             margin-left: 5.5rem;
@@ -86,7 +88,7 @@ $hero-tablet-height: 62.5vw;
             margin: 0 auto;
         }
         @include tablet {
-            margin: 7vw 0 0 0;
+            margin: 5vw 0 0 0;
             width: 60%;
             height: 18vw;
         }
@@ -130,7 +132,10 @@ $hero-tablet-height: 62.5vw;
         padding-bottom: .75rem;
 
         @include tablet {
-            @include tablet-page-header;
+            width: 75%;
+            font-size: 60px;
+            line-height: 68px;
+            font-weight: 700;
         }
         @include desktop {
             margin-left: 5.5rem;
@@ -150,7 +155,7 @@ $tablet-location-width: 10vw;
     box-sizing: border-box;
 
     @include tablet {
-        padding: 2.75rem 3rem 2.25rem $tablet-section-horizontal-padding;
+        padding: 2.75rem 2.25rem 1.5rem $tablet-section-horizontal-padding;
     }
     @include desktop {
         padding: 2.75rem 9.75rem 2.25rem 8rem;
@@ -161,7 +166,7 @@ $tablet-location-width: 10vw;
     &__title {
         @include tablet {
             font-size: 2.25rem;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
     }
     &__container {
@@ -173,12 +178,13 @@ $tablet-location-width: 10vw;
     &__labels {
         display: none;
         font-size: .85rem;
+        color: $silver;
 
         @include tablet {
             width: 100%;
             display: flex;
             justify-content: space-between;
-            margin-bottom: 1.25rem;
+            margin-bottom: .9rem;
         }
         @include desktop {
             width: 20%;
@@ -222,7 +228,8 @@ $tablet-location-width: 10vw;
             justify-content: space-between;
             margin-top: .75rem;
             box-sizing: border-box;
-            height: 3rem;
+            margin-bottom: 2rem;
+            height: 2.5rem;
         }
         @include desktop {
             height: 3.75rem;
@@ -296,6 +303,7 @@ $tablet-location-width: 10vw;
 
         @include tablet {
             left: -$tablet-section-horizontal-padding;
+            bottom: -1.25rem;
         }
     }
 

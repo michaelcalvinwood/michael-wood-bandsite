@@ -582,7 +582,7 @@ html, body {
 }
 @media (min-width: 768px) {
   .hero {
-    height: 62.5vw;
+    height: 63.6vw;
     padding: 8vw 36px;
     font-size: 1.6rem;
   }
@@ -611,7 +611,7 @@ html, body {
     display: block;
     top: 0;
     left: 0;
-    height: 62.5vw;
+    height: 63.6vw;
     padding: 8vw 36px;
     font-size: 1.6rem;
   }
@@ -626,6 +626,11 @@ html, body {
   color: white;
   margin-bottom: 0;
   z-index: 3 !important;
+}
+@media (min-width: 768px) {
+  .hero__album {
+    margin-bottom: 0.25rem;
+  }
 }
 @media (min-width: 1280px) {
   .hero__album {
@@ -656,7 +661,7 @@ html, body {
 }
 @media (min-width: 768px) {
   .hero__song-container {
-    margin: 7vw 0 0 0;
+    margin: 5vw 0 0 0;
     width: 60%;
     height: 18vw;
   }
@@ -684,7 +689,7 @@ html, body {
 }
 @media (min-width: 768px) {
   .hero__overlay {
-    height: 62.5vw;
+    height: 63.6vw;
   }
 }
 @media (min-width: 1280px) {
@@ -705,6 +710,7 @@ html, body {
 }
 @media (min-width: 768px) {
   .hero__title {
+    width: 75%;
     font-size: 60px;
     line-height: 68px;
     font-weight: 700;
@@ -724,7 +730,7 @@ html, body {
 }
 @media (min-width: 768px) {
   .shows {
-    padding: 2.75rem 3rem 2.25rem 36px;
+    padding: 2.75rem 2.25rem 1.5rem 36px;
   }
 }
 @media (min-width: 1280px) {
@@ -737,7 +743,7 @@ html, body {
 @media (min-width: 768px) {
   .shows__title {
     font-size: 2.25rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
   }
 }
 @media (min-width: 1280px) {
@@ -749,13 +755,14 @@ html, body {
 .shows__labels {
   display: none;
   font-size: 0.85rem;
+  color: #afafaf;
 }
 @media (min-width: 768px) {
   .shows__labels {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.9rem;
   }
 }
 @media (min-width: 1280px) {
@@ -803,7 +810,8 @@ html, body {
     justify-content: space-between;
     margin-top: 0.75rem;
     box-sizing: border-box;
-    height: 3rem;
+    margin-bottom: 2rem;
+    height: 2.5rem;
   }
 }
 @media (min-width: 1280px) {
@@ -885,5 +893,6 @@ html, body {
 @media (min-width: 768px) {
   .shows__divider {
     left: -36px;
+    bottom: -1.25rem;
   }
 }/*# sourceMappingURL=shows.css.map */
