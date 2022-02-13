@@ -340,6 +340,7 @@
         border-color: silver;
         border-style: solid;
         background-color: $alabaster;
+        font-family: $font-stack;
 
         &--error {
             border: 2px solid red;
@@ -375,6 +376,7 @@
         border-color: silver;
         border-style: solid;
         background-color: $alabaster;
+        font-family: $font-stack;
 
         &--error {
             border: 2px solid red;

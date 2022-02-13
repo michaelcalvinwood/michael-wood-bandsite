@@ -8,13 +8,18 @@
     <link rel="stylesheet" href="/styles/shows.css">
 </head>
 <body>
-    <!-- <img style="display: none; display:block; width:100%; opacity: 1; opacity: .25; position:absolute; top:0; left:0; z-index:2" src="/mockups/1.0 - Mockups/desktop-shows.png"> -->
     <header class="header">
-        <img class="header__logo" src="/assets/logos/Logo-bandsite.svg" alt="BANDSITE">
+        <a href="/index.html">
+            <img class="header__logo" src="/assets/logos/Logo-bandsite.svg" alt="BANDSITE">
+        </a>
         <nav class="header__nav">
             <ul class="header__list">
-                <li class="header__list-item header__list-item--inactive">Biography</li>
-                <li class="header__list-item header__list-item--active">Shows</li>
+                <a class="header__list-item header__list-item--inactive" href="/index.html"> 
+                    <li class="">Biography</li>
+                </a>
+                <a class="header__list-item header__list-item--active" href="/pages/shows.html">
+                    <li class="">Shows</li>
+                </a>
             </ul>
         </nav>
     </header>
@@ -53,9 +58,9 @@
                     </figure>
                 </div>
             </div>
-            <div class="social__logo-container">
+            <a href="/index.html" class="social__logo-container">
                 <img class="social__logo" src="/assets/logos/Logo-bandsite.svg" alt="BANDSITE">
-            </div>
+            </a>
         </section>
         <section class="contact">
             <div class="contact__group">
@@ -98,8 +103,10 @@
                 </div>
             </div>
         </section>
-    <img class="footer__logo" src="/assets/logos/Logo-bandsite.svg">
-    <p class="footer__copyright">Copyright The Bees Knees @2021 All Rights Reserved</p>
+        <a href="/index.html">
+            <img class="footer__logo" src="/assets/logos/Logo-bandsite.svg">
+        </a>
+        <p class="footer__copyright">Copyright The Bees Knees @2021 All Rights Reserved</p>
     </footer>
     <script src="/scripts/dom-library.js"></script>
     <script src="/scripts/build-shows-page.js"></script>

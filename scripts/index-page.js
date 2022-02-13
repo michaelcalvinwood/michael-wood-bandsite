@@ -1,3 +1,8 @@
+/*
+ * Instructor Note:
+ * This submission includes both Digging Deeper suggestions: form validation to prevent empty fields, and human-readable time output for up to x days ago.
+ */
+
 let comments = [
     {
         id: 0,
@@ -21,7 +26,10 @@ let comments = [
         comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."
     }
 ]
-    
+
+/*
+ * initializeAddCommentSection creates the input form and appends it to main
+ */
 function initializeAddCommentSection () {
     const main = Q('main');
 
@@ -48,36 +56,55 @@ function initializeAddCommentSection () {
     form.addEventListener('submit', formHandler);
 }
 
+/*
+ * displayComment creates and returns an individual comment card
+ */
+function displayComment (comment) {
+    let avatar = {};
+
+    let commentCard = document.createElement('div');
+    commentCard.classList.add('submitted-comments__comment-card');
+
+    C(commentCard, 'div', 'submitted-comments__divider');
+
+    let displayContainer = C(commentCard, 'div', 'submitted-comments__display-container');
+
+    if (comment.avatar) {
+        C(displayContainer, 'img', 'submitted-comments__avatar', '', {src: comment.avatar, alt: 'avatar'});
+    } else {
+        avatar = C(displayContainer, 'div', 'submitted-comments__avatar');
+    }
+    
+    let commentCardContainer = C(displayContainer, 'div', 'submitted-comments__info');
+
+    let nameTimeContainer = C(commentCardContainer, 'div', 'submitted-comments__name-time-container');
+    
+    C(nameTimeContainer, 'p', 'submitted-comments__name', comment.name);
+
+    C(nameTimeContainer, 'p', 'submitted-comments__timestamp', displayLiveDate(comment.timestamp));
+
+    C(commentCardContainer, 'p', 'submitted-comments__comment', comment.comment);
+
+    return commentCard;
+}
+
+/*
+ * updateSubmittedComments clears the provided section and then populates it with the contents the comments array
+ * @param submittedCommentsSection (Element): the element of the section that will house the comments
+ */
 function updateSubmittedComments (submittedCommentsSection) {
     submittedCommentsSection.innerHTML = '';
 
-    let avatar = {};
-
     for (let i = 0; i < comments.length; i++) {
-        let commentCard = C(submittedCommentsSection, 'div', 'submitted-comments__comment-card');
-
-        C(commentCard, 'div', 'submitted-comments__divider');
-
-        let displayContainer = C(commentCard, 'div', 'submitted-comments__display-container');
-
-        if (comments[i].avatar) {
-            C(displayContainer, 'img', 'submitted-comments__avatar', '', {src: comments[i].avatar, alt: 'avatar'});
-        } else {
-            avatar = C(displayContainer, 'div', 'submitted-comments__avatar');
-        }
-        
-        let commentCardContainer = C(displayContainer, 'div', 'submitted-comments__info');
-
-        let nameTimeContainer = C(commentCardContainer, 'div', 'submitted-comments__name-time-container');
-        
-        C(nameTimeContainer, 'p', 'submitted-comments__name', comments[i].name);
-
-        C(nameTimeContainer, 'p', 'submitted-comments__timestamp', displayLiveDate(comments[i].timestamp));
-
-        C(commentCardContainer, 'p', 'submitted-comments__comment', comments[i].comment);
+        submittedCommentsSection.appendChild(displayComment (comments[i]));
     }
 }
 
+/*
+ * displayLiveUpdate transforms the timestamp into a human readable output
+ * @param timestamp (seconds): the number of seconds since epoch. If date is provided then date is converted to seconds since epoch.
+ * @return String: formatted output to display the comment time
+ */
 function displayLiveDate (timestamp) {
     let test;
 
@@ -97,13 +124,13 @@ function displayLiveDate (timestamp) {
     const diff = currentTime - timestamp;
 
     if (diff < 2) return "now";
-    if (diff < 60) return diff + " seconds";
-    if (diff < 120) return "1 minute";
-    if (diff < 3600) return (diff % 60) + " minutes";
-    if (diff < 7200) return "1 hour";
-    if (diff < 86400) return (diff % 3600) + " hours";
-    if (diff < 172800) return "1 day";
-    if (diff < 604800) return (diff % 86400) + " days";
+    if (diff < 60) return diff + " seconds ago";
+    if (diff < 120) return "1 minute ago";
+    if (diff < 3600) return (diff % 60) + " minutes ago";
+    if (diff < 7200) return "1 hour ago";
+    if (diff < 86400) return (diff % 3600) + " hours ago";
+    if (diff < 172800) return "1 day ago";
+    if (diff < 604800) return (diff % 86400) + " days ago";
 
     const myDate = new Date((timestamp+82000)*1000);
     const localString = myDate.toLocaleString();
@@ -111,6 +138,8 @@ function displayLiveDate (timestamp) {
     
     return localParts[0];
 }
+
+/* initializeSubmittedCommentsSection creates a section for the comments array, appends it to main, and adds the comments from the comments array */
 
 function initializeSubmittedCommentsSection () {
     const main = Q('main');
@@ -122,6 +151,10 @@ function initializeSubmittedCommentsSection () {
     C(submittedCommentsSection, 'div', 'submitted-comments__divider');
 }
 
+/*
+ * formHandler provides form validation as well as adding a successfully submitted comment into the comments section
+ * @param e (event): the form submit event
+ */
 function formHandler (e) {
     e.preventDefault();
     
@@ -190,6 +223,3 @@ function formHandler (e) {
 
 initializeAddCommentSection();
 initializeSubmittedCommentsSection();
-
-const result = C('main', 'div');
-console.log ('result', result);

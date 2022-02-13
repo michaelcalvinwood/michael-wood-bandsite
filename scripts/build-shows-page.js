@@ -1,3 +1,10 @@
+/*
+ * Note to instructor:
+ * I was unsure whether the mobile version counts as rows regarding clicking them.
+ * Therefore, I created the excludeMobile variable so the clicking behavior can be excluded by setting this to true
+ */
+const excludeMobile = false;
+
 let currentActiveRow = null;
 
 let concerts = [
@@ -62,7 +69,13 @@ function initializeShowsSection (title) {
 
     return cards;
 }
-
+/*
+ * generateInfoPair creates the container for the label and value and attaches to the parent
+ * @param label (String): the field type for the concert value (e.g. date, venue, location)
+ * @param value (String): the value associated with the provided field type
+ * @param parent (Element): the parent to attached the created container
+ * @return Element: the created container element
+ */
 function generateInfoPair (label, value, parent) {
 
     const infoPair = C(parent, 'div', 'shows__info-pair');
@@ -90,6 +103,11 @@ function generateInfoPair (label, value, parent) {
     return infoPair;
 }
 
+/* createShowCard creates the individual show cards based on the show object
+ * @param concert (Obj): the show object
+ * @param parent (Element): the parent to attach the show card to
+ * @return Element: the created show card
+ */
 function createShowCard (concert, parent) {
     const card = C(parent, 'div', 'shows__card');
     card.addEventListener('click', rowClickedHandler);
@@ -104,12 +122,15 @@ function createShowCard (concert, parent) {
     return card;
 }
 
+/*
+ * rowClickedHandler handles the 'click' event for each row
+ * @param e (event): the row 'click' event
+ */
 function rowClickedHandler (e) {
-    console.log (e);
+    console.log(e);
     e.stopPropagation();
-
-    // if we are in mobile mode, do nothing
-    if (window.innerWidth < 768) return;
+ 
+    if (window.innerWidth < 768 && excludeMobile) return;
 
     // if we click on the same row multiple times, maintain the current state
     if (currentActiveRow === e.target) return;
@@ -130,8 +151,13 @@ function rowClickedHandler (e) {
 
     currentActiveRow = row;
 }
-
+/*
+ * labelsClickHandler is triggered by each of two click events: clicking the labels or clicking the Shows section outside of the table
+ * This function removes the active state from any row that may currently have the active state
+ * @param e (Event): the click events from either the labels or from the shows area
+ */
 function labelsClickHandler (e) {
+    console.log('labelsClickHandler', e);
     e.stopPropagation();
 
     if (currentActiveRow) {
@@ -145,5 +171,4 @@ let card = {};
 
 for (let i = 0; i < concerts.length; ++i) {
     card = createShowCard(concerts[i], cardsSection);
-    // cards.appendChild(card);
 }

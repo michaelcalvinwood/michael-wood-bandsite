@@ -5,11 +5,6 @@
 
 @import './partials/global';
 
-$hero-mobile-width: 100%;
-$hero-mobile-height: 87vw;
-
-$hero-tablet-height: 63.6vw;
-
 .hero {
     width: $hero-mobile-width;
     height: $hero-mobile-height;
@@ -41,6 +36,9 @@ $hero-tablet-height: 63.6vw;
         z-index: 3;
         opacity: 1;
 
+        @media (min-width: 525px) {
+            padding-bottom: 15vw;
+        }
         @include tablet {
             position: absolute;
             display: block;
@@ -50,8 +48,8 @@ $hero-tablet-height: 63.6vw;
             padding: 8vw $tablet-section-horizontal-padding;
             font-size: 1.6rem;
         }
-        @media (min-width: 525px) {
-            padding-bottom: 15vw;
+        @include desktop {
+            height: 100%;
         }
     }
     &__album {
@@ -144,12 +142,6 @@ $hero-tablet-height: 63.6vw;
         }
     }
 }
-$tablet-button-height: 40px;
-$tablet-button-width: 19.25vw;
-$tablet-date-width: 20vw;
-$tablet-venue-width: 10vw;
-$tablet-location-width: 10vw;
-
 .shows {
     padding: 2rem $mobile-section-horizontal-padding 1rem $mobile-section-horizontal-padding;
     box-sizing: border-box;
