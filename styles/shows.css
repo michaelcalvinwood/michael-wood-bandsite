@@ -735,7 +735,7 @@ html, body {
 }
 @media (min-width: 1280px) {
   .shows {
-    padding: 2.75rem 9.75rem 2.25rem 8rem;
+    padding: 2.75rem 9.75rem 1.5rem 8rem;
     display: flex;
     justify-content: space-between;
   }
@@ -767,7 +767,8 @@ html, body {
 }
 @media (min-width: 1280px) {
   .shows__labels {
-    width: 20%;
+    margin-top: 0.25rem;
+    width: 100%;
     height: 2.25rem;
     vertical-align: middle;
   }
@@ -784,12 +785,24 @@ html, body {
     align-items: center;
   }
 }
+@media (min-width: 1280px) {
+  .shows__label-date {
+    width: 20vw;
+    min-width: 20vw;
+  }
+}
+@media (min-width: 1280px) {
+  .shows__label-venue {
+    width: 13.5vw;
+    min-width: 13.5vw;
+  }
+}
 .shows__label-place-holder {
   width: 19.25vw;
 }
 @media (min-width: 1280px) {
   .shows__cards {
-    margin-top: 2.5rem;
+    margin-top: 1.75rem;
     width: 100%;
   }
 }
@@ -817,6 +830,7 @@ html, body {
 @media (min-width: 1280px) {
   .shows__card {
     height: 3.75rem;
+    margin-bottom: 0.75rem;
   }
 }
 @media (min-width: 768px) {
@@ -894,5 +908,10 @@ html, body {
   .shows__divider {
     left: -36px;
     bottom: -1.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .shows__divider {
+    bottom: -0.425rem;
   }
 }/*# sourceMappingURL=shows.css.map */

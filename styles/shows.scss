@@ -158,7 +158,7 @@ $tablet-location-width: 10vw;
         padding: 2.75rem 2.25rem 1.5rem $tablet-section-horizontal-padding;
     }
     @include desktop {
-        padding: 2.75rem 9.75rem 2.25rem 8rem;
+        padding: 2.75rem 9.75rem 1.5rem 8rem;
         display: flex;
         justify-content: space-between;
     }
@@ -187,7 +187,8 @@ $tablet-location-width: 10vw;
             margin-bottom: .9rem;
         }
         @include desktop {
-            width: 20%;
+            margin-top: .25rem;
+            width: 100%;
             height: 2.25rem;
             vertical-align: middle;
         }
@@ -202,12 +203,24 @@ $tablet-location-width: 10vw;
             align-items: center;
         }
     }
+    &__label-date {
+        @include desktop {
+            width: 20vw;
+            min-width: 20vw;
+        }
+    }
+    &__label-venue {
+        @include desktop {
+            width: 13.5vw;
+            min-width: 13.5vw;
+        }
+    }
     &__label-place-holder {
         width: $tablet-button-width;
     }
     &__cards {
         @include desktop {
-            margin-top: 2.5rem;
+            margin-top: 1.75rem;
             width: 100%;
         }
     }
@@ -233,6 +246,7 @@ $tablet-location-width: 10vw;
         }
         @include desktop {
             height: 3.75rem;
+            margin-bottom: .75rem;
         }
     }
     &__info-pair {
@@ -304,6 +318,9 @@ $tablet-location-width: 10vw;
         @include tablet {
             left: -$tablet-section-horizontal-padding;
             bottom: -1.25rem;
+        }
+        @include desktop {
+            bottom: -.425rem;
         }
     }
 
