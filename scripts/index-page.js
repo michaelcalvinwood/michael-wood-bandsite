@@ -235,6 +235,71 @@ function getComments () {
     }) 
 }
 
+function getShowDates () {
+    const request = {
+        url: baseUrl + `showdates?api_key=${apiKey}`,
+        method: 'get'
+    }
+
+    axios (request)
+    .then (response => {
+        console.log ('success', response);
+    })
+    .catch (error => {
+        console.log ('error', error)
+    }) 
+}
+
+function addComment (name, comment) {
+    const request = {
+        url: baseUrl + `comments?api_key=${apiKey}`,
+        method: 'post',
+        data: {
+            name: name,
+            comment: comment
+        }
+    }
+
+    axios (request)
+    .then (response => {
+        console.log ('success', response);
+    })
+    .catch (error => {
+        console.log ('error', error)
+    }) 
+}
+
+function addLike (id) {
+    const request = {
+        url: baseURL + `comments/${id}/like`,
+        method: 'put',
+    }
+
+    axios (request)
+    .then (response => {
+        console.log ('success', response);
+    })
+    .catch (error => {
+        console.log ('error', error);
+    })
+}
+
+function deleteComment (id) {
+    const request = {
+        url: baseURL + `comments/${id}`,
+        method: 'delete',
+    }
+
+    axios (request)
+    .then (response => {
+        console.log ('success', response);
+    })
+    .catch (error => {
+        console.log ('error', error);
+    })
+}
 initializeAddCommentSection();
 initializeSubmittedCommentsSection();
 getComments();
+getShowDates();
+addComment("Miguel Madera", "Just wow!");
