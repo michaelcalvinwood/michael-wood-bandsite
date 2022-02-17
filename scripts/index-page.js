@@ -1,7 +1,6 @@
-/*
- * Instructor Note:
- * This submission includes both Digging Deeper suggestions: form validation to prevent empty fields, and human-readable time output for up to x days ago.
- */
+
+const apiKey = "f3bd5bed-c466-449a-bc93-1d14dc589719";
+const baseUrl = "https://project-1-api.herokuapp.com/";
 
 let comments = [
     {
@@ -221,5 +220,21 @@ function formHandler (e) {
     e.target.reset();
 }
 
+function getComments () {
+    const request = {
+        url: baseUrl + `comments?api_key=${apiKey}`,
+        method: 'get'
+    }
+
+    axios (request)
+    .then (response => {
+        console.log ('success', response);
+    })
+    .catch (error => {
+        console.log ('error', error)
+    }) 
+}
+
 initializeAddCommentSection();
 initializeSubmittedCommentsSection();
+getComments();
