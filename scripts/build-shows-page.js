@@ -173,8 +173,6 @@ function createShowCard (concert, parent) {
 function rowClickedHandler (e) {
     console.log(e);
     e.stopPropagation();
- 
-    if (window.innerWidth < 768 && excludeMobile) return;
 
     // if we click on the same row multiple times, maintain the current state
     if (currentActiveRow === e.target) return;
