@@ -2,6 +2,39 @@ const apiKey = "f3bd5bed-c466-449a-bc93-1d14dc589719";
 const baseUrl = "https://project-1-api.herokuapp.com/";
 
 /*
+ * createElement: Creates a child element and appends to parent
+ * @param parent (Element): parent element to attach child to
+ * @param tag (String): element tag to create
+ * @param c (String): optional class(es) of the element. Multiple classes are allowed when separated by a space.
+ * @param text (String): optional innerText of the element
+ * @param attributes (Obj): optional object whose key/value pairs will be added to the element
+ * @return Element on success (the created child element); false on error (if tag contains invalid characters). 
+ */
+ 
+function createElement (parent, tag, c = false, text = false, attributes = false) {
+    let el = {};
+    try {
+        el = document.createElement(tag);
+    } catch (e) {
+        return false;
+    }
+
+    parent.appendChild(el);
+    
+    // optional parameters
+    if (c) el.className = c; 
+    if (text) el.innerText = text;
+    if (attributes) {
+        for (const [key, value] of Object.entries(attributes)) {
+            el.setAttribute (key, value);
+        };
+    }
+
+    return el
+}
+
+
+/*
  * Note to instructor:
  * I was unsure whether the mobile version counts as rows regarding clicking them.
  * Therefore, I created the excludeMobile variable so the clicking behavior can be excluded by setting this to true
@@ -52,23 +85,23 @@ let currentActiveRow = null;
 function initializeShowsSection (title) {
     const main = document.querySelector('main');
 
-    const section = C(main, 'section', 'shows');
+    const section = createElement(main, 'section', 'shows');
     // disable active row with any click outside of the rows in the shows section
     section.addEventListener('click', labelsClickHandler);
 
-    C(section, 'h2', 'shows__title', title);
+    createElement(section, 'h2', 'shows__title', title);
 
-    const showsContainer = C(section, 'div', 'shows__container');
+    const showsContainer = createElement(section, 'div', 'shows__container');
     
-    const labels = C(showsContainer, 'div', 'shows__labels');
+    const labels = createElement(showsContainer, 'div', 'shows__labels');
     labels.addEventListener('click', labelsClickHandler);
 
-    C(labels, 'div', 'shows__label-date', 'DATE');
-    C(labels, 'div', 'shows__label-venue', 'VENUE');
-    C(labels, 'div', 'shows__label-location', 'LOCATION');
-    C(labels, 'div', 'shows__label-place-holder');
+    createElement(labels, 'div', 'shows__label-date', 'DATE');
+    createElement(labels, 'div', 'shows__label-venue', 'VENUE');
+    createElement(labels, 'div', 'shows__label-location', 'LOCATION');
+    createElement(labels, 'div', 'shows__label-place-holder');
 
-    const cards = C(showsContainer, 'section', 'shows__cards');
+    const cards = createElement(showsContainer, 'section', 'shows__cards');
 
     return cards;
 }
@@ -81,11 +114,11 @@ function initializeShowsSection (title) {
  */
 function generateInfoPair (label, value, parent) {
 
-    const infoPair = C(parent, 'div', 'shows__info-pair');
+    const infoPair = createElement(parent, 'div', 'shows__info-pair');
 
-    C(infoPair, 'p', 'shows__info-label', label);
+    createElement(infoPair, 'p', 'shows__info-label', label);
 
-    let infoValue = C(infoPair, 'p', 'shows__info-value', value);
+    let infoValue = createElement(infoPair, 'p', 'shows__info-value', value);
 
     switch (label) {
         case 'DATE':
@@ -120,15 +153,15 @@ function createShowCard (concert, parent) {
    
     console.log ('date', date)
 
-    const card = C(parent, 'div', 'shows__card');
+    const card = createElement(parent, 'div', 'shows__card');
     card.addEventListener('click', rowClickedHandler);
     
     generateInfoPair('DATE', date, card);
     generateInfoPair('VENUE', concert.place, card);
     generateInfoPair('LOCATION', concert.location, card);
     
-    C(card, 'button', 'shows__button', 'BUY TICKETS');
-    C(card, 'div', 'shows__divider');
+    createElement(card, 'button', 'shows__button', 'BUY TICKETS');
+    createElement(card, 'div', 'shows__divider');
 
     return card;
 }

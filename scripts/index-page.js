@@ -2,30 +2,64 @@ const apiKey = "f3bd5bed-c466-449a-bc93-1d14dc589719";
 const baseUrl = "https://project-1-api.herokuapp.com/";
 
 /*
+ * createElement: Creates a child element and appends to parent
+ * @param parent (Element): parent element to attach child to
+ * @param tag (String): element tag to create
+ * @param c (String): optional class(es) of the element. Multiple classes are allowed when separated by a space.
+ * @param text (String): optional innerText of the element
+ * @param attributes (Obj): optional object whose key/value pairs will be added to the element
+ * @return Element on success (the created child element); false on error (if tag contains invalid characters). 
+ */
+ 
+function createElement (parent, tag, c = false, text = false, attributes = false) {
+    let el = {};
+    try {
+        el = document.createElement(tag);
+    } catch (e) {
+        return false;
+    }
+
+    parent.appendChild(el);
+    
+    // optional parameters
+    if (c) el.className = c; 
+    if (text) el.innerText = text;
+    if (attributes) {
+        for (const [key, value] of Object.entries(attributes)) {
+            el.setAttribute (key, value);
+        };
+    }
+
+    return el
+}
+
+
+
+/*
  * initializeAddCommentSection creates the input form and appends it to main
  */
 // function initializeAddCommentSection () {
 //     const main = document.querySelector('main');
 
-//     const section = C(main, 'section', 'add-comment');
+//     const section = createElementmain, 'section', 'add-comment');
 
-//     C(section, 'h2', 'add-comment__title', 'Join the Conversation');
+//     createElement(section, 'h2', 'add-comment__title', 'Join the Conversation');
 
-//     const formContainer = C(section, 'div', 'add-comment__form-container');
+//     const formContainer = createElement(section, 'div', 'add-comment__form-container');
 
-//     C(formContainer, 'img', 'add-comment__head-shot', '', {src: '/assets/images/Mohan-muruge.jpg', alt: 'avatar'});
+//     createElement(formContainer, 'img', 'add-comment__head-shot', '', {src: '/assets/images/Mohan-muruge.jpg', alt: 'avatar'});
 
-//     const form = C(formContainer, 'form', 'add-comment__form', '', {id: 'inputForm'});
+//     const form = createElement(formContainer, 'form', 'add-comment__form', '', {id: 'inputForm'});
     
-//     C(form, 'label', 'add-comment__label-name', 'NAME', {for: 'name'});
+//     createElement(form, 'label', 'add-comment__label-name', 'NAME', {for: 'name'});
 
-//     C(form, 'input', 'add-comment__input-name', '', {type: 'text', name: 'name', id: 'name', placeholder: 'Enter your name'});
+//     createElement(form, 'input', 'add-comment__input-name', '', {type: 'text', name: 'name', id: 'name', placeholder: 'Enter your name'});
 
-//     C(form, 'label', 'add-comment__label-comment', 'COMMENT', {for: 'comment'});
+//     createElement(form, 'label', 'add-comment__label-comment', 'COMMENT', {for: 'comment'});
 
-//     C(form, 'textarea', 'add-comment__input-comment', '', {name: 'comment', id: 'comment', placeholder: 'Add a new comment'});
+//     createElement(form, 'textarea', 'add-comment__input-comment', '', {name: 'comment', id: 'comment', placeholder: 'Add a new comment'});
 
-//     C(form, 'button', 'add-comment__button', 'COMMENT');
+//     createElement(form, 'button', 'add-comment__button', 'COMMENT');
 
 //     form.addEventListener('submit', formHandler);
 // }
@@ -39,25 +73,25 @@ function displayComment (comment) {
     let commentCard = document.createElement('div');
     commentCard.classList.add('submitted-comments__comment-card');
 
-    C(commentCard, 'div', 'submitted-comments__divider');
+    createElement(commentCard, 'div', 'submitted-comments__divider');
 
-    let displayContainer = C(commentCard, 'div', 'submitted-comments__display-container');
+    let displayContainer = createElement(commentCard, 'div', 'submitted-comments__display-container');
 
     if (comment.avatar) {
-        C(displayContainer, 'img', 'submitted-comments__avatar', '', {src: comment.avatar, alt: 'avatar'});
+        createElement(displayContainer, 'img', 'submitted-comments__avatar', '', {src: comment.avatar, alt: 'avatar'});
     } else {
-        avatar = C(displayContainer, 'div', 'submitted-comments__avatar');
+        avatar = createElement(displayContainer, 'div', 'submitted-comments__avatar');
     }
     
-    let commentCardContainer = C(displayContainer, 'div', 'submitted-comments__info');
+    let commentCardContainer = createElement(displayContainer, 'div', 'submitted-comments__info');
 
-    let nameTimeContainer = C(commentCardContainer, 'div', 'submitted-comments__name-time-container');
+    let nameTimeContainer = createElement(commentCardContainer, 'div', 'submitted-comments__name-time-container');
     
-    C(nameTimeContainer, 'p', 'submitted-comments__name', comment.name);
+    createElement(nameTimeContainer, 'p', 'submitted-comments__name', comment.name);
 
-    C(nameTimeContainer, 'p', 'submitted-comments__timestamp', displayLiveDate(comment.timestamp));
+    createElement(nameTimeContainer, 'p', 'submitted-comments__timestamp', displayLiveDate(comment.timestamp));
 
-    C(commentCardContainer, 'p', 'submitted-comments__comment', comment.comment);
+    createElement(commentCardContainer, 'p', 'submitted-comments__comment', comment.comment);
 
     console.log ('commentCard', commentCard);
 
@@ -123,11 +157,11 @@ function displayLiveDate (timestamp) {
 function initializeSubmittedCommentsSection () {
     const main = document.querySelector('main');
 
-    const submittedCommentsSection = C(main, 'section', 'submitted-comments');
+    const submittedCommentsSection = createElement(main, 'section', 'submitted-comments');
 
     // updateSubmittedComments(submittedCommentsSection);
  
-    C(submittedCommentsSection, 'div', 'submitted-comments__divider');
+    createElement(submittedCommentsSection, 'div', 'submitted-comments__divider');
 }
 
 /*
