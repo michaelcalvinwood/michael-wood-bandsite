@@ -1,5 +1,12 @@
 @use 'variables' as *;
 
+// additional breakpoint to adjust hero section earlier for much better looking hero section at all screen sizes.
+@mixin mobile-adjust {
+    @media (min-width: 525px) {
+        @content;
+    }
+}
+
 @mixin tablet {
     @media (min-width: $tablet-breakpoint) {
         @content;

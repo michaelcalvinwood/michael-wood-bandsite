@@ -8,7 +8,7 @@
 .hero {
     width: $hero-mobile-width;
     height: $hero-mobile-height;
-    padding: 11vw $mobile-section-horizontal-padding 0 $mobile-section-horizontal-padding;
+    padding: 11vw 16px 0 16px;
     box-sizing: border-box;
     background-image: url('/assets/images/hero-shows.jpg');
     background-repeat: no-repeat;
@@ -36,7 +36,7 @@
         z-index: 3;
         opacity: 1;
 
-        @media (min-width: 525px) {
+        @include mobile-adjust {
             padding-bottom: 15vw;
         }
         @include tablet {
@@ -81,7 +81,7 @@
         z-index: 3 !important;
         position: relative;
 
-        @media (min-width: 525px) {
+        @include mobile-adjust {
             width: 80%;
             margin: 0 auto;
         }
@@ -143,7 +143,7 @@
     }
 }
 .shows {
-    padding: 2rem $mobile-section-horizontal-padding 1rem $mobile-section-horizontal-padding;
+    padding: 2rem 16px 1rem 16px;
     box-sizing: border-box;
 
     @include tablet {
@@ -305,7 +305,7 @@
         height: 1px;
         background-color: $mercury;
         bottom: 0;
-        left: -$mobile-section-horizontal-padding;
+        left: -16px;
 
         @include tablet {
             left: -36px;
