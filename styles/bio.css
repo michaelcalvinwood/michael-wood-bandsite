@@ -1156,6 +1156,7 @@ input:focus, textarea:focus {
 }
 .submitted-comments__timestamp {
   font-size: 0.8rem;
+  color: #afafaf;
 }
 .submitted-comments__comment {
   font-size: 0.8rem;

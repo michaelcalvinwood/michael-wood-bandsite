@@ -1,30 +1,5 @@
-
 const apiKey = "f3bd5bed-c466-449a-bc93-1d14dc589719";
 const baseUrl = "https://project-1-api.herokuapp.com/";
-
-let comments = [
-    {
-        id: 0,
-        avatar: "",
-        name: "Connor Walton",
-        timestamp: "02/17/2021",
-        comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."
-    },
-    {
-        id: 1,
-        avatar: "",
-        name: "Emilie Beach",
-        timestamp: "01/09/2021",
-        comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."
-    },
-    {
-        id: 2,
-        avatar: "",
-        name: "Miles Acosta",
-        timestamp: "12/20/2020",
-        comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."
-    }
-]
 
 /*
  * initializeAddCommentSection creates the input form and appends it to main
@@ -84,6 +59,8 @@ function displayComment (comment) {
 
     C(commentCardContainer, 'p', 'submitted-comments__comment', comment.comment);
 
+    console.log ('commentCard', commentCard);
+
     return commentCard;
 }
 
@@ -107,20 +84,19 @@ function updateSubmittedComments (submittedCommentsSection) {
 function displayLiveDate (timestamp) {
     let test;
 
-    if (timestamp.indexOf('/') !== -1) {
-        const dateParts = timestamp.split('/');
-        const dateString = `${dateParts[2]}-${dateParts[0]}-${dateParts[1]}`;
-        test = Date.parse(dateString)/1000;
-        if (isNaN(test)) return timestamp;
-        timestamp = test;
-    }
+    // if (timestamp.indexOf('/') !== -1) {
+    //     const dateParts = timestamp.split('/');
+    //     const dateString = `${dateParts[2]}-${dateParts[0]}-${dateParts[1]}`;
+    //     test = Date.parse(dateString)/1000;
+    //     if (isNaN(test)) return timestamp;
+    //     timestamp = test;
+    // }
 
-    test = parseInt(timestamp);
-    if (isNaN(test)) return timestamp;
-    timestamp = test;
+    timestamp = Number(timestamp);
 
-    const currentTime = Math.round(Date.now() / 1000);
-    const diff = currentTime - timestamp;
+    const currentTime = Date.now();
+    let diff = (currentTime - timestamp) / 1000;
+    diff = Math.trunc(diff);
 
     if (diff < 2) return "now";
     if (diff < 60) return diff + " seconds ago";
@@ -131,11 +107,15 @@ function displayLiveDate (timestamp) {
     if (diff < 172800) return "1 day ago";
     if (diff < 604800) return (diff % 86400) + " days ago";
 
-    const myDate = new Date((timestamp+82000)*1000);
-    const localString = myDate.toLocaleString();
-    const localParts = localString.split(',');
+    let date = new Date(Number(timestamp))
+    const options = { month: '2-digit', day: '2-digit', year: 'numeric' };
     
-    return localParts[0];
+    // console.log(today.toLocaleDateString("en-US")); // 9/17/2016
+    // console.log(today.toLocaleDateString("en-US", options));
+
+    date = date.toLocaleDateString("en-US", options);
+    
+    return date;
 }
 
 /* initializeSubmittedCommentsSection creates a section for the comments array, appends it to main, and adds the comments from the comments array */
@@ -145,7 +125,7 @@ function initializeSubmittedCommentsSection () {
 
     const submittedCommentsSection = C(main, 'section', 'submitted-comments');
 
-    updateSubmittedComments(submittedCommentsSection);
+    // updateSubmittedComments(submittedCommentsSection);
  
     C(submittedCommentsSection, 'div', 'submitted-comments__divider');
 }
@@ -215,7 +195,7 @@ function formHandler (e) {
 
     const submittedCommentsSection = Q('.submitted-comments');
 
-    updateSubmittedComments (submittedCommentsSection);
+    // updateSubmittedComments (submittedCommentsSection);
 
     e.target.reset();
 }
@@ -228,22 +208,13 @@ function getComments () {
 
     axios (request)
     .then (response => {
-        console.log ('success', response);
-    })
-    .catch (error => {
-        console.log ('error', error)
-    }) 
-}
+        const submittedCommentsSection = document.querySelector('.submitted-comments')
+        submittedCommentsSection.innerHTML = '';
 
-function getShowDates () {
-    const request = {
-        url: baseUrl + `showdates?api_key=${apiKey}`,
-        method: 'get'
-    }
-
-    axios (request)
-    .then (response => {
-        console.log ('success', response);
+        for (let i = 0; i < response.data.length; ++i) {
+            submittedCommentsSection.appendChild(displayComment (response.data[i]));
+        }
+        console.log ('success', response.data);
     })
     .catch (error => {
         console.log ('error', error)
@@ -301,5 +272,5 @@ function deleteComment (id) {
 initializeAddCommentSection();
 initializeSubmittedCommentsSection();
 getComments();
-getShowDates();
-addComment("Miguel Madera", "Just wow!");
+// getShowDates();
+// addComment("Miguel Madera", "Just wow!");

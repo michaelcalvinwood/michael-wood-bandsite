@@ -1,3 +1,6 @@
+const apiKey = "f3bd5bed-c466-449a-bc93-1d14dc589719";
+const baseUrl = "https://project-1-api.herokuapp.com/";
+
 /*
  * Note to instructor:
  * I was unsure whether the mobile version counts as rows regarding clicking them.
@@ -7,38 +10,38 @@ const excludeMobile = false;
 
 let currentActiveRow = null;
 
-let concerts = [
-    {
-        date: "Mon Sept 06 2021",
-        venue: "Ronald Lane",
-        location: "San Francisco, CA"
-    },
-    {
-        date: "Tue Sept 21 2021",
-        venue: "Pier 3 East",
-        location: "San Francisco, CA"
-    },
-    {
-        date: "Fri Oct 15 2021",
-        venue: "View Lounge ",
-        location: "San Francisco, CA"
-    },
-    {
-        date: "Sat Nov 06 2021",
-        venue: "Hyatt Agency",
-        location: "San Francisco, CA"
-    },
-    {
-        date: "Fri Nov 26 2021",
-        venue: "Moscow Center",
-        location: "San Francisco, CA"
-    },
-    {
-        date: "Wed Dec 15 2021",
-        venue: "Press Club",
-        location: "San Francisco, CA"
-    }
-];
+// let concerts = [
+//     {
+//         date: "Mon Sept 06 2021",
+//         venue: "Ronald Lane",
+//         location: "San Francisco, CA"
+//     },
+//     {
+//         date: "Tue Sept 21 2021",
+//         venue: "Pier 3 East",
+//         location: "San Francisco, CA"
+//     },
+//     {
+//         date: "Fri Oct 15 2021",
+//         venue: "View Lounge ",
+//         location: "San Francisco, CA"
+//     },
+//     {
+//         date: "Sat Nov 06 2021",
+//         venue: "Hyatt Agency",
+//         location: "San Francisco, CA"
+//     },
+//     {
+//         date: "Fri Nov 26 2021",
+//         venue: "Moscow Center",
+//         location: "San Francisco, CA"
+//     },
+//     {
+//         date: "Wed Dec 15 2021",
+//         venue: "Press Club",
+//         location: "San Francisco, CA"
+//     }
+// ];
 /*
  * initializeShowsSection:
  *   creates the shows section
@@ -109,11 +112,19 @@ function generateInfoPair (label, value, parent) {
  * @return Element: the created show card
  */
 function createShowCard (concert, parent) {
+    let date = new Date(Number(concert.date))
+        .toString()
+        .split(' ')
+        .slice(0, 4)
+        .join(' ');
+   
+    console.log ('date', date)
+
     const card = C(parent, 'div', 'shows__card');
     card.addEventListener('click', rowClickedHandler);
     
-    generateInfoPair('DATE', concert.date, card);
-    generateInfoPair('VENUE', concert.venue, card);
+    generateInfoPair('DATE', date, card);
+    generateInfoPair('VENUE', concert.place, card);
     generateInfoPair('LOCATION', concert.location, card);
     
     C(card, 'button', 'shows__button', 'BUY TICKETS');
@@ -165,10 +176,28 @@ function labelsClickHandler (e) {
         currentActiveRow = null;
     }
 }
-
 let cardsSection = initializeShowsSection('Shows');
-let card = {};
 
-for (let i = 0; i < concerts.length; ++i) {
-    card = createShowCard(concerts[i], cardsSection);
+function getShowDates () {
+    const request = {
+        url: baseUrl + `showdates?api_key=${apiKey}`,
+        method: 'get'
+    }
+
+    axios (request)
+    .then (response => {
+        console.log ('success', response.data);
+        
+        let card = {};
+
+        for (let i = 0; i < response.data.length; ++i) {
+            card = createShowCard(response.data[i], cardsSection);
+        }
+
+    })
+    .catch (error => {
+        console.log ('error', error)
+    }) 
 }
+
+getShowDates();
