@@ -50,7 +50,7 @@ let currentActiveRow = null;
  *   returns the cards container object
 */
 function initializeShowsSection (title) {
-    const main = Q('main');
+    const main = document.querySelector('main');
 
     const section = C(main, 'section', 'shows');
     // disable active row with any click outside of the rows in the shows section

@@ -35,9 +35,3 @@ function C (parent, tag, c = false, text = false, attributes = false) {
     return el
 }
 
-/* DOM Document shortcuts for querySelector, querySelectorAll, getElementById and getElementById.style */
-
-function Q (selector) { return document.querySelector(selector)};
-function A (selector) { return document.querySelectorAll(selector)};
-function I (id) { return document.getElementById(id)};
-function S (id) { return document.getElementById(id).style};

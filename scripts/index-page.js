@@ -5,7 +5,7 @@ const baseUrl = "https://project-1-api.herokuapp.com/";
  * initializeAddCommentSection creates the input form and appends it to main
  */
 // function initializeAddCommentSection () {
-//     const main = Q('main');
+//     const main = document.querySelector('main');
 
 //     const section = C(main, 'section', 'add-comment');
 
@@ -121,7 +121,7 @@ function displayLiveDate (timestamp) {
 /* initializeSubmittedCommentsSection creates a section for the comments array, appends it to main, and adds the comments from the comments array */
 
 function initializeSubmittedCommentsSection () {
-    const main = Q('main');
+    const main = document.querySelector('main');
 
     const submittedCommentsSection = C(main, 'section', 'submitted-comments');
 
@@ -146,7 +146,7 @@ function formHandler (e) {
     if (!name) {
         I('name').classList.add('add-comment__input-name--error');
 
-        label = Q('.add-comment__label-name');
+        label = document.querySelector('.add-comment__label-name');
         label.classList.add('add-comment__label-name--error');
         label.innerText = 'Please enter a name.'
 
@@ -154,7 +154,7 @@ function formHandler (e) {
     } else {
          I('name').classList.remove('add-comment__input-name--error');
 
-        label = Q('.add-comment__label-name');
+        label = document.querySelector('.add-comment__label-name');
         label.classList.remove('add-comment__label-name--error');
         label.innerText = 'NAME';
     }
@@ -162,7 +162,7 @@ function formHandler (e) {
     if (!comment) {
         I('comment').classList.add('add-comment__input-comment--error');
 
-        label = Q('.add-comment__label-comment');
+        label = document.querySelector('.add-comment__label-comment');
         label.classList.add('add-comment__label-comment--error');
         label.innerText = 'Please write a comment.'
 
@@ -170,7 +170,7 @@ function formHandler (e) {
     } else {
         I('comment').classList.remove('add-comment__input-comment--error');
 
-        label = Q('.add-comment__label-comment');
+        label = document.querySelector('.add-comment__label-comment');
         label.classList.remove('add-comment__label-comment--error');
         label.innerText = 'COMMENT';
     }
@@ -193,7 +193,7 @@ function formHandler (e) {
 
     comments.unshift(newComment);
 
-    const submittedCommentsSection = Q('.submitted-comments');
+    const submittedCommentsSection = document.querySelector('.submitted-comments');
 
     // updateSubmittedComments (submittedCommentsSection);
 
