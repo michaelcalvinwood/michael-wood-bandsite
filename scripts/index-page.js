@@ -4,31 +4,31 @@ const baseUrl = "https://project-1-api.herokuapp.com/";
 /*
  * initializeAddCommentSection creates the input form and appends it to main
  */
-function initializeAddCommentSection () {
-    const main = Q('main');
+// function initializeAddCommentSection () {
+//     const main = Q('main');
 
-    const section = C(main, 'section', 'add-comment');
+//     const section = C(main, 'section', 'add-comment');
 
-    C(section, 'h2', 'add-comment__title', 'Join the Conversation');
+//     C(section, 'h2', 'add-comment__title', 'Join the Conversation');
 
-    const formContainer = C(section, 'div', 'add-comment__form-container');
+//     const formContainer = C(section, 'div', 'add-comment__form-container');
 
-    C(formContainer, 'img', 'add-comment__head-shot', '', {src: '/assets/images/Mohan-muruge.jpg', alt: 'avatar'});
+//     C(formContainer, 'img', 'add-comment__head-shot', '', {src: '/assets/images/Mohan-muruge.jpg', alt: 'avatar'});
 
-    const form = C(formContainer, 'form', 'add-comment__form', '', {id: 'inputForm'});
+//     const form = C(formContainer, 'form', 'add-comment__form', '', {id: 'inputForm'});
     
-    C(form, 'label', 'add-comment__label-name', 'NAME', {for: 'name'});
+//     C(form, 'label', 'add-comment__label-name', 'NAME', {for: 'name'});
 
-    C(form, 'input', 'add-comment__input-name', '', {type: 'text', name: 'name', id: 'name', placeholder: 'Enter your name'});
+//     C(form, 'input', 'add-comment__input-name', '', {type: 'text', name: 'name', id: 'name', placeholder: 'Enter your name'});
 
-    C(form, 'label', 'add-comment__label-comment', 'COMMENT', {for: 'comment'});
+//     C(form, 'label', 'add-comment__label-comment', 'COMMENT', {for: 'comment'});
 
-    C(form, 'textarea', 'add-comment__input-comment', '', {name: 'comment', id: 'comment', placeholder: 'Add a new comment'});
+//     C(form, 'textarea', 'add-comment__input-comment', '', {name: 'comment', id: 'comment', placeholder: 'Add a new comment'});
 
-    C(form, 'button', 'add-comment__button', 'COMMENT');
+//     C(form, 'button', 'add-comment__button', 'COMMENT');
 
-    form.addEventListener('submit', formHandler);
-}
+//     form.addEventListener('submit', formHandler);
+// }
 
 /*
  * displayComment creates and returns an individual comment card
@@ -269,7 +269,7 @@ function deleteComment (id) {
         console.log ('error', error);
     })
 }
-initializeAddCommentSection();
+// initializeAddCommentSection();
 initializeSubmittedCommentsSection();
 getComments();
 // getShowDates();
