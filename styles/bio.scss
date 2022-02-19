@@ -80,7 +80,7 @@
 
         @include tablet {
             @include tablet-section-header;
-            padding: $tablet-section-top-margin 0 1.25rem 0;
+            padding: 48px 0 1.25rem 0;
         }
         @include desktop {
             margin-left: 3.5rem;
@@ -140,7 +140,7 @@
 
         @include tablet {
             @include tablet-subheader;
-            margin-top: $tablet-section-top-margin;
+            margin-top: 48px;
         }
         @include desktop {
             margin-top: 3.5rem;
@@ -179,7 +179,7 @@
     background-color: $alabaster;
 
     @include tablet {
-        padding: $tablet-section-top-margin 36px 0 36px;
+        padding: 48px 36px 0 36px;
     }
     @include desktop {
         padding: 1.25rem 10vw 0 10vw;

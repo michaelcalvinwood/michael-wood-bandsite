@@ -187,7 +187,7 @@
     }
     &__label-date, &__label-venue, &__label-location {
         @include tablet {
-            width: $tablet-date-width;
+            width: 20vw;
         }
         @include desktop {
             height: 3.75rem;
@@ -267,7 +267,7 @@
 
         @include tablet {
             font-size: .9rem;
-            width: $tablet-date-width;
+            width: 20vw;
             display: flex;
             align-items: center;
             height: 100%;

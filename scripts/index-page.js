@@ -7,7 +7,7 @@ XMLDocument
 /*
  * initializeAddCommentSection creates the input form and appends it to main
  */
-// function initializeAddCommentSection () {
+function initializeAddCommentSection () {
 //     const main = document.querySelector('main');
 
 //     const section = createElementmain, 'section', 'add-comment');
@@ -30,8 +30,8 @@ XMLDocument
 
 //     createElement(form, 'button', 'add-comment__button', 'COMMENT');
 
-//     form.addEventListener('submit', formHandler);
-// }
+    document.querySelector('form').addEventListener('submit', formHandler);
+}
 
 /*
  * displayComment creates and returns an individual comment card
@@ -262,7 +262,7 @@ function deleteComment (id) {
         console.log ('error', error);
     })
 }
-// initializeAddCommentSection();
+initializeAddCommentSection();
 initializeSubmittedCommentsSection();
 getComments();
 // getShowDates();
