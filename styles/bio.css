@@ -4,6 +4,21 @@
  * These three variables are very useful because they ensure that the overlay perfectly matches the dimensions of the hero section.
  * Simply by changing the variables, the hero section and overlay adjust accordingly.
  */
+@font-face {
+  font-family: "Avenir";
+  src: url("/assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("/assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("/assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype");
+  font-weight: 700;
+}
 * {
   margin: 0;
   padding: 0;
@@ -309,6 +324,21 @@ input:focus, textarea:focus {
  * Simply by changing the variables, the hero section and overlay adjust accordingly.
  */
 /* color scheme */
+@font-face {
+  font-family: "Avenir";
+  src: url("/assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("/assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("/assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype");
+  font-weight: 700;
+}
 * {
   margin: 0;
   padding: 0;
@@ -604,21 +634,6 @@ input:focus, textarea:focus {
   color: white;
 }
 
-@font-face {
-  font-family: "Avenir";
-  src: url("/assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype");
-  font-weight: 400;
-}
-@font-face {
-  font-family: "Avenir";
-  src: url("/assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype");
-  font-weight: 600;
-}
-@font-face {
-  font-family: "Avenir";
-  src: url("/assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype");
-  font-weight: 700;
-}
 .hero {
   width: 100%;
   height: 56vw;
