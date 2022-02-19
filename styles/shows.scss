@@ -17,7 +17,7 @@
 
     @include tablet {
         height: $hero-tablet-height;
-        padding: 8vw $tablet-section-horizontal-padding;
+        padding: 8vw 36px;
         font-size: 1.6rem;
     }
     @include desktop {
@@ -45,7 +45,7 @@
             top: 0;
             left: 0;
             height: $hero-tablet-height;
-            padding: 8vw $tablet-section-horizontal-padding;
+            padding: 8vw 36px;
             font-size: 1.6rem;
         }
         @include desktop {
@@ -147,7 +147,7 @@
     box-sizing: border-box;
 
     @include tablet {
-        padding: 2.75rem 2.25rem 1.5rem $tablet-section-horizontal-padding;
+        padding: 2.75rem 2.25rem 1.5rem 36px;
     }
     @include desktop {
         padding: 2.75rem 9.75rem 1.5rem 8rem;
@@ -308,7 +308,7 @@
         left: -$mobile-section-horizontal-padding;
 
         @include tablet {
-            left: -$tablet-section-horizontal-padding;
+            left: -36px;
             bottom: -1.25rem;
         }
         @include desktop {
