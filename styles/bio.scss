@@ -48,11 +48,15 @@
         display:block;
         color: white;
         font-weight: 400;
-        @include mobile-header;
+        font-size: 22px;
+        line-height: 32px;
+        font-weight: 700;
         z-index: 2;
 
         @include tablet {
-            @include tablet-page-header;
+            font-size: 60px;
+            line-height: 68px;
+            font-weight: 700;
         }
         @include desktop {
             margin-left: 5.5rem;
@@ -65,7 +69,7 @@
     }
 }
 .info {
-    padding: 0 16px 1rem 16px;
+    padding: 0 1.75rem 1rem 1rem;
 
     @include tablet {
         padding: 0 2.25rem;
@@ -74,12 +78,16 @@
         padding: 0 72px 2.25rem 72px;
     }
     &__title {
-        @include mobile-header;
+        font-size: 22px;
+        line-height: 32px;
+        font-weight: 700;
         padding: 18px 0 .5rem 0;
         box-sizing: border-box;
 
         @include tablet {
-            @include tablet-section-header;
+            font-size: 36px;
+            line-height: 44px;
+            font-weight: 700;
             padding: 48px 0 1.25rem 0;
         }
         @include desktop {
@@ -98,6 +106,7 @@
         width: 100%;
         height: 46.5vw;
         display: block;
+        margin-bottom: .75rem;
         
         @include tablet {
             height: 40vw;
@@ -109,9 +118,8 @@
     }
     &__quote {
         font-size: 13px;
-        line-height: 18px;
+        line-height: 1.25rem;
         font-weight: 400;
-        margin: .8rem 0 1rem 0;
 
         @include tablet {
             font-size: 22px;
@@ -126,22 +134,30 @@
 
         &--emphasized {
             font-weight: 600;
+            margin: 0;
         }
         &--reduced {
+            margin: .5rem 0 1rem 0;
+            width: 90%;
+
             @include tablet {
                 font-size: 16px;
                 line-height: 22px;
                 font-weight: 600;
-                margin-top: 1rem;
+               
             }
         }
     }
     &__subheading {
-        @include mobile-subheader;
-        margin: 18px 0 16px 0;
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 600;
+        margin: 1.25rem 0 .75rem 0;
 
         @include tablet {
-            @include tablet-subheader;
+            font-size: 24px;
+            line-height: 32px;
+            font-weight: 600;
             margin-top: 48px;
         }
         @include desktop {
@@ -156,13 +172,13 @@
         }
     }
     &__p {
-        font-size: 13px;
-        line-height: 18px;
+        font-size: .8rem;
+        line-height: 1.05rem;
         font-weight: 400;
         margin:0;
 
         &--continue {
-            margin-top: 1rem;
+            margin-top: 1.2rem;
 
             @include tablet {
                 margin-top: 0;
@@ -170,7 +186,9 @@
         }
 
         @include tablet {
-            @include tablet-body;
+            font-size: 14px;
+            line-height: 22px;
+            font-weight: 400;
             width: 48%;
         }
         @include desktop {
@@ -179,7 +197,7 @@
     }
 }
 .gallery {
-    padding: 18px 16px 0 16px;
+    padding: 18px 1.75rem 0 16px;
     background-color: $alabaster;
 
     @include tablet {
@@ -189,11 +207,15 @@
         padding: 1.25rem 10vw 0 10vw;
     }
     &__title {
-        @include mobile-header;
+        font-size: 22px;
+        line-height: 32px;
+        font-weight: 700;
         margin: 0px 0 .7rem 0;
 
         @include tablet {
-            @include tablet-section-header;
+            font-size: 36px;
+            line-height: 44px;
+            font-weight: 700;
             margin-top: 1.5rem;
         }
     }
@@ -217,7 +239,7 @@
     }
     &__figure {
         position: relative;
-        margin-bottom: 1.1rem;
+        margin-bottom: .75rem;
 
         @include tablet {
             width: 27.5vw;
@@ -269,7 +291,7 @@
     }
 }
 .add-comment {
-    padding: 0 16px 0 16px;
+    padding: .7rem 1.75rem 0 16px;
 
     @include tablet {
         padding: .5rem 36px;
@@ -281,8 +303,8 @@
     }
 
     &__title {
-        font-size: 1.45rem;
-        margin-bottom: 1.25rem;
+        font-size: 1.35rem;
+        margin-bottom: 1rem;
 
         @include tablet {        
             font-size: 34px;
@@ -371,7 +393,7 @@
     &__input-comment {
         width: 100%;
         height: 6rem;
-        margin-bottom: .75rem;
+        margin-bottom: .35rem;
         border-radius: 4px;
         padding: 12px;
         box-sizing: border-box;
@@ -394,7 +416,7 @@
         height: 40px;
         background-color: $bandsite-black;
         color: white;
-        margin-bottom: 1.25rem;
+        margin-bottom: 1rem;
         border: none;
         border-radius: 4px;
         cursor: pointer;
@@ -410,8 +432,8 @@
     }
 }
 .submitted-comments {
-    padding: 0 16px 0 16px;
-    margin-bottom: 1.75rem;
+    padding: 0 1.75rem 0 1rem;
+    margin-bottom: 1rem;
 
     @include tablet {
         margin: 0 96px 0 80px;
@@ -431,7 +453,7 @@
     }
     &__display-container {
         display: flex;
-        margin-bottom: 1rem;
+        margin-bottom: .75rem;
     }
     &__avatar {
         width: 36px;
@@ -474,12 +496,20 @@
         color: $silver;
     }
     &__comment {
-        font-size: .8rem;
-        line-height: 1.1rem;
+        font-size: .75rem;
+        line-height: 1.05rem;
 
         @include tablet {
             font-size: .85rem;
             line-height: 1.3rem;
+        }
+    }
+    &__comment-card {
+        padding-top: .85rem;
+        border-bottom: 1px solid $mercury;
+
+        &--first-comment {
+            border-top: 1px solid $mercury;
         }
     }
 }

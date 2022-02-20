@@ -1,9 +1,4 @@
 /* color scheme */
-/* Note to instructor
- * I recognize the request to limit use of variables.
- * These three variables are very useful because they ensure that the overlay perfectly matches the dimensions of the hero section.
- * Simply by changing the variables, the hero section and overlay adjust accordingly.
- */
 @font-face {
   font-family: "Avenir";
   src: url("/assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype");
@@ -97,9 +92,9 @@ input:focus, textarea:focus {
 }
 .header__list-item {
   font-size: 13px;
-  line-height: 18px;
   font-weight: 400;
   height: 1.8rem;
+  line-height: 18px;
   width: 49.9%;
   box-sizing: border-box;
   text-align: center;
@@ -342,11 +337,6 @@ input:focus, textarea:focus {
  * Note to Instructor:
  * Hover animation has been added to photos in tablet and desktop sizes. Kindly mouseover to see effect. Also, please click resulting email image.
 */
-/* Note to instructor
- * I recognize the request to limit use of variables.
- * These three variables are very useful because they ensure that the overlay perfectly matches the dimensions of the hero section.
- * Simply by changing the variables, the hero section and overlay adjust accordingly.
- */
 /* color scheme */
 @font-face {
   font-family: "Avenir";
@@ -441,9 +431,9 @@ input:focus, textarea:focus {
 }
 .header__list-item {
   font-size: 13px;
-  line-height: 18px;
   font-weight: 400;
   height: 1.8rem;
+  line-height: 18px;
   width: 49.9%;
   box-sizing: border-box;
   text-align: center;
@@ -751,7 +741,7 @@ input:focus, textarea:focus {
 }
 
 .info {
-  padding: 0 16px 1rem 16px;
+  padding: 0 1.75rem 1rem 1rem;
 }
 @media (min-width: 768px) {
   .info {
@@ -797,6 +787,7 @@ input:focus, textarea:focus {
   width: 100%;
   height: 46.5vw;
   display: block;
+  margin-bottom: 0.75rem;
 }
 @media (min-width: 768px) {
   .info__image {
@@ -811,9 +802,8 @@ input:focus, textarea:focus {
 }
 .info__quote {
   font-size: 13px;
-  line-height: 18px;
+  line-height: 1.25rem;
   font-weight: 400;
-  margin: 0.8rem 0 1rem 0;
 }
 @media (min-width: 768px) {
   .info__quote {
@@ -831,20 +821,24 @@ input:focus, textarea:focus {
 }
 .info__quote--emphasized {
   font-weight: 600;
+  margin: 0;
+}
+.info__quote--reduced {
+  margin: 0.5rem 0 1rem 0;
+  width: 90%;
 }
 @media (min-width: 768px) {
   .info__quote--reduced {
     font-size: 16px;
     line-height: 22px;
     font-weight: 600;
-    margin-top: 1rem;
   }
 }
 .info__subheading {
   font-size: 14px;
   line-height: 22px;
   font-weight: 600;
-  margin: 18px 0 16px 0;
+  margin: 1.25rem 0 0.75rem 0;
 }
 @media (min-width: 768px) {
   .info__subheading {
@@ -867,13 +861,13 @@ input:focus, textarea:focus {
   }
 }
 .info__p {
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 0.8rem;
+  line-height: 1.05rem;
   font-weight: 400;
   margin: 0;
 }
 .info__p--continue {
-  margin-top: 1rem;
+  margin-top: 1.2rem;
 }
 @media (min-width: 768px) {
   .info__p--continue {
@@ -895,7 +889,7 @@ input:focus, textarea:focus {
 }
 
 .gallery {
-  padding: 18px 16px 0 16px;
+  padding: 18px 1.75rem 0 16px;
   background-color: #fafafa;
 }
 @media (min-width: 768px) {
@@ -945,7 +939,7 @@ input:focus, textarea:focus {
 }
 .gallery__figure {
   position: relative;
-  margin-bottom: 1.1rem;
+  margin-bottom: 0.75rem;
 }
 @media (min-width: 768px) {
   .gallery__figure {
@@ -1003,7 +997,7 @@ input:focus, textarea:focus {
 }
 
 .add-comment {
-  padding: 0 16px 0 16px;
+  padding: 0.7rem 1.75rem 0 16px;
 }
 @media (min-width: 768px) {
   .add-comment {
@@ -1017,8 +1011,8 @@ input:focus, textarea:focus {
   }
 }
 .add-comment__title {
-  font-size: 1.45rem;
-  margin-bottom: 1.25rem;
+  font-size: 1.35rem;
+  margin-bottom: 1rem;
 }
 @media (min-width: 768px) {
   .add-comment__title {
@@ -1110,7 +1104,7 @@ input:focus, textarea:focus {
 .add-comment__input-comment {
   width: 100%;
   height: 6rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.35rem;
   border-radius: 4px;
   padding: 12px;
   box-sizing: border-box;
@@ -1133,7 +1127,7 @@ input:focus, textarea:focus {
   height: 40px;
   background-color: #323232;
   color: white;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -1152,8 +1146,8 @@ input:focus, textarea:focus {
 }
 
 .submitted-comments {
-  padding: 0 16px 0 16px;
-  margin-bottom: 1.75rem;
+  padding: 0 1.75rem 0 1rem;
+  margin-bottom: 1rem;
 }
 @media (min-width: 768px) {
   .submitted-comments {
@@ -1177,7 +1171,7 @@ input:focus, textarea:focus {
 }
 .submitted-comments__display-container {
   display: flex;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 .submitted-comments__avatar {
   width: 36px;
@@ -1223,12 +1217,19 @@ input:focus, textarea:focus {
   color: #afafaf;
 }
 .submitted-comments__comment {
-  font-size: 0.8rem;
-  line-height: 1.1rem;
+  font-size: 0.75rem;
+  line-height: 1.05rem;
 }
 @media (min-width: 768px) {
   .submitted-comments__comment {
     font-size: 0.85rem;
     line-height: 1.3rem;
   }
+}
+.submitted-comments__comment-card {
+  padding-top: 0.85rem;
+  border-bottom: 1px solid #e1e1e1;
+}
+.submitted-comments__comment-card--first-comment {
+  border-top: 1px solid #e1e1e1;
 }/*# sourceMappingURL=bio.css.map */

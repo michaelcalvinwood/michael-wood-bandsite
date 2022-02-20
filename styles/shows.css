@@ -1,9 +1,4 @@
 /* color scheme */
-/* Note to instructor
- * I recognize the request to limit use of variables.
- * These three variables are very useful because they ensure that the overlay perfectly matches the dimensions of the hero section.
- * Simply by changing the variables, the hero section and overlay adjust accordingly.
- */
 @font-face {
   font-family: "Avenir";
   src: url("/assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype");
@@ -338,11 +333,6 @@ input:focus, textarea:focus {
   color: white;
 }
 
-/* Note to instructor
- * I recognize the request to limit use of variables.
- * These three variables are very useful because they ensure that the overlay perfectly matches the dimensions of the hero section.
- * Simply by changing the variables, the hero section and overlay adjust accordingly.
- */
 /* color scheme */
 @font-face {
   font-family: "Avenir";

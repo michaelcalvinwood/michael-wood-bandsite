@@ -1,7 +1,37 @@
 const apiKey = "f3bd5bed-c466-449a-bc93-1d14dc589719";
 const baseUrl = "https://project-1-api.herokuapp.com/";
 
-XMLDocument
+/*
+ * createElement: Creates a child element and appends to parent
+ * @param parent (Element): parent element to attach child to
+ * @param tag (String): element tag to create
+ * @param c (String): optional class(es) of the element. Multiple classes are allowed when separated by a space.
+ * @param text (String): optional innerText of the element
+ * @param attributes (Obj): optional object whose key/value pairs will be added to the element
+ * @return Element on success (the created child element); false on error (if tag contains invalid characters). 
+ */
+ 
+function createElement (parent, tag, c = false, text = false, attributes = false) {
+    let el = {};
+    try {
+        el = document.createElement(tag);
+    } catch (e) {
+        return false;
+    }
+
+    parent.appendChild(el);
+    
+    // optional parameters
+    if (c) el.className = c; 
+    if (text) el.innerText = text;
+    if (attributes) {
+        for (const [key, value] of Object.entries(attributes)) {
+            el.setAttribute (key, value);
+        };
+    }
+
+    return el
+}
 
 
 /*
@@ -36,13 +66,20 @@ function initializeAddCommentSection () {
 /*
  * displayComment creates and returns an individual comment card
  */
-function displayComment (comment) {
+function displayComment (parent, comment, index) {
     let avatar = {};
 
-    let commentCard = document.createElement('div');
-    commentCard.classList.add('submitted-comments__comment-card');
+    console.log ('displayComment parent', parent);
 
-    createElement(commentCard, 'div', 'submitted-comments__divider');
+    let commentCard = {};
+
+    if (index === 0) {
+        commentCard = createElement(parent, 'div', 'submitted-comments__comment-card submitted-comments__comment-card--first-comment')
+    } else {
+        commentCard = createElement(parent, 'div', 'submitted-comments__comment-card')
+    }
+    
+    // createElement(commentCard, 'div', 'submitted-comments__divider');
 
     let displayContainer = createElement(commentCard, 'div', 'submitted-comments__display-container');
 
@@ -75,7 +112,7 @@ function updateSubmittedComments (submittedCommentsSection) {
     submittedCommentsSection.innerHTML = '';
 
     for (let i = 0; i < comments.length; i++) {
-        submittedCommentsSection.appendChild(displayComment (comments[i]));
+        displayComment (submittedCommentsSection, comments[i], i);
     }
 }
 
@@ -205,7 +242,7 @@ function getComments () {
         submittedCommentsSection.innerHTML = '';
 
         for (let i = 0; i < response.data.length; ++i) {
-            submittedCommentsSection.appendChild(displayComment (response.data[i]));
+            displayComment (submittedCommentsSection, response.data[i], i);
         }
         console.log ('success', response.data);
     })
