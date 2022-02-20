@@ -33,14 +33,6 @@ function createElement (parent, tag, c = false, text = false, attributes = false
     return el
 }
 
-
-/*
- * Note to instructor:
- * I was unsure whether the mobile version counts as rows regarding clicking them.
- * Therefore, I created the excludeMobile variable so the clicking behavior can be excluded by setting this to true
- */
-const excludeMobile = false;
-
 let currentActiveRow = null;
 
 // let concerts = [
