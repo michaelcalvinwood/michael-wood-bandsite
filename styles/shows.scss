@@ -208,7 +208,7 @@
         }
     }
     &__label-place-holder {
-        width: $tablet-button-width;
+        width: 19.25vw;
     }
     &__cards {
         @include desktop {
@@ -281,7 +281,7 @@
         }
     }
     &__button{
-        height: $tablet-button-height;
+        height: 40px;
         width: 100%;
         background-color: $bandsite-black;
         color: white;
@@ -290,7 +290,7 @@
         margin-bottom: .95rem;
 
         @include tablet {
-            width: $tablet-button-width;
+            width: 19.25vw;
             height: 40px;
             padding: 0;
             margin: auto 0;

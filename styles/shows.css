@@ -97,9 +97,9 @@ input:focus, textarea:focus {
 }
 .header__list-item {
   font-size: 13px;
-  line-height: 18px;
   font-weight: 400;
   height: 1.8rem;
+  line-height: 18px;
   width: 49.9%;
   box-sizing: border-box;
   text-align: center;
@@ -437,9 +437,9 @@ input:focus, textarea:focus {
 }
 .header__list-item {
   font-size: 13px;
-  line-height: 18px;
   font-weight: 400;
   height: 1.8rem;
+  line-height: 18px;
   width: 49.9%;
   box-sizing: border-box;
   text-align: center;
