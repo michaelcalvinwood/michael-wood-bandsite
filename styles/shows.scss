@@ -143,11 +143,12 @@
     }
 }
 .shows {
-    padding: 2rem 16px 1rem 16px;
+    // padding: 2rem 16px 1rem 16px;
     box-sizing: border-box;
+    padding-bottom: 1rem;
 
     @include tablet {
-        padding: 2.75rem 2.25rem 1.5rem 36px;
+        padding: 0 0 2.25rem 0;
     }
     @include desktop {
         padding: 2.75rem 9.75rem 1.5rem 8rem;
@@ -156,15 +157,30 @@
     }
     
     &__title {
+        margin: .85rem 0 .5rem 1rem;
+        font-size: 1.35rem;
+
         @include tablet {
             font-size: 2.25rem;
-            margin-bottom: 2.5rem;
+            margin: 2.25rem 0 2.5rem 2rem;
         }
     }
     &__container {
+        @include tablet {
+            margin: 0 2rem 0 1.25rem;
+            
+        }
         @include desktop {
             margin-left: 9.5rem;
             width: 75%;
+        }
+    }
+    &__labels-container {
+        display: none;
+
+        @include tablet {
+            display: block;
+            margin: 0 1.25rem .5rem 1rem;
         }
     }
     &__labels {
@@ -176,7 +192,6 @@
             width: 100%;
             display: flex;
             justify-content: space-between;
-            margin-bottom: .9rem;
         }
         @include desktop {
             margin-top: .25rem;
@@ -184,6 +199,9 @@
             height: 2.25rem;
             vertical-align: middle;
         }
+    }
+    &__info-label {
+        margin-bottom: .4rem;
     }
     &__label-date, &__label-venue, &__label-location {
         @include tablet {
@@ -209,8 +227,11 @@
     }
     &__label-place-holder {
         width: 19.25vw;
+        min-width: 19.25vw;
     }
     &__cards {
+       
+
         @include desktop {
             margin-top: 1.75rem;
             width: 100%;
@@ -218,7 +239,8 @@
     }
     &__card {
         position: relative;
-        margin-top: 1.3rem;
+        padding-top: 1.1rem;
+        border-bottom: 1px solid $mercury;
 
         &:hover {
             background-color: $alabaster;
@@ -228,17 +250,31 @@
         }
         
         @include tablet {
+            // display: flex;
+            // flex-direction: row;
+            // justify-content: space-between;
+            // margin-bottom: 2rem;
+            // margin-top: .75rem;
+            margin: 0;
+            padding: .95rem 0;
+            box-sizing: border-box;
+            // height: 2.5rem;
+        }
+        @include desktop {
+            // height: 3.75rem;
+            // background-color: red;
+        }
+    }
+    &__card-container {
+        margin: 0 2rem 0 .9rem;
+        @include tablet {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            margin-top: .75rem;
-            box-sizing: border-box;
-            margin-bottom: 2rem;
-            height: 2.5rem;
+            margin: 0 1.25rem 0 1rem;    
         }
         @include desktop {
             height: 3.75rem;
-            margin-bottom: .75rem;
         }
     }
     &__info-pair {
@@ -297,6 +333,7 @@
         }
         @include desktop {
             width: 11.5vw;
+            vertical-align: middle;
         }
     }
     &__divider {

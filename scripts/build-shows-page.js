@@ -85,7 +85,9 @@ function initializeShowsSection (title) {
 
     const showsContainer = createElement(section, 'div', 'shows__container');
     
-    const labels = createElement(showsContainer, 'div', 'shows__labels');
+    const showsLabelContainer = createElement(showsContainer, 'div', 'shows__labels-container');
+
+    const labels = createElement(showsLabelContainer, 'div', 'shows__labels');
     labels.addEventListener('click', labelsClickHandler);
 
     createElement(labels, 'div', 'shows__label-date', 'DATE');
@@ -147,13 +149,15 @@ function createShowCard (concert, parent) {
 
     const card = createElement(parent, 'div', 'shows__card');
     card.addEventListener('click', rowClickedHandler);
+
+    const cardContainer = createElement (card, 'div', 'shows__card-container');
     
-    generateInfoPair('DATE', date, card);
-    generateInfoPair('VENUE', concert.place, card);
-    generateInfoPair('LOCATION', concert.location, card);
+    generateInfoPair('DATE', date, cardContainer);
+    generateInfoPair('VENUE', concert.place, cardContainer);
+    generateInfoPair('LOCATION', concert.location, cardContainer);
     
-    createElement(card, 'button', 'shows__button', 'BUY TICKETS');
-    createElement(card, 'div', 'shows__divider');
+    createElement(cardContainer, 'button', 'shows__button', 'BUY TICKETS');
+    //createElement(card, 'div', 'shows__divider');
 
     return card;
 }
