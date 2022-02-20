@@ -75,7 +75,7 @@
     }
     &__title {
         @include mobile-header;
-        padding: $mobile-section-top-margin-mockup 0 .5rem 0;
+        padding: 18px 0 .5rem 0;
         box-sizing: border-box;
 
         @include tablet {
@@ -136,7 +136,7 @@
     }
     &__subheading {
         @include mobile-subheader;
-        margin: $mobile-section-top-margin-mockup 0 16px 0;
+        margin: 18px 0 16px 0;
 
         @include tablet {
             @include tablet-subheader;
@@ -175,7 +175,7 @@
     }
 }
 .gallery {
-    padding: $mobile-section-top-margin-mockup 16px 0 16px;
+    padding: 18px 16px 0 16px;
     background-color: $alabaster;
 
     @include tablet {
