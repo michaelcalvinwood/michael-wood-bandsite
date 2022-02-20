@@ -1235,4 +1235,27 @@ input:focus, textarea:focus {
   .submitted-comments__comment-card {
     padding-top: 1.75rem;
   }
+}
+.submitted-comments__buttons-container {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  line-height: 1.05rem;
+  margin-top: 0.25rem;
+}
+@media (min-width: 768px) {
+  .submitted-comments__buttons-container {
+    font-size: 0.85rem;
+    line-height: 1.3rem;
+  }
+}
+.submitted-comments__likes-count {
+  font-style: italic;
+}
+.submitted-comments__like-button {
+  height: 1rem;
+  margin-right: 0.5rem;
+}
+.submitted-comments__delete-button {
+  height: 1rem;
 }/*# sourceMappingURL=bio.css.map */

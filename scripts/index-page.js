@@ -38,28 +38,6 @@ function createElement (parent, tag, c = false, text = false, attributes = false
  * initializeAddCommentSection creates the input form and appends it to main
  */
 function initializeAddCommentSection () {
-//     const main = document.querySelector('main');
-
-//     const section = createElementmain, 'section', 'add-comment');
-
-//     createElement(section, 'h2', 'add-comment__title', 'Join the Conversation');
-
-//     const formContainer = createElement(section, 'div', 'add-comment__form-container');
-
-//     createElement(formContainer, 'img', 'add-comment__head-shot', '', {src: '/assets/images/Mohan-muruge.jpg', alt: 'avatar'});
-
-//     const form = createElement(formContainer, 'form', 'add-comment__form', '', {id: 'inputForm'});
-    
-//     createElement(form, 'label', 'add-comment__label-name', 'NAME', {for: 'name'});
-
-//     createElement(form, 'input', 'add-comment__input-name', '', {type: 'text', name: 'name', id: 'name', placeholder: 'Enter your name'});
-
-//     createElement(form, 'label', 'add-comment__label-comment', 'COMMENT', {for: 'comment'});
-
-//     createElement(form, 'textarea', 'add-comment__input-comment', '', {name: 'comment', id: 'comment', placeholder: 'Add a new comment'});
-
-//     createElement(form, 'button', 'add-comment__button', 'COMMENT');
-
     document.querySelector('form').addEventListener('submit', formHandler);
 }
 
@@ -79,8 +57,6 @@ function displayComment (parent, comment, index) {
         commentCard = createElement(parent, 'div', 'submitted-comments__comment-card')
     }
     
-    // createElement(commentCard, 'div', 'submitted-comments__divider');
-
     let displayContainer = createElement(commentCard, 'div', 'submitted-comments__display-container');
 
     if (comment.avatar) {
@@ -89,9 +65,9 @@ function displayComment (parent, comment, index) {
         avatar = createElement(displayContainer, 'div', 'submitted-comments__avatar');
     }
     
-    let commentCardContainer = createElement(displayContainer, 'div', 'submitted-comments__info');
+    const commentCardContainer = createElement(displayContainer, 'div', 'submitted-comments__info');
 
-    let nameTimeContainer = createElement(commentCardContainer, 'div', 'submitted-comments__name-time-container');
+    const nameTimeContainer = createElement(commentCardContainer, 'div', 'submitted-comments__name-time-container');
     
     createElement(nameTimeContainer, 'p', 'submitted-comments__name', comment.name);
 
@@ -99,7 +75,28 @@ function displayComment (parent, comment, index) {
 
     createElement(commentCardContainer, 'p', 'submitted-comments__comment', comment.comment);
 
-    console.log ('commentCard', commentCard);
+    const submittedCommentsButtonsContainer = createElement(commentCardContainer, 'div', 'submitted-comments__buttons-container');
+
+    if (comment.likes !== 1) {
+        createElement (submittedCommentsButtonsContainer, 'p', 'submitted-comments__likes-count', `${comment.likes} likes`);
+    }
+    else {
+        createElement (submittedCommentsButtonsContainer, 'p', 'submitted-comments__likes-count', `1 like`);
+    }
+    
+    const submittedCommentsButtons = createElement (submittedCommentsButtonsContainer, 'div', 'submitted-comments__buttons');
+
+    const likeButton = createElement (submittedCommentsButtons, 'img', 'submitted-comments__like-button', '', {src: '/assets/icons/icon-like.svg', alt: 'like-button'});
+
+    likeButton.addEventListener('click', (e) => {
+        addLike(comment.id);
+    })
+
+    const deleteButton = createElement (submittedCommentsButtons, 'img', 'submitted-comments__delete-button', '', {src: '/assets/icons/icon-delete.svg', alt: 'like-button'});
+    
+    deleteButton.addEventListener('click', (e) => {
+        deleteComment(comment.id);
+    })
 
     return commentCard;
 }
@@ -139,10 +136,7 @@ function displayLiveDate (timestamp) {
 
     let date = new Date(Number(timestamp))
     const options = { month: '2-digit', day: '2-digit', year: 'numeric' };
-    
-    // console.log(today.toLocaleDateString("en-US")); // 9/17/2016
-    // console.log(today.toLocaleDateString("en-US", options));
-
+   
     date = date.toLocaleDateString("en-US", options);
     
     return date;
@@ -170,11 +164,12 @@ function formHandler (e) {
     let hasErrors = false;
     let label = {};
 
-    const name = e.target.name.value;
-    const comment = e.target.comment.value;
+    const form = e.target;
+    const name = form.name;
+    const comment = form.comment;
 
-    if (!name) {
-        I('name').classList.add('add-comment__input-name--error');
+    if (!name.value) {
+        name.classList.add('add-comment__input-name--error');
 
         label = document.querySelector('.add-comment__label-name');
         label.classList.add('add-comment__label-name--error');
@@ -182,15 +177,15 @@ function formHandler (e) {
 
         hasErrors = true;
     } else {
-         I('name').classList.remove('add-comment__input-name--error');
+        name.classList.remove('add-comment__input-name--error');
 
         label = document.querySelector('.add-comment__label-name');
         label.classList.remove('add-comment__label-name--error');
         label.innerText = 'NAME';
     }
 
-    if (!comment) {
-        I('comment').classList.add('add-comment__input-comment--error');
+    if (!comment.value) {
+        comment.classList.add('add-comment__input-comment--error');
 
         label = document.querySelector('.add-comment__label-comment');
         label.classList.add('add-comment__label-comment--error');
@@ -198,7 +193,7 @@ function formHandler (e) {
 
         hasErrors = true;
     } else {
-        I('comment').classList.remove('add-comment__input-comment--error');
+        comment.classList.remove('add-comment__input-comment--error');
 
         label = document.querySelector('.add-comment__label-comment');
         label.classList.remove('add-comment__label-comment--error');
@@ -207,25 +202,7 @@ function formHandler (e) {
 
     if (hasErrors) return;
 
-    let nextId = -1;
-
-    comments.forEach(comment => {
-        if (comment.id >= nextId) nextId = comment.id + 1; 
-    });
-
-    const newComment = {
-        id: nextId,
-        avatar: '',
-        name: name,
-        timestamp: Math.round(Date.now() / 1000).toString(),
-        comment: comment
-    }
-
-    comments.unshift(newComment);
-
-    const submittedCommentsSection = document.querySelector('.submitted-comments');
-
-    // updateSubmittedComments (submittedCommentsSection);
+    addComment(name.value, comment.value);
 
     e.target.reset();
 }
@@ -241,8 +218,12 @@ function getComments () {
         const submittedCommentsSection = document.querySelector('.submitted-comments')
         submittedCommentsSection.innerHTML = '';
 
-        for (let i = 0; i < response.data.length; ++i) {
-            displayComment (submittedCommentsSection, response.data[i], i);
+        const sortedComments = response.data.sort ((a, b) => b.timestamp - a.timestamp);
+
+        console.log ('sortedComments', sortedComments);
+
+        for (let i = 0; i < sortedComments.length; ++i) {
+            displayComment (submittedCommentsSection, sortedComments[i], i);
         }
         console.log ('success', response.data);
     })
@@ -264,6 +245,7 @@ function addComment (name, comment) {
     axios (request)
     .then (response => {
         console.log ('success', response);
+        getComments ();
     })
     .catch (error => {
         console.log ('error', error)
@@ -272,13 +254,14 @@ function addComment (name, comment) {
 
 function addLike (id) {
     const request = {
-        url: baseURL + `comments/${id}/like`,
+        url: baseUrl + `comments/${id}/like?api_key=${apiKey}`,
         method: 'put',
     }
 
     axios (request)
     .then (response => {
         console.log ('success', response);
+        getComments();
     })
     .catch (error => {
         console.log ('error', error);
@@ -287,13 +270,14 @@ function addLike (id) {
 
 function deleteComment (id) {
     const request = {
-        url: baseURL + `comments/${id}`,
+        url: baseUrl + `comments/${id}?api_key=${apiKey}`,
         method: 'delete',
     }
 
     axios (request)
     .then (response => {
         console.log ('success', response);
+        getComments();
     })
     .catch (error => {
         console.log ('error', error);
@@ -302,5 +286,3 @@ function deleteComment (id) {
 initializeAddCommentSection();
 initializeSubmittedCommentsSection();
 getComments();
-// getShowDates();
-// addComment("Miguel Madera", "Just wow!");

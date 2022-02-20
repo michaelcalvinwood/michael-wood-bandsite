@@ -838,7 +838,7 @@ input:focus, textarea:focus {
 }
 @media (min-width: 1280px) {
   .shows {
-    padding: 2.75rem 9.75rem 1.5rem 8rem;
+    padding: 2.75rem 7.75rem 2rem 8rem;
     display: flex;
     justify-content: space-between;
   }
@@ -853,6 +853,11 @@ input:focus, textarea:focus {
     margin: 2.25rem 0 2.5rem 2rem;
   }
 }
+@media (min-width: 1280px) {
+  .shows__title {
+    margin: 0;
+  }
+}
 @media (min-width: 768px) {
   .shows__container {
     margin: 0 2rem 0 1.25rem;
@@ -860,8 +865,8 @@ input:focus, textarea:focus {
 }
 @media (min-width: 1280px) {
   .shows__container {
-    margin-left: 9.5rem;
-    width: 75%;
+    margin: 0;
+    width: 76%;
   }
 }
 .shows__labels-container {
@@ -871,6 +876,11 @@ input:focus, textarea:focus {
   .shows__labels-container {
     display: block;
     margin: 0 1.25rem 0.5rem 1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .shows__labels-container {
+    margin: 0 1.25rem 0 1rem;
   }
 }
 .shows__labels {
@@ -926,7 +936,7 @@ input:focus, textarea:focus {
 }
 @media (min-width: 1280px) {
   .shows__cards {
-    margin-top: 1.75rem;
+    margin-top: 1rem;
     width: 100%;
   }
 }
@@ -944,8 +954,13 @@ input:focus, textarea:focus {
 @media (min-width: 768px) {
   .shows__card {
     margin: 0;
-    padding: 0.95rem 0;
+    padding: 0.9rem 0;
     box-sizing: border-box;
+  }
+}
+@media (min-width: 1280px) {
+  .shows__card {
+    padding: 0.4rem 0;
   }
 }
 .shows__card-container {
@@ -962,6 +977,7 @@ input:focus, textarea:focus {
 @media (min-width: 1280px) {
   .shows__card-container {
     height: 3.75rem;
+    margin: 0 1.25rem 0 1rem;
   }
 }
 @media (min-width: 768px) {

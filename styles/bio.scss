@@ -445,15 +445,6 @@
         margin: 0 24rem 2.25rem 23rem;
     }
 
-    // &__divider {
-    //     width: 100%;
-    //     border-top: 1px solid $mercury;
-    //     margin-bottom: .85rem;
-
-    //     @include tablet {
-    //         margin-bottom: 1.7rem;
-    //     }
-    // }
     &__display-container {
         display: flex;
         margin-bottom: .75rem;
@@ -521,5 +512,27 @@
         @include desktop {
             padding-top: 1.75rem;
         }
+    }
+    &__buttons-container {
+        display: flex;
+        justify-content: space-between;
+        font-size: .75rem;
+        line-height: 1.05rem;
+        margin-top: .25rem;
+
+        @include tablet {
+            font-size: .85rem;
+            line-height: 1.3rem;
+        }
+    }
+    &__likes-count {
+        font-style: italic;
+    }
+    &__like-button {
+        height: 1rem;
+        margin-right: .5rem;
+    }
+    &__delete-button {
+        height: 1rem;
     }
 }
