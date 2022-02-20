@@ -780,7 +780,7 @@ input:focus, textarea:focus {
 }
 @media (min-width: 1280px) {
   .info__wrapper {
-    padding: 0 9rem;
+    padding: 0 10rem 0 9rem;
   }
 }
 .info__image {
@@ -798,6 +798,7 @@ input:focus, textarea:focus {
 @media (min-width: 1280px) {
   .info__image {
     margin-top: 1rem;
+    margin-bottom: 2rem;
     height: 35vw;
   }
 }
@@ -901,7 +902,7 @@ input:focus, textarea:focus {
 }
 @media (min-width: 1280px) {
   .gallery {
-    padding: 1.25rem 10vw 0 10vw;
+    padding: 1.25rem 11vw 0 10vw;
   }
 }
 .gallery__title {
@@ -1143,7 +1144,7 @@ input:focus, textarea:focus {
 @media (min-width: 1280px) {
   .add-comment__button {
     width: 34%;
-    margin-top: 0.25rem;
+    margin-top: 0.75rem;
   }
 }
 
@@ -1158,7 +1159,7 @@ input:focus, textarea:focus {
 }
 @media (min-width: 1280px) {
   .submitted-comments {
-    margin: 0 24rem 0 23rem;
+    margin: 0 24rem 2.25rem 23rem;
   }
 }
 .submitted-comments__display-container {
@@ -1228,5 +1229,10 @@ input:focus, textarea:focus {
 @media (min-width: 768px) {
   .submitted-comments__comment-card {
     padding-top: 1.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .submitted-comments__comment-card {
+    padding-top: 1.75rem;
   }
 }/*# sourceMappingURL=bio.css.map */
