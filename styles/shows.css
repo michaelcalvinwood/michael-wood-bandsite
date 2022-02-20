@@ -738,7 +738,7 @@ input:focus, textarea:focus {
   display: block;
   color: white;
   margin-bottom: 0;
-  z-index: 3 !important;
+  z-index: 3;
 }
 @media (min-width: 768px) {
   .hero__album {
@@ -763,7 +763,7 @@ input:focus, textarea:focus {
 .hero__song-container {
   width: 100%;
   height: 30vw;
-  z-index: 3 !important;
+  z-index: 3;
   position: relative;
 }
 @media (min-width: 525px) {
@@ -815,7 +815,7 @@ input:focus, textarea:focus {
   font-weight: 400;
   font-size: 24px;
   line-height: 32px;
-  z-index: 20 !important;
+  z-index: 20;
   opacity: 1;
   width: 70%;
   position: relative;
@@ -945,11 +945,11 @@ input:focus, textarea:focus {
   padding-top: 1.1rem;
   border-bottom: 1px solid #e1e1e1;
 }
-.shows__card:hover {
+.shows__card--inactive:hover {
   background-color: #fafafa;
 }
 .shows__card--active {
-  background-color: #e1e1e1 !important;
+  background-color: #e1e1e1;
 }
 @media (min-width: 768px) {
   .shows__card {

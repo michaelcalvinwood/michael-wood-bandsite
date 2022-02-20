@@ -147,7 +147,7 @@ function createShowCard (concert, parent) {
    
     console.log ('date', date)
 
-    const card = createElement(parent, 'div', 'shows__card');
+    const card = createElement(parent, 'div', 'shows__card shows__card--inactive');
     card.addEventListener('click', rowClickedHandler);
 
     const cardContainer = createElement (card, 'div', 'shows__card-container');
@@ -184,9 +184,15 @@ function rowClickedHandler (e) {
     // if we cannot find the row then an error has occurred. Therefore return in order to keep the code running.
     if (row.classList.contains('main')) return;
 
-    if (currentActiveRow) currentActiveRow.classList.remove('shows__card--active');
-    row.classList.add('shows__card--active')
+    if (row === currentActiveRow) return;
 
+    if (currentActiveRow) {
+        currentActiveRow.classList.remove('shows__card--active');
+        currentActiveRow.classList.add('shows__card--inactive')
+    }
+
+    row.classList.add('shows__card--active')
+    row.classList.remove('shows__card--inactive');
     currentActiveRow = row;
 }
 /*
