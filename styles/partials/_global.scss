@@ -134,13 +134,13 @@ input:focus, textarea:focus {
 }
 .footer {
     @include mobile-footer-text;
-    padding: $mobile-section-top-margin-mockup $mobile-section-horizontal-padding 1.5rem $mobile-section-horizontal-padding;
+    padding: 18px 16px 1.5rem 16px;
     background-color: $bandsite-black;
     color: $white;
 
     @include tablet {
         @include tablet-footer-text;
-        padding: $tablet-section-top-margin 36px 1.5rem 36px;
+        padding: 48px 36px 1.5rem 36px;
     }
     @include desktop {
         padding: 3rem 0vw 1.5rem 10vw;
@@ -180,7 +180,7 @@ input:focus, textarea:focus {
 
         @include tablet {
             @include tablet-section-header;
-            width: $tablet-footer-content-width;
+            width: 30vw;
         }
         @include desktop {
             display: inline-block;
@@ -197,13 +197,13 @@ input:focus, textarea:focus {
         display: flex;
         width: 7.5rem;
         justify-content: space-between;
-        margin-top: $mobile-section-top-margin-mockup;
+        margin-top: 18px;
 
         @include tablet {
             margin-top: 0;
             padding-bottom: .2rem;
             padding-left: .75rem;
-            width: $tablet-footer-content-width;
+            width: 30vw;
             justify-content: flex-start;
             align-self: center;
         }
@@ -246,7 +246,7 @@ input:focus, textarea:focus {
     }
 
     &__group {
-        margin-top: $mobile-section-top-margin-mockup;
+        margin-top: 18px;
 
         @include tablet {
             width: 30vw;

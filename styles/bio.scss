@@ -71,7 +71,7 @@
         padding: 0 2.25rem;
     }
     @include desktop {
-        padding: 0 $desktop-section-horizontal-padding 2.25rem $desktop-section-horizontal-padding;
+        padding: 0 72px 2.25rem 72px;
     }
     &__title {
         @include mobile-header;
