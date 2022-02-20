@@ -762,7 +762,7 @@ input:focus, textarea:focus {
 }
 @media (min-width: 768px) {
   .info__title {
-    font-size: 36px;
+    font-size: 2.15rem;
     line-height: 44px;
     font-weight: 700;
     padding: 48px 0 1.25rem 0;
@@ -775,7 +775,7 @@ input:focus, textarea:focus {
 }
 @media (min-width: 768px) {
   .info__wrapper {
-    padding: 0 3.5rem;
+    padding: 0 4.5rem 0 3.5rem;
   }
 }
 @media (min-width: 1280px) {
@@ -792,6 +792,7 @@ input:focus, textarea:focus {
 @media (min-width: 768px) {
   .info__image {
     height: 40vw;
+    margin-bottom: 1.75rem;
   }
 }
 @media (min-width: 1280px) {
@@ -829,6 +830,7 @@ input:focus, textarea:focus {
 }
 @media (min-width: 768px) {
   .info__quote--reduced {
+    margin: 1rem 0 1rem 0;
     font-size: 16px;
     line-height: 22px;
     font-weight: 600;
@@ -845,7 +847,7 @@ input:focus, textarea:focus {
     font-size: 24px;
     line-height: 32px;
     font-weight: 600;
-    margin-top: 48px;
+    margin: 3rem 0 1rem 0;
   }
 }
 @media (min-width: 1280px) {
@@ -894,7 +896,7 @@ input:focus, textarea:focus {
 }
 @media (min-width: 768px) {
   .gallery {
-    padding: 48px 36px 0 36px;
+    padding: 48px 3.2rem 2.25rem 36px;
   }
 }
 @media (min-width: 1280px) {
@@ -910,7 +912,7 @@ input:focus, textarea:focus {
 }
 @media (min-width: 768px) {
   .gallery__title {
-    font-size: 36px;
+    font-size: 2.15rem;
     line-height: 44px;
     font-weight: 700;
     margin-top: 1.5rem;
@@ -1135,7 +1137,7 @@ input:focus, textarea:focus {
 @media (min-width: 768px) {
   .add-comment__button {
     width: 30%;
-    margin: 0 0px 1.1rem auto;
+    margin: 0.75rem 0px 1.1rem auto;
   }
 }
 @media (min-width: 1280px) {
@@ -1151,22 +1153,12 @@ input:focus, textarea:focus {
 }
 @media (min-width: 768px) {
   .submitted-comments {
-    margin: 0 96px 0 80px;
+    margin: 0 96px 2.5rem 80px;
   }
 }
 @media (min-width: 1280px) {
   .submitted-comments {
     margin: 0 24rem 0 23rem;
-  }
-}
-.submitted-comments__divider {
-  width: 100%;
-  border-top: 1px solid #e1e1e1;
-  margin-bottom: 0.85rem;
-}
-@media (min-width: 768px) {
-  .submitted-comments__divider {
-    margin-bottom: 1.7rem;
   }
 }
 .submitted-comments__display-container {
@@ -1232,4 +1224,9 @@ input:focus, textarea:focus {
 }
 .submitted-comments__comment-card--first-comment {
   border-top: 1px solid #e1e1e1;
+}
+@media (min-width: 768px) {
+  .submitted-comments__comment-card {
+    padding-top: 1.5rem;
+  }
 }/*# sourceMappingURL=bio.css.map */
