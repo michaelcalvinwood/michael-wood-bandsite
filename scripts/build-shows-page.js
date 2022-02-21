@@ -124,7 +124,6 @@ function createShowCard (concert, parent) {
     generateInfoPair('LOCATION', concert.location, cardContainer);
     
     createElement(cardContainer, 'button', 'shows__button', 'BUY TICKETS');
-    //createElement(card, 'div', 'shows__divider');
 
     return card;
 }
