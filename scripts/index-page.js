@@ -47,8 +47,6 @@ function initializeAddCommentSection () {
 function displayComment (parent, comment, index) {
     let avatar = {};
 
-    console.log ('displayComment parent', parent);
-
     let commentCard = {};
 
     if (index === 0) {
@@ -128,11 +126,11 @@ function displayLiveDate (timestamp) {
     if (diff < 2) return "now";
     if (diff < 60) return diff + " seconds ago";
     if (diff < 120) return "1 minute ago";
-    if (diff < 3600) return (diff % 60) + " minutes ago";
+    if (diff < 3600) return Math.trunc(diff / 60) + " minutes ago";
     if (diff < 7200) return "1 hour ago";
-    if (diff < 86400) return (diff % 3600) + " hours ago";
+    if (diff < 86400) return Math.trunc(diff / 3600) + " hours ago";
     if (diff < 172800) return "1 day ago";
-    if (diff < 604800) return (diff % 86400) + " days ago";
+    if (diff < 604800) return Math.trunc(diff / 86400) + " days ago";
 
     let date = new Date(Number(timestamp))
     const options = { month: '2-digit', day: '2-digit', year: 'numeric' };
@@ -148,8 +146,6 @@ function initializeSubmittedCommentsSection () {
     const main = document.querySelector('main');
 
     const submittedCommentsSection = createElement(main, 'section', 'submitted-comments');
-
-    // updateSubmittedComments(submittedCommentsSection);
  
     createElement(submittedCommentsSection, 'div', 'submitted-comments__divider');
 }
@@ -220,16 +216,11 @@ function getComments () {
 
         const sortedComments = response.data.sort ((a, b) => b.timestamp - a.timestamp);
 
-        console.log ('sortedComments', sortedComments);
-
         for (let i = 0; i < sortedComments.length; ++i) {
             displayComment (submittedCommentsSection, sortedComments[i], i);
         }
-        console.log ('success', response.data);
     })
-    .catch (error => {
-        console.log ('error', error)
-    }) 
+    .catch (error => {}) 
 }
 
 function addComment (name, comment) {
@@ -244,12 +235,9 @@ function addComment (name, comment) {
 
     axios (request)
     .then (response => {
-        console.log ('success', response);
         getComments ();
     })
-    .catch (error => {
-        console.log ('error', error)
-    }) 
+    .catch (error => {}) 
 }
 
 function addLike (id) {
@@ -260,12 +248,9 @@ function addLike (id) {
 
     axios (request)
     .then (response => {
-        console.log ('success', response);
         getComments();
     })
-    .catch (error => {
-        console.log ('error', error);
-    })
+    .catch (error => {})
 }
 
 function deleteComment (id) {
@@ -276,13 +261,11 @@ function deleteComment (id) {
 
     axios (request)
     .then (response => {
-        console.log ('success', response);
-        getComments();
+        getComments(); 
     })
-    .catch (error => {
-        console.log ('error', error);
-    })
+    .catch (error => {})
 }
+
 initializeAddCommentSection();
 initializeSubmittedCommentsSection();
 getComments();

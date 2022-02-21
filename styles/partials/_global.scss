@@ -114,7 +114,6 @@ input:focus, textarea:focus {
             &--active, &:hover {
                 border-bottom: none;
             }
-
         }
     }
     &__list-value {
@@ -179,7 +178,6 @@ input:focus, textarea:focus {
         align-items: flex-end;
     }
     @include desktop {
-        // display:block;
         margin-right: 10vw;
         box-sizing: border-box;
     }

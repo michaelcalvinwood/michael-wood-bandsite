@@ -925,7 +925,7 @@ input:focus, textarea:focus {
   }
 }
 @media (min-width: 1280px) {
-  .shows__label-venue {
+  .shows__label-venue, .shows__label-location {
     width: 13.5vw;
     min-width: 13.5vw;
   }
@@ -1016,9 +1016,11 @@ input:focus, textarea:focus {
 @media (min-width: 1280px) {
   .shows__info-value {
     width: 13.5vw;
+    min-width: 13.5vw;
   }
   .shows__info-value--date {
     width: 20vw;
+    min-width: 20vw;
   }
 }
 .shows__button {
@@ -1040,26 +1042,7 @@ input:focus, textarea:focus {
 }
 @media (min-width: 1280px) {
   .shows__button {
-    width: 11.5vw;
+    width: 19.25vw;
     vertical-align: middle;
-  }
-}
-.shows__divider {
-  position: absolute;
-  width: 100vw;
-  height: 1px;
-  background-color: #e1e1e1;
-  bottom: 0;
-  left: -16px;
-}
-@media (min-width: 768px) {
-  .shows__divider {
-    left: -36px;
-    bottom: -1.25rem;
-  }
-}
-@media (min-width: 1280px) {
-  .shows__divider {
-    bottom: -0.425rem;
   }
 }/*# sourceMappingURL=shows.css.map */

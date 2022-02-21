@@ -333,10 +333,6 @@ input:focus, textarea:focus {
   color: white;
 }
 
-/*
- * Note to Instructor:
- * Hover animation has been added to photos in tablet and desktop sizes. Kindly mouseover to see effect. Also, please click resulting email image.
-*/
 /* color scheme */
 @font-face {
   font-family: "Avenir";

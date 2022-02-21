@@ -1,6 +1,8 @@
 const apiKey = "f3bd5bed-c466-449a-bc93-1d14dc589719";
 const baseUrl = "https://project-1-api.herokuapp.com/";
 
+let currentActiveRow = null;
+
 /*
  * createElement: Creates a child element and appends to parent
  * @param parent (Element): parent element to attach child to
@@ -32,8 +34,6 @@ function createElement (parent, tag, c = false, text = false, attributes = false
 
     return el
 }
-
-let currentActiveRow = null;
 
 /*
  * initializeShowsSection:
@@ -67,6 +67,7 @@ function initializeShowsSection (title) {
 
     return cards;
 }
+
 /*
  * generateInfoPair creates the container for the label and value and attaches to the parent
  * @param label (String): the field type for the concert value (e.g. date, venue, location)
@@ -112,8 +113,6 @@ function createShowCard (concert, parent) {
         .split(' ')
         .slice(0, 4)
         .join(' ');
-   
-    console.log ('date', date)
 
     const card = createElement(parent, 'div', 'shows__card shows__card--inactive');
     card.addEventListener('click', rowClickedHandler);
@@ -135,7 +134,6 @@ function createShowCard (concert, parent) {
  * @param e (event): the row 'click' event
  */
 function rowClickedHandler (e) {
-    console.log(e);
     e.stopPropagation();
 
     // if we click on the same row multiple times, maintain the current state
@@ -169,7 +167,6 @@ function rowClickedHandler (e) {
  * @param e (Event): the click events from either the labels or from the shows area
  */
 function labelsClickHandler (e) {
-    console.log('labelsClickHandler', e);
     e.stopPropagation();
 
     if (currentActiveRow) {
@@ -186,19 +183,14 @@ function getShowDates () {
     }
 
     axios (request)
-    .then (response => {
-        console.log ('success', response.data);
-        
+    .then (response => {    
         let card = {};
 
         for (let i = 0; i < response.data.length; ++i) {
             card = createShowCard(response.data[i], cardsSection);
         }
-
     })
-    .catch (error => {
-        console.log ('error', error)
-    }) 
+    .catch (error => {}) 
 }
 
 getShowDates();
